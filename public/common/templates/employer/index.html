@@ -1,0 +1,26 @@
+<sun-form form="employer" data="employer_"></sun-form>
+
+<hr/>
+
+<table ng-gridview="employers"
+       resource="$employers"
+       data="employers"
+       title="<h4>Employers</h4>">
+    <thead>
+        <tr>
+            <th data-render="{{name || ''}}">Company Name</th>
+            <th data-render="{{how_long || ''}}">How Long</th>
+            <th data-render="{{payment_schedule || ''}}">Payment Schedule</th>
+            <th data-render="${{net_salary || ''}}">Net Salary</th>
+            <th data-name="$options" data-width="160" >Options</th>
+        </tr> 
+    </thead>
+</table>
+
+<div class="hide">
+    <sun-form ng-gridedit="employers"
+              form="employer"
+              edit="true"
+              data="employers.$selected" >
+    </sun-form>
+</div>

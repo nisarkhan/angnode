@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>NodeAngularJS</Name>
+    <RootNamespace>NodeAngularJS</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>fdd3aa0e-096d-4ddf-900d-6cb98952ddaa</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>server.js</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <ProjectView>ProjectFiles</ProjectView>
+    <NodejsPort>1337</NodejsPort>
+    <StartWebBrowser>true</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="dashboard\controller.js" />
+    <Compile Include="public\assets\js\plugins.js" />
+    <Compile Include="public\assets\js\ui-select\angular-sanitize.js" />
+    <Compile Include="public\assets\js\ui-select\select.js" />
+    <Compile Include="public\assets\js\vendor\angular\angular-animate.js" />
+    <Compile Include="public\assets\js\vendor\angular\angular-animate.min.js" />
+    <Compile Include="public\assets\js\vendor\angular\angular-cookies.js" />
+    <Compile Include="public\assets\js\vendor\angular\angular-cookies.min.js" />
+    <Compile Include="public\assets\js\vendor\angular\angular-loader.js" />
+    <Compile Include="public\assets\js\vendor\angular\angular-loader.min.js" />
+    <Compile Include="public\assets\js\vendor\angular\angular-mocks.js" />
+    <Compile Include="public\assets\js\vendor\angular\angular-resource.js" />
+    <Compile Include="public\assets\js\vendor\angular\angular-resource.min.js" />
+    <Compile Include="public\assets\js\vendor\angular\angular-route.js" />
+    <Compile Include="public\assets\js\vendor\angular\angular-route.min.js" />
+    <Compile Include="public\assets\js\vendor\angular\angular-sanitize.js" />
+    <Compile Include="public\assets\js\vendor\angular\angular-sanitize.min.js" />
+    <Compile Include="public\assets\js\vendor\angular\angular-scenario.js" />
+    <Compile Include="public\assets\js\vendor\angular\angular-touch.js" />
+    <Compile Include="public\assets\js\vendor\angular\angular-touch.min.js" />
+    <Compile Include="public\assets\js\vendor\angular\angular.js" />
+    <Compile Include="public\assets\js\vendor\angular\angular.min.js" />
+    <Compile Include="public\assets\js\vendor\bootstrap.js" />
+    <Compile Include="public\assets\js\vendor\bootstrap.min.js" />
+    <Compile Include="public\assets\js\vendor\html5shiv.min.js" />
+    <Compile Include="public\assets\js\vendor\jquery.min.js" />
+    <Compile Include="public\assets\js\vendor\respond.min.js" />
+    <Compile Include="public\common\directives\dropdown.js" />
+    <Compile Include="public\common\directives\form.js" />
+    <Compile Include="public\common\directives\gridview.js" />
+    <Compile Include="public\common\directives\mask.js" />
+    <Compile Include="public\common\directives\match.js" />
+    <Compile Include="public\common\directives\templates.js" />
+    <Compile Include="public\common\drawer\controller.js" />
+    <Compile Include="public\common\filters.js" />
+    <Compile Include="public\common\filters\sumtender.js" />
+    <Compile Include="public\common\modules\application\address.js" />
+    <Compile Include="public\common\modules\application\borrower.js" />
+    <Compile Include="public\common\modules\application\create.js" />
+    <Compile Include="public\common\modules\application\decline.js" />
+    <Compile Include="public\common\modules\application\evaluate.js" />
+    <Compile Include="public\common\modules\application\letter.js" />
+    <Compile Include="public\common\modules\application\options.js" />
+    <Compile Include="public\common\modules\borrower\controller.js" />
+    <Compile Include="public\common\modules\changepassword\controller.js" />
+    <Compile Include="public\common\modules\check\controller.js" />
+    <Compile Include="public\common\modules\collection\controller.js" />
+    <Compile Include="public\common\modules\drawer\controller.js" />
+    <Compile Include="public\common\modules\employees\controller.js" />
+    <Compile Include="public\common\modules\loan\make.js" />
+    <Compile Include="public\common\modules\loan\rate.js" />
+    <Compile Include="public\common\modules\loan\renew.js" />
+    <Compile Include="public\common\modules\report\controller.js" />
+    <Compile Include="public\common\modules\writeoff\controller.js" />
+    <Compile Include="public\common\services\application.js" />
+    <Compile Include="public\common\services\automobile.js" />
+    <Compile Include="public\common\services\borrower.js" />
+    <Compile Include="public\common\services\callroute.js" />
+    <Compile Include="public\common\services\cashtransfer.js" />
+    <Compile Include="public\common\services\chart_of_accounts.js" />
+    <Compile Include="public\common\services\checkbook.js" />
+    <Compile Include="public\common\services\collateral.js" />
+    <Compile Include="public\common\services\collect.js" />
+    <Compile Include="public\common\services\debt.js" />
+    <Compile Include="public\common\services\delinquency.js" />
+    <Compile Include="public\common\services\drawer.js" />
+    <Compile Include="public\common\services\drawer_history.js" />
+    <Compile Include="public\common\services\employee.js" />
+    <Compile Include="public\common\services\employees.js" />
+    <Compile Include="public\common\services\employer.js" />
+    <Compile Include="public\common\services\employers.js" />
+    <Compile Include="public\common\services\form_error.js" />
+    <Compile Include="public\common\services\inquieries.js" />
+    <Compile Include="public\common\services\line.js" />
+    <Compile Include="public\common\services\loan.js" />
+    <Compile Include="public\common\services\organization.js" />
+    <Compile Include="public\common\services\other_income.js" />
+    <Compile Include="public\common\services\pay_collection.js" />
+    <Compile Include="public\common\services\phones.js" />
+    <Compile Include="public\common\services\phone_number.js" />
+    <Compile Include="public\common\services\promissory_note.js" />
+    <Compile Include="public\common\services\reference.js" />
+    <Compile Include="public\common\services\residence.js" />
+    <Compile Include="public\common\services\storage.js" />
+    <Compile Include="public\common\services\tab.js" />
+    <Compile Include="public\common\services\tender_types.js" />
+    <Compile Include="public\common\services\user.js" />
+    <Compile Include="public\common\services\writeoff.js" />
+    <Compile Include="public\common\sunloan.js" />
+    <Compile Include="public\controllers\controller.js" />
+    <Compile Include="public\dashboard\controller.js" />
+    <Compile Include="public\routes.js" />
+    <Compile Include="server.js" />
+    <Compile Include="public\sunloan.js" />
+    <Content Include="dashboard\drawer.html" />
+    <Content Include="dashboard\index.html" />
+    <Content Include="dashboard\make_loan_confirm.html" />
+    <Content Include="dashboard\stream.html" />
+    <Content Include="Procfile" />
+    <Content Include="public\assets\css\bootstrap.css.map" />
+    <Content Include="public\assets\css\bootstrap.min.css" />
+    <Content Include="public\assets\css\font-awesome.min.css" />
+    <Content Include="public\assets\css\sunloan.animate.css" />
+    <Content Include="public\assets\css\sunloan.css" />
+    <Content Include="public\assets\css\sunloan.datatable.css" />
+    <Content Include="public\assets\css\sunloan.datepicker.css" />
+    <Content Include="public\assets\css\ui-select\select.css" />
+    <Content Include="public\assets\css\ui-select\select.default.css" />
+    <Content Include="public\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="public\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="public\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="public\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="public\assets\fonts\PT_Sans-Caption-Web-Bold.eot" />
+    <Content Include="public\assets\fonts\PT_Sans-Caption-Web-Bold.svg" />
+    <Content Include="public\assets\fonts\PT_Sans-Caption-Web-Bold.ttf" />
+    <Content Include="public\assets\fonts\PT_Sans-Caption-Web-Bold.woff" />
+    <Content Include="public\assets\fonts\PT_Sans-Caption-Web-Regular.eot" />
+    <Content Include="public\assets\fonts\PT_Sans-Caption-Web-Regular.svg" />
+    <Content Include="public\assets\fonts\PT_Sans-Caption-Web-Regular.ttf" />
+    <Content Include="public\assets\fonts\PT_Sans-Caption-Web-Regular.woff" />
+    <Content Include="public\assets\images\login.jpg" />
+    <Content Include="public\assets\images\spinner-1.gif" />
+    <Content Include="public\assets\images\spinner.gif" />
+    <Content Include="public\assets\images\sunloan.png" />
+    <Content Include="public\assets\js\vendor\angular\angular-animate.min.js.map" />
+    <Content Include="public\assets\js\vendor\angular\angular-cookies.min.js.map" />
+    <Content Include="public\assets\js\vendor\angular\angular-csp.css" />
+    <Content Include="public\assets\js\vendor\angular\angular-loader.min.js.map" />
+    <Content Include="public\assets\js\vendor\angular\angular-resource.min.js.map" />
+    <Content Include="public\assets\js\vendor\angular\angular-route.min.js.map" />
+    <Content Include="public\assets\js\vendor\angular\angular-sanitize.min.js.map" />
+    <Content Include="public\assets\js\vendor\angular\angular-touch.min.js.map" />
+    <Content Include="public\assets\js\vendor\angular\angular.min.js.map" />
+    <Content Include="public\common\drawer\cash_transfer.html" />
+    <Content Include="public\common\drawer\edit.html" />
+    <Content Include="public\common\drawer\manage.html" />
+    <Content Include="public\common\json\collect.json" />
+    <Content Include="public\common\json\loan.json" />
+    <Content Include="public\common\json\types.json" />
+    <Content Include="public\common\modules\application\address.html" />
+    <Content Include="public\common\modules\application\borrower.html" />
+    <Content Include="public\common\modules\application\create.html" />
+    <Content Include="public\common\modules\application\decline.html" />
+    <Content Include="public\common\modules\application\evaluate.html" />
+    <Content Include="public\common\modules\application\letter.html" />
+    <Content Include="public\common\modules\application\options.html" />
+    <Content Include="public\common\modules\application\tabs.html" />
+    <Content Include="public\common\modules\borrower\collection.html" />
+    <Content Include="public\common\modules\borrower\contact.html" />
+    <Content Include="public\common\modules\borrower\dashboard.html" />
+    <Content Include="public\common\modules\borrower\loan.html" />
+    <Content Include="public\common\modules\borrower\nfs.html" />
+    <Content Include="public\common\modules\borrower\promise.html" />
+    <Content Include="public\common\modules\borrower\search.html" />
+    <Content Include="public\common\modules\borrower\writeoff.html" />
+    <Content Include="public\common\modules\changepassword\index.html" />
+    <Content Include="public\common\modules\check\maintenance.html" />
+    <Content Include="public\common\modules\check\write.html" />
+    <Content Include="public\common\modules\collection\index.html" />
+    <Content Include="public\common\modules\drawer\cash_transfer.html" />
+    <Content Include="public\common\modules\drawer\edit.html" />
+    <Content Include="public\common\modules\drawer\manage.html" />
+    <Content Include="public\common\modules\employees\index.html" />
+    <Content Include="public\common\modules\loan\make.html" />
+    <Content Include="public\common\modules\loan\rate.html" />
+    <Content Include="public\common\modules\loan\renew.html" />
+    <Content Include="public\common\modules\report\index.html" />
+    <Content Include="public\common\modules\review\address.html" />
+    <Content Include="public\common\modules\review\borrower.html" />
+    <Content Include="public\common\modules\review\create.html" />
+    <Content Include="public\common\templates\automobiles\edit.html" />
+    <Content Include="public\common\templates\automobiles\index.html" />
+    <Content Include="public\common\templates\automobile\edit.html" />
+    <Content Include="public\common\templates\automobile\index.html" />
+    <Content Include="public\common\templates\borrower\edit.html" />
+    <Content Include="public\common\templates\borrower\index.html" />
+    <Content Include="public\common\templates\collaterals\edit.html" />
+    <Content Include="public\common\templates\collaterals\index.html" />
+    <Content Include="public\common\templates\collateral\edit.html" />
+    <Content Include="public\common\templates\collateral\index.html" />
+    <Content Include="public\common\templates\debt\edit.html" />
+    <Content Include="public\common\templates\debt\index.html" />
+    <Content Include="public\common\templates\employees\edit.html" />
+    <Content Include="public\common\templates\employees\index.html" />
+    <Content Include="public\common\templates\employee\edit.html" />
+    <Content Include="public\common\templates\employee\index.html" />
+    <Content Include="public\common\templates\employer\edit.html" />
+    <Content Include="public\common\templates\employer\index.html" />
+    <Content Include="public\common\templates\header.html" />
+    <Content Include="public\common\templates\inquiry\edit.html" />
+    <Content Include="public\common\templates\inquiry\index.html" />
+    <Content Include="public\common\templates\loan_history\index.html" />
+    <Content Include="public\common\templates\loan_history\reverse.html" />
+    <Content Include="public\common\templates\notification.html" />
+    <Content Include="public\common\templates\other_debt\edit.html" />
+    <Content Include="public\common\templates\other_debt\index.html" />
+    <Content Include="public\common\templates\other_income\edit.html" />
+    <Content Include="public\common\templates\other_income\index.html" />
+    <Content Include="public\common\templates\phones\edit.html" />
+    <Content Include="public\common\templates\phones\index.html" />
+    <Content Include="public\common\templates\phone_number\edit.html" />
+    <Content Include="public\common\templates\phone_number\index.html" />
+    <Content Include="public\common\templates\primary_debt\edit.html" />
+    <Content Include="public\common\templates\primary_debt\index.html" />
+    <Content Include="public\common\templates\reference\edit.html" />
+    <Content Include="public\common\templates\reference\index.html" />
+    <Content Include="public\common\templates\residence\borrower.html" />
+    <Content Include="public\common\templates\residence\edit.html" />
+    <Content Include="public\common\templates\residence\index.html" />
+    <Content Include="public\common\templates\transaction\edit.html" />
+    <Content Include="public\common\templates\transaction\index.html" />
+    <Content Include="public\common\templates\transaction\reverse.html" />
+    <Content Include="public\common\modules\writeoff\index.html" />
+    <Content Include="public\dashboard\drawer.html" />
+    <Content Include="public\dashboard\index.html" />
+    <Content Include="public\dashboard\make_loan_confirm.html" />
+    <Content Include="public\dashboard\stream.html" />
+    <Content Include="public\index.html" />
+    <Content Include="package.json" />
+    <Content Include="public\about.html" />
+    <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="dashboard\" />
+    <Folder Include="public\" />
+    <Folder Include="public\assets\" />
+    <Folder Include="public\assets\css\" />
+    <Folder Include="public\assets\css\ui-select\" />
+    <Folder Include="public\assets\fonts\" />
+    <Folder Include="public\assets\images\" />
+    <Folder Include="public\assets\js\" />
+    <Folder Include="public\assets\js\ui-select\" />
+    <Folder Include="public\assets\js\vendor\" />
+    <Folder Include="public\assets\js\vendor\angular\" />
+    <Folder Include="public\common\" />
+    <Folder Include="public\common\directives\" />
+    <Folder Include="public\common\drawer\" />
+    <Folder Include="public\common\filters\" />
+    <Folder Include="public\common\json\" />
+    <Folder Include="public\common\modules\" />
+    <Folder Include="public\common\modules\application\" />
+    <Folder Include="public\common\modules\borrower\" />
+    <Folder Include="public\common\modules\changepassword\" />
+    <Folder Include="public\common\modules\check\" />
+    <Folder Include="public\common\modules\collection\" />
+    <Folder Include="public\common\modules\drawer\" />
+    <Folder Include="public\common\modules\employees\" />
+    <Folder Include="public\common\modules\loan\" />
+    <Folder Include="public\common\modules\report\" />
+    <Folder Include="public\common\modules\review\" />
+    <Folder Include="public\common\templates\" />
+    <Folder Include="public\common\templates\automobiles\" />
+    <Folder Include="public\common\templates\automobile\" />
+    <Folder Include="public\common\templates\borrower\" />
+    <Folder Include="public\common\templates\collaterals\" />
+    <Folder Include="public\common\templates\collateral\" />
+    <Folder Include="public\common\templates\debt\" />
+    <Folder Include="public\common\templates\employees\" />
+    <Folder Include="public\common\templates\employee\" />
+    <Folder Include="public\common\templates\employer\" />
+    <Folder Include="public\common\templates\inquiry\" />
+    <Folder Include="public\common\templates\loan_history\" />
+    <Folder Include="public\common\templates\other_debt\" />
+    <Folder Include="public\common\templates\other_income\" />
+    <Folder Include="public\common\templates\phones\" />
+    <Folder Include="public\common\templates\phone_number\" />
+    <Folder Include="public\common\templates\primary_debt\" />
+    <Folder Include="public\common\templates\reference\" />
+    <Folder Include="public\common\templates\residence\" />
+    <Folder Include="public\common\templates\transaction\" />
+    <Folder Include="public\common\modules\writeoff\" />
+    <Folder Include="public\common\services\" />
+    <Folder Include="public\controllers\" />
+    <Folder Include="public\dashboard\" />
+  </ItemGroup>
+  <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

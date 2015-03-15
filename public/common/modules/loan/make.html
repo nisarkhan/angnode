@@ -1,0 +1,431 @@
+<div class="container">
+
+    <div class="row text-gray">
+        <div class="col-xs-4">Application Date</div>
+        <div class="col-xs-4">Requested Amount</div>
+        <div class="col-xs-4 text-right">Submitted By</div>
+    </div>
+    <h3 class="row reduced">
+        <div class="col-xs-4"> {{ application.submitted_date}}</div>
+        <div class="col-xs-4">{{application.requested_amount}}</div>
+        <div class="col-xs-4 text-right">{{application.submitted_by}}</div>
+    </h3>
+
+    <form name="form" class="form-horizontal" novalidate>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Application Information</h4>
+                    <div class="panel-body">
+                        <div class="col-xs-4">
+                            <p><span class="strong">Ownership  type:</span> {{application.ownership_type}}</p>
+                            <p><span class="strong">Application by Phone:</span> {{application.by_phone}}</p>
+                            <p><span class="strong">Referral:</span> {{application.referral_name|| 'Not Completed'}}</p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p><span class="strong">Date/Time Taken:</span> {{application.submitted_date}}</p>
+                            <p><span class="strong">Amount Requested:</span> {{application.requested_amount||'0'}}</p>
+                            <p><span class="strong">Previous Sun Loan Acct:</span> Not Completed</p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p><span class="strong">Taken By:</span> {{application.submitted_by}}</p>
+                            <p><span class="strong">Source:</span> {{application.source||'Not Completed'}}</p>
+                            <p><span class="strong">If Previous When?:</span> Not Completed</p>
+                        </div>
+                    </div>
+                </div>                  
+            </div>              
+        </div>           
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Borrower Information</h4>
+                    <div class="panel-body">
+                        <div class="col-xs-4">
+                            <p><span class="strong">Last Name:</span> {{application.last_name}}</p>
+                            <p><span class="strong">Date of Birth:</span> {{application.date_of_birth}}</p>
+                            <p><span class="strong">Home City:</span> {{application.home_city}}</p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p><span class="strong">MI:</span> {{application.middle_name|| '' }}</p>
+                            <p><span class="strong">{{application.identification_type||''}}:</span> {{application.identification_number||''}}</p>
+                            <p><span class="strong">Status:</span> {{application.status}}</p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p><span class="strong">First Name</span> {{application.first_name}}</p>
+                            <p><span class="strong">Dependents:</span> {{application.number_of_dependents||'0'}}</p>
+                        </div>
+                    </div>
+                </div>                  
+            </div>              
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Residences</h4>
+                    <div class="panel-body">
+                        <table class="table-striped table-bordered" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="text-center strong">Address</th>
+                                    <th class="text-center strong">Type</th>
+                                    <th class="text-center strong">Ownership Type</th>
+                                    <th class="text-center strong">Moved In</th>
+                                    <th class="text-center strong">How Long</th>
+                                    <th class="text-center strong">Verified How</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="residence in application.residences">
+                                    <td>{{residence.address}} {{residence.city}}, {{residence.state}} {{residence.zip}}</td>
+                                    <td>{{residence.type}}</td>
+                                    <td>{{residence.ownership_type}}</td>
+                                    <td>{{residence.year_moved_in}}</td>
+                                    <td>{{residence.how_long}}</td>
+                                    <td>{{residence.how_verified}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Phones</h4>
+                    <div class="panel-body">
+                        <table class="table-striped table-bordered" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="text-center strong">Type</th>
+                                    <th class="text-center strong">Number</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="phone in application.phones">
+                                    <td>{{phone.phone_type}}</td>
+                                    <td>{{phone.phone_number}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Employers</h4>
+                    <div class="panel-body">
+                        <table class="table-striped table-bordered" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="text-center strong">Name</th>
+                                    <th class="text-center strong">Payment_Schedule</th>
+                                    <th class="text-center strong">Net Salary</th>
+                                    <th class="text-center strong">Verified How</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="employer in application.employers">
+                                    <td>{{employer.name}}</td>
+                                    <td>{{employer.payment_schedule}}</td>
+                                    <td>{{employer.net_salary}}</td>
+                                    <td>{{employer.verified_how}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">References</h4>
+                    <div class="panel-body">
+                        <table class="table-striped table-bordered" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="text-center strong">Name</th>
+                                    <th class="text-center strong">Address</th>
+                                    <th class="text-center strong">Relationship</th>
+                                    <th class="text-center strong">Phone Number</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="reference in application.references">
+                                    <td>{{reference.first_name}} {{reference.last_name}}</td>
+                                    <td>{{reference.address}} {{reference.city}}, {{reference.state}} {{reference.zip}}</td>
+                                    <td>{{reference.relationship_type}}</td>
+                                    <td>{{reference.phone_number}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Automobiles</h4>
+                    <div class="panel-body">
+                        <table class="table-striped table-bordered" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="text-center strong">VIN</th>
+                                    <th class="text-center strong">Make</th>
+                                    <th class="text-center strong">Model</th>
+                                    <th class="text-center strong">Color</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="automobile in application.automobiles">
+                                    <td>{{automobile.vin_number}}</td>
+                                    <td>{{automobile.make}}</td>
+                                    <td>{{automobile.model}}</td>
+                                    <td>{{automobile.color}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Debts</h4>
+                    <div class="panel-body">
+                        <table class="table-striped table-bordered" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="text-center strong">Type</th>
+                                    <th class="text-center strong">Note</th>
+                                    <th class="text-center strong">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="debt in application.debts">
+                                    <td>{{debt.debt_type}}</td>
+                                    <td>{{debt.description}}</td>
+                                    <td class="text-right">${{debt.value}}</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td class="text-right strong">Total:</td>
+                                    <td class="text-right strong">{{ application.debts | sumValues: 'value' | currency}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Income</h4>
+                    <div class="panel-body">
+                        <table class="table-striped table-bordered" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="text-center strong">source</th>
+                                    <th class="text-center strong">how_verified</th>
+                                    <th class="text-center strong">who_verified</th>
+                                    <th class="text-center strong">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="income in application.other_incomes">
+                                    <td>{{income.source}}</td>
+                                    <td>{{income.how_verified}}</td>
+                                    <td>{{income.who_verified}}</td>
+                                    <td class="text-right">${{income.amount}}</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td class="text-right strong">Total:</td>
+                                    <td class="text-right strong">{{ application.other_incomes | sumValues: 'amount' | currency}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Finances</h4>
+                    <div class="panel-body">
+                        <table class="table-striped table-bordered" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="text-center strong">Income</th>
+                                    <th class="text-center strong">Debt</th>
+                                    <th class="text-center strong">Free Income</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-right">{{total_income| currency}}</td>
+                                    <td class="text-right">{{total_debt| currency }}</td>
+                                    <td class="text-right">{{free_income| currency }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Evaluation</h4>
+                    <div class="panel-body">
+                        <table class="table-striped table-bordered" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="text-center strong">Credit Check</th>
+                                    <th class="text-center strong">&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Transunion(SARMA)</td>
+                                    <td>{{ application.transunion || false }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Equifax(CSC Credit Services)</td>
+                                    <td>{{ application.equifax || false }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Experian(formerly TRW)</td>
+                                    <td>{{ application.experian || false }}</td>
+                                </tr>                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">SAWS</h4>
+                    <div class="panel-body">
+                        <table class="table-striped table-bordered" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="text-center strong">SAWS</th>
+                                    <th class="text-center strong">&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Stability</td>
+                                    <td>{{ application.stability || 'Not Complete' }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Ability</td>
+                                    <td>{{ application.ability || 'Not Complete' }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Willingness</td>
+                                    <td>{{ application.willingness || 'Not Complete' }}</td>
+                                </tr>  
+                                <tr>
+                                    <td>security</td>
+                                    <td>{{ application.security || 'Not Complete' }}</td>
+                                </tr>                                  
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Approval</h4>
+                    <div class="panel-body">
+                        <table class="table-striped table-bordered" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="text-center strong">Approved</th>
+                                    <th class="text-center strong">&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Approval Date</td>
+                                    <td>{{ application.approval_date || 'Not Complete' }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Approved By</td>
+                                    <td>{{ application.approved_by || 'Not Complete' }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Approved Amount</td>
+                                    <td>${{ application.net_loan || 'Not Complete' }}</td>
+                                </tr>  
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Rate</h4>
+                    <div class="panel-body">
+                        <ul class="list-group list-selector">
+                            <li class="list-group-item" ng-class="option.loan_rate_id == rate.loan_rate_id ? 'active' : ''" ng-click="select(option);" ng-repeat="option in rates">
+
+                                <div class="row text-gray">
+                                    <div class="col-xs-3">IAHC</div>
+                                    <div class="col-xs-3"># of Payments</div>
+                                    <div class="col-xs-3">Final Payment</div>
+                                    <div class="col-xs-3">Total Note</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-3">${{option.iahc_charge}}</div>
+                                    <div class="col-xs-3">{{option.number_of_payments}}</div>
+                                    <div class="col-xs-3">${{option.final_payment}}</div>
+                                    <div class="col-xs-3 strong">${{option.total_note}}</div>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row text-right">
+            <div class="col-xs-12">
+                <button class="btn btn-default" ng-show="loan" ng-click="complete()">
+                    <i class="fa fa-print"></i> Complete
+                </button>                
+                <button class="btn btn-default" ng-show="loan" ng-click="print_note()">
+                    <i class="fa fa-print"></i> Print Promissory Note
+                </button>
+                <button class="btn btn-green" ng-click="make_loan()" ng-hide="loan">
+                    <i class="fa fa-check-circle"></i> Make Loan
+                </button>
+
+            </div>
+        </div>
+
+    </form>
+
+</div>

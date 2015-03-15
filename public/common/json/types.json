@@ -1,0 +1,1429 @@
+
+{
+    "prefixes":[
+        {
+            "id":" ",
+            "name":" "
+        },
+        {
+            "id":"Mr",
+            "name":"Mr"
+        },
+        {
+            "id":"Mrs",
+            "name":"Mrs"
+        },
+        {
+            "id":"Miss",
+            "name":"Miss"
+        },
+        {
+            "id":"Ms",
+            "name":"Ms"
+        },
+        {
+            "id":"Prof",
+            "name":"Prof"
+        },
+        {
+            "id":"Ph.D",
+            "name":"Ph.D"
+        },
+        {
+            "id":"Capt",
+            "name":"Capt"
+        },
+        {
+            "id":"Lt",
+            "name":"Lt"
+        },
+        {
+            "id":"Dr",
+            "name":"Dr"
+        },
+        {
+            "id":"Rev",
+            "name":"Rev"
+        }
+    ],
+    "suffixes":[
+        {
+            "id":" ",
+            "name":" "
+        },
+        {
+            "id":"II",
+            "name":"II"
+        },
+        {
+            "id":"III",
+            "name":"III"
+        },
+        {
+            "id":"IV",
+            "name":"IV"
+        },
+        {
+            "id":"Jr.",
+            "name":"Jr."
+        },
+        {
+            "id":"Sr.",
+            "name":"Sr."
+        },
+        {
+            "id":"V",
+            "name":"V"
+        },
+        {
+            "id":"VI",
+            "name":"VI"
+        }
+    ],
+    "phones":[
+        {
+            "id":"Not completed",
+            "name":"Not completed"
+        },
+        {
+            "id":"Mobile",
+            "name":"Mobile"
+        },
+        {
+            "id":"Home",
+            "name":"Home"
+        },
+        {
+            "id":"Work",
+            "name":"Work"
+        },
+        {
+            "id":"Near by",
+            "name":"Near by"
+        }
+    ],
+    "appsources":[
+        {
+            "id":"Not completed",
+            "name":"Not completed"
+        },
+        {
+            "id":"Direct mail",
+            "name":"Direct mail"
+        },
+        {
+            "id":"FB or update",
+            "name":"FB or update"
+        },
+        {
+            "id":"Flier",
+            "name":"Flier"
+        },
+        {
+            "id":"Mailing",
+            "name":"Mailing"
+        },
+        {
+            "id":"Other",
+            "name":"Other"
+        },
+        {
+            "id":"Radio",
+            "name":"Radio"
+        },
+        {
+            "id":"Relative friend",
+            "name":"Relative friend"
+        },
+        {
+            "id":"Sunloan customer",
+            "name":"Sunloan customer"
+        },
+        {
+            "id":"Telemarketing",
+            "name":"Telemarketing"
+        },
+        {
+            "id":"Television",
+            "name":"Television"
+        },
+        {
+            "id":"Yellow pages",
+            "name":"Yellow pages"
+        }
+    ],
+    "apptypes":[
+        {
+            "id":"Not completed",
+            "name":"Not completed"
+        },
+        {
+            "id":"Individual",
+            "name":"Individual"
+        },
+        {
+            "id":"Joint",
+            "name":"Joint"
+        }
+    ],
+    "states":[
+        {
+            "abbrev":"AK",
+            "name":"Alaska"
+        },
+        {
+            "abbrev":"AL",
+            "name":"Alabama"
+        },
+        {
+            "abbrev":"AR",
+            "name":"Arkansas"
+        },
+        {
+            "abbrev":"AZ",
+            "name":"Arizona"
+        },
+        {
+            "abbrev":"CA",
+            "name":"California"
+        },
+        {
+            "abbrev":"CO",
+            "name":"Colorado"
+        },
+        {
+            "abbrev":"CT",
+            "name":"Connecticut"
+        },
+        {
+            "abbrev":"DE",
+            "name":"Delaware"
+        },
+        {
+            "abbrev":"FL",
+            "name":"Florida"
+        },
+        {
+            "abbrev":"GA",
+            "name":"Georgia"
+        },
+        {
+            "abbrev":"HI",
+            "name":"Hawaii"
+        },
+        {
+            "abbrev":"IA",
+            "name":"Iowa"
+        },
+        {
+            "abbrev":"ID",
+            "name":"Idaho"
+        },
+        {
+            "abbrev":"IL",
+            "name":"Illinois"
+        },
+        {
+            "abbrev":"IN",
+            "name":"Indiana"
+        },
+        {
+            "abbrev":"KS",
+            "name":"Kansas"
+        },
+        {
+            "abbrev":"KY",
+            "name":"Kentucky"
+        },
+        {
+            "abbrev":"LA",
+            "name":"Louisiana"
+        },
+        {
+            "abbrev":"MA",
+            "name":"Massachusetts"
+        },
+        {
+            "abbrev":"MD",
+            "name":"Maryland"
+        },
+        {
+            "abbrev":"ME",
+            "name":"Maine"
+        },
+        {
+            "abbrev":"MI",
+            "name":"Michigan"
+        },
+        {
+            "abbrev":"MN",
+            "name":"Minnesota"
+        },
+        {
+            "abbrev":"MO",
+            "name":"Missouri"
+        },
+        {
+            "abbrev":"MS",
+            "name":"Mississippi"
+        },
+        {
+            "abbrev":"MT",
+            "name":"Montana"
+        },
+        {
+            "abbrev":"NC",
+            "name":"North Carolina"
+        },
+        {
+            "abbrev":"ND",
+            "name":"North Dakota"
+        },
+        {
+            "abbrev":"NE",
+            "name":"Nebraska"
+        },
+        {
+            "abbrev":"NH",
+            "name":"New Hampshire"
+        },
+        {
+            "abbrev":"NJ",
+            "name":"New Jersey"
+        },
+        {
+            "abbrev":"NM",
+            "name":"New Mexico"
+        },
+        {
+            "abbrev":"NV",
+            "name":"Nevada"
+        },
+        {
+            "abbrev":"NY",
+            "name":"New York"
+        },
+        {
+            "abbrev":"OH",
+            "name":"Ohio"
+        },
+        {
+            "abbrev":"OK",
+            "name":"Oklahoma"
+        },
+        {
+            "abbrev":"OR",
+            "name":"Oregon"
+        },
+        {
+            "abbrev":"PA",
+            "name":"Pennsylvania"
+        },
+        {
+            "abbrev":"RI",
+            "name":"Rhode Island"
+        },
+        {
+            "abbrev":"SC",
+            "name":"South Carolina"
+        },
+        {
+            "abbrev":"SD",
+            "name":"South Dakota"
+        },
+        {
+            "abbrev":"TN",
+            "name":"Tennessee"
+        },
+        {
+            "abbrev":"TX",
+            "name":"Texas"
+        },
+        {
+            "abbrev":"UT",
+            "name":"Utah"
+        },
+        {
+            "abbrev":"VA",
+            "name":"Virginia"
+        },
+        {
+            "abbrev":"VT",
+            "name":"Vermont"
+        },
+        {
+            "abbrev":"WA",
+            "name":"Washington"
+        },
+        {
+            "abbrev":"WI",
+            "name":"Wisconsin"
+        },
+        {
+            "abbrev":"WV",
+            "name":"West Virginia"
+        },
+        {
+            "abbrev":"WY",
+            "name":"Wyoming"
+        }
+    ],
+    "timespans":[
+        {
+            "id":"Not completed",
+            "name":"Not completed"
+        },
+        {
+            "id":"Less than 1 Month",
+            "name":"Less than 1 Month"
+        },
+        {
+            "id":"1 Month",
+            "name":"1 Month"
+        },
+        {
+            "id":"2 Months",
+            "name":"2 Months"
+        },
+        {
+            "id":"3 Months",
+            "name":"3 Months"
+        },
+        {
+            "id":"4 Months",
+            "name":"4 Months"
+        },
+        {
+            "id":"5 Months",
+            "name":"5 Months"
+        },
+        {
+            "id":"6 Months",
+            "name":"6 Months"
+        },
+        {
+            "id":"7 Months",
+            "name":"7 Months"
+        },
+        {
+            "id":"8 Months",
+            "name":"8 Months"
+        },
+        {
+            "id":"9 Months",
+            "name":"9 Months"
+        },
+        {
+            "id":"10 Months",
+            "name":"10 Months"
+        },
+        {
+            "id":"11 Months",
+            "name":"11 Months"
+        },
+        {
+            "id":"1 Year",
+            "name":"1 Year"
+        },
+        {
+            "id":"1.5 Years",
+            "name":"1.5 Years"
+        },
+        {
+            "id":"2.5 Years",
+            "name":"2.5 Years"
+        },
+        {
+            "id":"3 Years",
+            "name":"3 Years"
+        },
+        {
+            "id":"4 Years",
+            "name":"4 Years"
+        },
+        {
+            "id":"3.5 Years",
+            "name":"3.5 Years"
+        },
+        {
+            "id":"2 Years",
+            "name":"2 Years"
+        },
+        {
+            "id":"4.5 Years",
+            "name":"4.5 Years"
+        },
+        {
+            "id":"6 Years",
+            "name":"6 Years"
+        },
+        {
+            "id":"5 Years",
+            "name":"5 Years"
+        },
+        {
+            "id":"7 Years",
+            "name":"7 Years"
+        },
+        {
+            "id":"9 Years",
+            "name":"9 Years"
+        },
+        {
+            "id":"8 Years",
+            "name":"8 Years"
+        },
+        {
+            "id":"10 Years",
+            "name":"10 Years"
+        },
+        {
+            "id":"15 to 20 Years",
+            "name":"15 to 20 Years"
+        },
+        {
+            "id":"10 to 15 Years",
+            "name":"10 to 15 Years"
+        },
+        {
+            "id":"20 to 25 Years",
+            "name":"20 to 25 Years"
+        },
+        {
+            "id":"25 Years or more",
+            "name":"25 Years or more"
+        }
+    ],
+    "howlong":[
+        {
+            "id":"Not completed",
+            "name":"Not completed"
+        },
+        {
+            "id":"Less than 1 Month",
+            "name":"Less than 1 Month"
+        },
+        {
+            "id":"1 Month",
+            "name":"1 Month"
+        },
+        {
+            "id":"2 Months",
+            "name":"2 Months"
+        },
+        {
+            "id":"3 Months",
+            "name":"3 Months"
+        },
+        {
+            "id":"4 Months",
+            "name":"4 Months"
+        },
+        {
+            "id":"5 Months",
+            "name":"5 Months"
+        },
+        {
+            "id":"6 Months",
+            "name":"6 Months"
+        },
+        {
+            "id":"7 Months",
+            "name":"7 Months"
+        },
+        {
+            "id":"8 Months",
+            "name":"8 Months"
+        },
+        {
+            "id":"9 Months",
+            "name":"9 Months"
+        },
+        {
+            "id":"10 Months",
+            "name":"10 Months"
+        },
+        {
+            "id":"11 Months",
+            "name":"11 Months"
+        },
+        {
+            "id":"1 Year",
+            "name":"1 Year"
+        },
+        {
+            "id":"1.5 Years",
+            "name":"1.5 Years"
+        },
+        {
+            "id":"2 Years",
+            "name":"2 Years"
+        },
+        {
+            "id":"2.5 Years",
+            "name":"2.5 Years"
+        },
+        {
+            "id":"3 Years",
+            "name":"3 Years"
+        },
+        {
+            "id":"3.5 Years",
+            "name":"3.5 Years"
+        },
+        {
+            "id":"4 Years",
+            "name":"4 Years"
+        },
+        {
+            "id":"4.5 Years",
+            "name":"4.5 Years"
+        },
+        {
+            "id":"5 Years",
+            "name":"5 Years"
+        },
+        {
+            "id":"6 Years",
+            "name":"6 Years"
+        },
+        {
+            "id":"7 Years",
+            "name":"7 Years"
+        },
+        {
+            "id":"8 Years",
+            "name":"8 Years"
+        },
+        {
+            "id":"9 Years",
+            "name":"9 Years"
+        },
+        {
+            "id":"10 Years",
+            "name":"10 Years"
+        },
+        {
+            "id":"10 to 15 Years",
+            "name":"10 to 15 Years"
+        },
+        {
+            "id":"15 to 20 Years",
+            "name":"15 to 20 Years"
+        },
+        {
+            "id":"20 to 25 Years",
+            "name":"20 to 25 Years"
+        },
+        {
+            "id":"25 Years or more",
+            "name":"25 Years or more"
+        }
+    ],
+    "ownership":[
+        {
+            "id":"Not completed",
+            "name":"Not completed"
+        },
+        {
+            "id":"Less than 1 Month",
+            "name":"Less than 1 Month"
+        },
+        {
+            "id":"1 Month",
+            "name":"1 Month"
+        },
+        {
+            "id":"2 Months",
+            "name":"2 Months"
+        },
+        {
+            "id":"3 Months",
+            "name":"3 Months"
+        },
+        {
+            "id":"4 Months",
+            "name":"4 Months"
+        },
+        {
+            "id":"5 Months",
+            "name":"5 Months"
+        },
+        {
+            "id":"6 Months",
+            "name":"6 Months"
+        },
+        {
+            "id":"7 Months",
+            "name":"7 Months"
+        },
+        {
+            "id":"8 Months",
+            "name":"8 Months"
+        },
+        {
+            "id":"9 Months",
+            "name":"9 Months"
+        },
+        {
+            "id":"10 Months",
+            "name":"10 Months"
+        },
+        {
+            "id":"11 Months",
+            "name":"11 Months"
+        },
+        {
+            "id":"1 Year",
+            "name":"1 Year"
+        },
+        {
+            "id":"1.5 Years",
+            "name":"1.5 Years"
+        },
+        {
+            "id":"2 Years",
+            "name":"2 Years"
+        },
+        {
+            "id":"2.5 Years",
+            "name":"2.5 Years"
+        },
+        {
+            "id":"3 Years",
+            "name":"3 Years"
+        },
+        {
+            "id":"3.5 Years",
+            "name":"3.5 Years"
+        },
+        {
+            "id":"4 Years",
+            "name":"4 Years"
+        },
+        {
+            "id":"4.5 Years",
+            "name":"4.5 Years"
+        },
+        {
+            "id":"5 Years",
+            "name":"5 Years"
+        },
+        {
+            "id":"6 Years",
+            "name":"6 Years"
+        },
+        {
+            "id":"7 Years",
+            "name":"7 Years"
+        },
+        {
+            "id":"8 Years",
+            "name":"8 Years"
+        },
+        {
+            "id":"9 Years",
+            "name":"9 Years"
+        },
+        {
+            "id":"10 Years",
+            "name":"10 Years"
+        },
+        {
+            "id":"10 to 15 Years",
+            "name":"10 to 15 Years"
+        },
+        {
+            "id":"15 to 20 Years",
+            "name":"15 to 20 Years"
+        },
+        {
+            "id":"20 to 25 Years",
+            "name":"20 to 25 Years"
+        },
+        {
+            "id":"25 Years or more",
+            "name":"25 Years or more"
+        },
+        {
+            "id":"Not completed",
+            "name":"Not completed"
+        },
+        {
+            "id":"Buying",
+            "name":"Buying"
+        },
+        {
+            "id":"Own",
+            "name":"Own"
+        },
+        {
+            "id":"Renting",
+            "name":"Renting"
+        },
+        {
+            "id":"Live with friend(s)",
+            "name":"Live with friend(s)"
+        },
+        {
+            "id":"Live with relative",
+            "name":"Live with relative"
+        },
+        {
+            "id":"Live with family",
+            "name":"Live with family"
+        },
+        {
+            "id":"None",
+            "name":"None"
+        }
+    ],
+    "restypes":[
+        {
+            "id":"Not completed",
+            "name":"Not completed"
+        },
+        {
+            "id":"House",
+            "name":"House"
+        },
+        {
+            "id":"Mobile",
+            "name":"Mobile"
+        },
+        {
+            "id":"Apartment",
+            "name":"Apartment"
+        }
+    ],
+    "years":[
+        {
+            "id":2014,
+            "name":2014
+        },
+        {
+            "id":2013,
+            "name":2013
+        },
+        {
+            "id":2012,
+            "name":2012
+        },
+        {
+            "id":2011,
+            "name":2011
+        },
+        {
+            "id":2010,
+            "name":2010
+        },
+        {
+            "id":2009,
+            "name":2009
+        },
+        {
+            "id":2008,
+            "name":2008
+        },
+        {
+            "id":2007,
+            "name":2007
+        },
+        {
+            "id":2006,
+            "name":2006
+        },
+        {
+            "id":2005,
+            "name":2005
+        },
+        {
+            "id":2004,
+            "name":2004
+        },
+        {
+            "id":2003,
+            "name":2003
+        },
+        {
+            "id":2002,
+            "name":2002
+        },
+        {
+            "id":2001,
+            "name":2001
+        },
+        {
+            "id":2000,
+            "name":2000
+        },
+        {
+            "id":1999,
+            "name":1999
+        },
+        {
+            "id":1998,
+            "name":1998
+        },
+        {
+            "id":1997,
+            "name":1997
+        },
+        {
+            "id":1996,
+            "name":1996
+        },
+        {
+            "id":1995,
+            "name":1995
+        },
+        {
+            "id":1994,
+            "name":1994
+        },
+        {
+            "id":1993,
+            "name":1993
+        },
+        {
+            "id":1992,
+            "name":1992
+        },
+        {
+            "id":1991,
+            "name":1991
+        },
+        {
+            "id":1990,
+            "name":1990
+        },
+        {
+            "id":1989,
+            "name":1989
+        },
+        {
+            "id":1988,
+            "name":1988
+        },
+        {
+            "id":1987,
+            "name":1987
+        },
+        {
+            "id":1986,
+            "name":1986
+        },
+        {
+            "id":1985,
+            "name":1985
+        },
+        {
+            "id":1984,
+            "name":1984
+        },
+        {
+            "id":1983,
+            "name":1983
+        },
+        {
+            "id":1982,
+            "name":1982
+        },
+        {
+            "id":1981,
+            "name":1981
+        },
+        {
+            "id":1980,
+            "name":1980
+        },
+        {
+            "id":1979,
+            "name":1979
+        },
+        {
+            "id":1978,
+            "name":1978
+        },
+        {
+            "id":1977,
+            "name":1977
+        },
+        {
+            "id":1976,
+            "name":1976
+        },
+        {
+            "id":1975,
+            "name":1975
+        },
+        {
+            "id":1974,
+            "name":1974
+        },
+        {
+            "id":1973,
+            "name":1973
+        },
+        {
+            "id":1972,
+            "name":1972
+        },
+        {
+            "id":1971,
+            "name":1971
+        },
+        {
+            "id":1970,
+            "name":1970
+        },
+        {
+            "id":1969,
+            "name":1969
+        },
+        {
+            "id":1968,
+            "name":1968
+        },
+        {
+            "id":1967,
+            "name":1967
+        },
+        {
+            "id":1966,
+            "name":1966
+        },
+        {
+            "id":1965,
+            "name":1965
+        },
+        {
+            "id":1964,
+            "name":1964
+        },
+        {
+            "id":1963,
+            "name":1963
+        },
+        {
+            "id":1962,
+            "name":1962
+        },
+        {
+            "id":1961,
+            "name":1961
+        },
+        {
+            "id":1960,
+            "name":1960
+        },
+        {
+            "id":1959,
+            "name":1959
+        },
+        {
+            "id":1958,
+            "name":1958
+        },
+        {
+            "id":1957,
+            "name":1957
+        },
+        {
+            "id":1956,
+            "name":1956
+        },
+        {
+            "id":1955,
+            "name":1955
+        },
+        {
+            "id":1954,
+            "name":1954
+        },
+        {
+            "id":1953,
+            "name":1953
+        },
+        {
+            "id":1952,
+            "name":1952
+        },
+        {
+            "id":1951,
+            "name":1951
+        },
+        {
+            "id":1950,
+            "name":1950
+        },
+        {
+            "id":1949,
+            "name":1949
+        },
+        {
+            "id":1948,
+            "name":1948
+        },
+        {
+            "id":1947,
+            "name":1947
+        },
+        {
+            "id":1946,
+            "name":1946
+        },
+        {
+            "id":1945,
+            "name":1945
+        },
+        {
+            "id":1944,
+            "name":1944
+        },
+        {
+            "id":1943,
+            "name":1943
+        },
+        {
+            "id":1942,
+            "name":1942
+        },
+        {
+            "id":1941,
+            "name":1941
+        },
+        {
+            "id":1940,
+            "name":1940
+        },
+        {
+            "id":1939,
+            "name":1939
+        },
+        {
+            "id":1938,
+            "name":1938
+        },
+        {
+            "id":1937,
+            "name":1937
+        },
+        {
+            "id":1936,
+            "name":1936
+        },
+        {
+            "id":1935,
+            "name":1935
+        },
+        {
+            "id":1934,
+            "name":1934
+        },
+        {
+            "id":1933,
+            "name":1933
+        },
+        {
+            "id":1932,
+            "name":1932
+        },
+        {
+            "id":1931,
+            "name":1931
+        },
+        {
+            "id":1930,
+            "name":1930
+        }
+    ],
+    "relationships":[
+        {
+            "id":"Not completed",
+            "name":"Not completed"
+        },
+        {
+            "id":"Father",
+            "name":"Father"
+        },
+        {
+            "id":"Brother",
+            "name":"Brother"
+        },
+        {
+            "id":"Sister",
+            "name":"Sister"
+        },
+        {
+            "id":"Uncle",
+            "name":"Uncle"
+        },
+        {
+            "id":"Mother",
+            "name":"Mother"
+        }
+    ],
+    "how_verified":[
+        {
+            "id":"Not Completed",
+            "name":"Not Completed"
+        },
+        {
+            "id":"Award Letter",
+            "name":"Award Letter"
+        },
+        {
+            "id":"Bills",
+            "name":"Bills"
+        },
+        {
+            "id":"Bank Statement",
+            "name":"Bank Statement"
+        },
+        {
+            "id":"Credit Bureau",
+            "name":"Credit Bureau"
+        },
+        {
+            "id":"Creditor",
+            "name":"Creditor"
+        },
+        {
+            "id":"Lease Agreement",
+            "name":"Lease Agreement"
+        },
+        {
+            "id":"Letter",
+            "name":"Letter"
+        },
+        {
+            "id":"Phone",
+            "name":"Phone"
+        },
+        {
+            "id":"Pay Stub and Phone",
+            "name":"Pay Stub and Phone"
+        },
+        {
+            "id":"Pay Stub",
+            "name":"Pay Stub"
+        },
+        {
+            "id":"Tax Return",
+            "name":"Tax Return"
+        }
+    ],
+    "payment_schedules":[
+        {
+            "id":"Not completed",
+            "name":"Not completed"
+        },
+        {
+            "id":"Every 2 Weeks",
+            "name":"Every 2 Weeks"
+        },
+        {
+            "id":"Bi-Monthly",
+            "name":"Bi-Monthly"
+        },
+        {
+            "id":"Daily",
+            "name":"Daily"
+        },
+        {
+            "id":"Monthly",
+            "name":"Monthly"
+        },
+        {
+            "id":"Weekly",
+            "name":"Weekly"
+        }
+    ],
+    "debt_types":[
+        {
+            "id":"Auto Insurance",
+            "name":"Auto Insurance"
+        },
+        {
+            "id":"Groceries",
+            "name":"Groceries"
+        },
+        {
+            "id":"Phone",
+            "name":"Phone"
+        },
+        {
+            "id":"Sun Loan",
+            "name":"Sun Loan"
+        },
+        {
+            "id":"Transportation",
+            "name":"Transportation"
+        },
+        {
+            "id":"Utilities",
+            "name":"Utilities"
+        }
+    ],
+    "other_debt_types":[
+        {
+            "id":"Car Paymant",
+            "name":"Car Paymant"
+        },
+        {
+            "id":"Credit Card",
+            "name":"Credit Card"
+        },
+        {
+            "id":"Credit Report",
+            "name":"Credit Report"
+        },
+        {
+            "id":"Finance Company",
+            "name":"Finance Company"
+        },
+        {
+            "id":"No Car Payment",
+            "name":"No Car Payment"
+        },
+        {
+            "id":"No Rent/Mortgage",
+            "name":"No Rent/Mortgage"
+        },
+        {
+            "id":"Other",
+            "name":"Other"
+        },
+        {
+            "id":"Rent/Mortgage",
+            "name":"Rent/Mortgage"
+        }
+    ],
+    "collateral":[
+        {
+            "id":"ATV",
+            "name":"ATV"
+        },
+        {
+            "id":"Boat",
+            "name":"Boat"
+        },
+        {
+            "id":"Car",
+            "name":"Car"
+        },
+        {
+            "id":"Truck",
+            "name":"Truck"
+        }
+    ],
+    "application_statuses":[
+        {
+            "id":"Not completed",
+            "name":"Not completed"
+        },
+        {
+            "id":"Under review",
+            "name":"Under review"
+        },
+        {
+            "id":"Approved",
+            "name":"Approved"
+        },
+        {
+            "id":"Approved and completed",
+            "name":"Approved and completed"
+        },
+        {
+            "id":"Declined",
+            "name":"Declined"
+        }
+    ],
+    "denial_reasons":[
+        {
+            "id":"BANKRUPTCY",
+            "name":"BANKRUPTCY"
+        },
+        {
+            "id":"CREDIT APPLICATION INCOMPLETE",
+            "name":"CREDIT APPLICATION INCOMPLETE"
+        },
+        {
+            "id":"DELINQUENT PAST OR PRESENT CREDIT OBLIGATIONS",
+            "name":"DELINQUENT PAST OR PRESENT CREDIT OBLIGATIONS"
+        },
+        {
+            "id":"EXCESSIVE CREDIT OBLIGATIONS",
+            "name":"EXCESSIVE CREDIT OBLIGATIONS"
+        },
+        {
+            "id":"GARNISHMENT, ATTACHMENT, FORECLOSURE, REPOSSESSION, COLLECTION, ACTION, OR JUDGEMENT",
+            "name":"GARNISHMENT, ATTACHMENT, FORECLOSURE, REPOSSESSION, COLLECTION, ACTION, OR JUDGEMENT"
+        },
+        {
+            "id":"INSUFFICIENT INCOME FOR AMOUNT OF CREDIT REQUESTED",
+            "name":"INSUFFICIENT INCOME FOR AMOUNT OF CREDIT REQUESTED"
+        },
+        {
+            "id":"INSUFFICIENT NUMBER FOR AMOUNT OF REFERENFCES PROVIDED",
+            "name":"INSUFFICIENT NUMBER FOR AMOUNT OF REFERENFCES PROVIDED"
+        },
+        {
+            "id":"LENGTH OF EMPLOYMENT",
+            "name":"LENGTH OF EMPLOYMENT"
+        },
+        {
+            "id":"LENGTH OF RESIDENCE",
+            "name":"LENGTH OF RESIDENCE"
+        },
+        {
+            "id":"LIMITED CREDIT EXPERIENCE",
+            "name":"LIMITED CREDIT EXPERIENCE"
+        },
+        {
+            "id":"NO CREDIT FILE",
+            "name":"NO CREDIT FILE"
+        },
+        {
+            "id":"NOT COMPLETED",
+            "name":"NOT COMPLETED"
+        },
+        {
+            "id":"OTHER",
+            "name":"OTHER"
+        },
+        {
+            "id":"POOR CREDIT PERFORMANCE",
+            "name":"POOR CREDIT PERFORMANCE"
+        },
+        {
+            "id":"TEMPORARY EMPLOYMENT",
+            "name":"TEMPORARY EMPLOYMENT"
+        },
+        {
+            "id":"TEMPORARY RESIDENCE",
+            "name":"TEMPORARY RESIDENCE"
+        },
+        {
+            "id":"UNABLE TO VERIFY CREDIT REFERENCES",
+            "name":"UNABLE TO VERIFY CREDIT REFERENCES"
+        },
+        {
+            "id":"UNABLE TO VERIFY EMPLOYMENT",
+            "name":"UNABLE TO VERIFY EMPLOYMENT"
+        },
+        {
+            "id":"UNABLE TO VERIFY INCOME",
+            "name":"UNABLE TO VERIFY INCOME"
+        },
+        {
+            "id":"UNABLE TO VERIFY RESIDENCE",
+            "name":"UNABLE TO VERIFY RESIDENCE"
+        },
+        {
+            "id":"VALUE OR TYPE OF COLLATERAL NOT SUDDICIENT",
+            "name":"VALUE OR TYPE OF COLLATERAL NOT SUDDICIENT"
+        }
+    ]
+}

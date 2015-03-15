@@ -1,0 +1,26 @@
+<sun-form form="automobiles"
+          data="automobiles_">
+</sun-form>
+<hr/>
+<table ng-gridview="automobiles"
+       resource="$automobiles"
+       data="automobile"
+       title="<h4>Current Automobiles</h4>">
+    <thead>
+        <tr>
+            <th data-render="{{vin_number || ''}}">Vin-Number</th>
+            <th data-render="{{make || '' }}">Make</th>
+            <th data-render="{{model || ''}}">Model</th>
+            <th data-render="{{color || ''}}">Color</th>
+            <th data-name="$options" data-width="160" >Options</th>
+        </tr>
+    </thead>
+</table>
+
+<div class="hide">
+    <sun-form form="automobiles"
+              edit="true"
+              data="automobiles.$selected"
+              ng-gridedit="automobiles">
+    </sun-form>
+</div>

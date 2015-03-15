@@ -1,0 +1,186 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <application-tabs active="address" application="application"></application-tabs>
+        </div>
+    </div>
+
+    <form name="form" class="form-horizontal" ng-validate="create(residence)" novalidate>
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                        <div class="row">
+
+                            <div class="col-xs-4">
+
+                                <div class="form-group">
+                                    <label for="" class="col-xs-5 control-label">Address:</label>
+                                    <div class="col-xs-7">
+                                        <input name="address" type="text" tabindex="1" class="form-control" ng-model="residence.address" required>
+                                        <div class="alert alert-danger" ng-show="form.$submitted && form.address.$error.required">Enter a valid address.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+
+                                <div class="form-group">
+                                    <label for="" class="col-xs-5 control-label">City:</label>
+                                    <div class="col-xs-7">
+                                        <input name="city" type="text" tabindex="2" class="form-control" ng-model="residence.city" required text_only >
+                                        <div class="alert alert-danger" ng-show="form.$submitted && form.city.$error.required">Enter a city.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+
+                                <div class="form-group">
+                                    <label for="" class="col-xs-5 control-label">State:</label>
+                                    <div class="col-xs-7">
+                                        <!--<select dropdown="state" name="state" ng-model="residence.state" ng-dropdown required>
+                                            <option ng-option value="{{option.abbrev}}" ng-repeat="option in dropdown.states" >{{option.name}}</option>
+                                        </select>-->
+                                        <ui-select ng-model="ddl_state.selected" show-on-focus tabindex="3" theme="selectize" name="state" required ng-disabled="disabled" style="width: 150px;">
+                                            <ui-select-match placeholder="Select">
+                                                <span>{{$select.selected.name}}</span> 
+                                                <button type="button" class="clear" ng-click="clear($event, 'state')">x</button>
+                                            </ui-select-match>
+                                            <ui-select-choices repeat="option in dropdown.states | filter: $select.search">
+                                                <div ng-bind-html="option.name | highlight: $select.search"></div>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                        <div class="alert alert-danger" ng-show="form.$submitted && form.state.$error.required">Select a State.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-xs-4">
+
+                                <div class="form-group">
+                                    <label for="" class="col-xs-5 control-label">Zip Code:</label>
+                                    <div class="col-xs-7">
+                                        <input type="text" name="zip" tabindex="4" class="form-control" ng-model="residence.zip" ng-mask="zip" ng-minlength="5" required>
+                                        <div class="alert alert-danger" ng-show="form.$submitted && form.zip.$error.required">Enter a zip code.</div>
+                                        <div class="alert alert-warning" ng-show="form.$submitted && form.zip.$error.minlength">Zip code must be 5 characters length.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-4">
+
+                                <div class="form-group">
+                                    <label for="" class="col-xs-5 control-label">How Long:</label>
+                                    <div class="col-xs-7">
+                                        <!--<select name="how_long" dropdown="how_long" ng-model="residence.how_long" ng-dropdown required>
+                                            <option ng-option value="{{option.id}}" ng-repeat="option in dropdown.howlong" >{{option.name}}</option>
+                                        </select>-->
+                                        <ui-select ng-model="ddl_how_long.selected" show-on-focus tabindex="5" theme="selectize" name="how_long" required ng-disabled="disabled" style="width: 150px;">
+                                            <ui-select-match placeholder="Select">
+                                                <span>{{$select.selected.name}}</span> 
+                                                <button type="button" class="clear" ng-click="clear($event, 'how_long')">x</button>
+                                            </ui-select-match>
+                                            <ui-select-choices repeat="option in dropdown.howlong | filter: $select.search">
+                                                <div ng-bind-html="option.name | highlight: $select.search"></div>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                        <div class="alert alert-danger" ng-show="form.$submitted && form.how_long.$error.required">Select a "how long" value.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-4">
+
+                                <div class="form-group">
+                                    <label for="" class="col-xs-5 control-label">Type:</label>
+                                    <div class="col-xs-7">
+                                        <!--<select name="type" dropdown="type" ng-model="residence.type" ng-dropdown required>
+                                            <option ng-option value="{{option.id}}" ng-repeat="option in dropdown.restypes" >{{option.name}}</option>
+                                        </select>-->
+                                        <ui-select ng-model="ddl_res_type.selected" show-on-focus tabindex="6" theme="selectize" name="type" required ng-disabled="disabled" style="width: 150px;">
+                                            <ui-select-match placeholder="Select">
+                                                <span>{{$select.selected.name}}</span> 
+                                                <button type="button" class="clear" ng-click="clear($event, 'res_type')">x</button>
+                                            </ui-select-match>
+                                            <ui-select-choices repeat="option in dropdown.restypes | filter: $select.search">
+                                                <div ng-bind-html="option.name | highlight: $select.search"></div>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                        <div class="alert alert-danger" ng-show="form.$submitted && form.type.$error.required">Select a type.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-xs-4">
+
+                                <div class="form-group">
+                                    <label for="" class="col-xs-5 control-label">Ownership:</label>
+                                    <div class="col-xs-7">
+
+                                        <!--<select name="ownership_type" ng-model="application.residences[0].residenceOwnershipType" ng-dropdown required>-->
+                                        <!--<select name="ownership_type" ng-model="residence.ownership_type" ng-dropdown required>
+                                            <option ng-option value="{{option.id}}" ng-repeat="option in dropdown.ownership" >{{option.name}}</option>                                            
+                                        </select>-->
+                                        <ui-select ng-model="ddl_ownership_type.selected" show-on-focus tabindex="7" theme="selectize" name="ownership_type" required ng-disabled="disabled" style="width: 150px;">
+                                            <ui-select-match placeholder="Select">
+                                                <span>{{$select.selected.name}}</span> 
+                                                <button type="button" class="clear" ng-click="clear($event, 'ownership')">x</button>
+                                            </ui-select-match>
+                                            <ui-select-choices repeat="option in dropdown.ownership | filter: $select.search">
+                                                <div ng-bind-html="option.name | highlight: $select.search"></div>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                        <div class="alert alert-danger" ng-show="form.$submitted && form.ownership_type.$error.required">Select a ownership.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-4">
+
+                                <div class="form-group">
+                                    <label for="" class="col-xs-5 control-label">Year Moved in:</label>
+                                    <div class="col-xs-7">
+                                        <select dropdown="year_moved_in" ng-model="residence.year_moved_in" ng-dropdown>
+                                            <option ng-option value="{{option.id}}" ng-repeat="option in dropdown.years" >{{option.name}}</option>
+                                        </select>
+                                       <!-- <ui-select ng-model="ddl_year_moved_in.selected" show-on-focus tabindex="8" show-on-focus tabindex="8" theme="selectize" name="year_moved_in" ng-disabled="disabled" style="width: 200px;">
+                                          <ui-select-match placeholder="Select.../search...">
+                                            <span>{{$select.selected.name}}</span> 
+                                            <button type="button" class="clear" ng-click="clear($event, 'year_moved_in')">x</button>
+                                          </ui-select-match>
+                                          <ui-select-choices repeat="option in dropdown.years | filter: $select.search">
+                                            <div ng-bind-html="option.name | highlight: $select.search"></div>
+                                          </ui-select-choices>
+                                        </ui-select>-->
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row text-right">
+            <div class="col-xs-12">
+                <a class="btn btn-default" tabindex="11" href="#/application/{{application.id}}/borrower"> <i class="fa fa-long-arrow-left"></i> Previous </a>
+                <button class="btn btn-default" tabindex="10" ng-click="exit()" > <i class="fa fa-save"></i> Save & Exit </button>
+                <button class="btn btn-default" tabindex="9" type="submit" > <i class="fa fa-long-arrow-right"></i> Next </button>
+            </div>
+        </div>
+
+    </form>
+
+</div>

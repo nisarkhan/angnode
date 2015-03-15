@@ -1,0 +1,57 @@
+<div class="container">
+
+    <div class="row text-gray">
+      <div class="col-xs-4">Loan Application</div>
+      <div class="col-xs-4">Borrower SSN</div>
+      <div class="col-xs-4 text-right">Application ID</div>
+    </div>
+    <h3 class="row reduced">
+        <div class="col-xs-4"> Approved or Denied</div>
+        <div class="col-xs-4">{{application.social_security_number}}</div>
+        <div class="col-xs-4 text-right">{{application.id}}</div>
+    </h3>
+
+    <form name="form" class="form-horizontal" ng-validate="print(data)" novalidate>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+
+            <div class="row">
+                <div class="col-xs-4">
+                    <p><span class="strong">Borrower:</span> {{application.last_name}}, {{application.first_name}} </p>
+                    <p><span class="strong">Amount:</span> {{application.requested_amount}}</p>
+                    <p><span class="strong">Application date:</span> {{application.submitted_date}}</p>
+                </div>
+                <div class="col-xs-4">
+                    <p><span class="strong">Employment History:</span> {{application.employers[0].verified_how||'Not Completed'}}</p>
+                    <p><span class="strong">Primary Residence:</span> {{application.residences[0].address||'Not Completed'}}</p>
+                    <p><span class="strong">Monthly Income:</span> {{application.employers[0].net_salary||'Not Completed'}}</p>
+                </div>
+            </div>
+
+            <hr/>
+
+
+            <div class="form-group">
+                <label class="col-xs-2 control-label">Letter:</label>
+                <div class="col-xs-10">
+                  <select ng-dropdown>
+                      <option ng-option value="1">Option 1</option>
+                  </select>
+                </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row text-right">
+            <div class="col-xs-12">
+               <button class="btn btn-default" type="submit">
+                 <i class="fa fa-print"></i> Print
+               </button>
+            </div>
+        </div>
+
+    </form>
+
+</div>

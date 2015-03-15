@@ -1,0 +1,320 @@
+.dataTables_length,
+.dataTables_filter{
+  margin-bottom: 15px;
+  height: 34px;
+}
+.dataTables_length label {
+  font-weight: normal;
+  float: left;
+  text-align: left;
+  margin-bottom: 0px;
+}
+
+.dataTables_length select {
+  width: 75px;
+  margin: 0px 5px;
+}
+
+.dataTables_filter label {
+  font-weight: normal;
+  float: right;
+  margin-bottom: 0px;
+}
+
+.dataTables_filter input {
+  width: 16em;
+  margin-left: 15px;
+}
+
+.dataTables_info {
+  padding-top: 15px;
+  line-height: 34px;
+}
+
+.dataTables_paginate {
+  float: right;
+  margin-top: 15px;
+}
+
+.dataTables_paginate ul.pagination {
+  margin: 0px ;
+  white-space: nowrap;
+}
+
+table.dataTable td,
+table.dataTable th {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+
+table.dataTable {
+  clear: both;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  max-width: none !important;
+}
+
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_asc_disabled,
+table.dataTable thead .sorting_desc_disabled {
+  cursor: pointer;
+}
+/*
+table.dataTable thead .sorting { background: url('../images/sort_both.png') no-repeat center right; }
+table.dataTable thead .sorting_asc { background: url('../images/sort_asc.png') no-repeat center right; }
+table.dataTable thead .sorting_desc { background: url('../images/sort_desc.png') no-repeat center right; }
+
+table.dataTable thead .sorting_asc_disabled { background: url('../images/sort_asc_disabled.png') no-repeat center right; }
+table.dataTable thead .sorting_desc_disabled { background: url('../images/sort_desc_disabled.png') no-repeat center right; }
+*/
+
+table.dataTable th:active {
+  outline: none;
+}
+
+/* Scrolling */
+.dataTables_scrollHead table {
+  margin-bottom: 0 !important;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.dataTables_scrollHead table thead tr:last-child th:first-child,
+.dataTables_scrollHead table thead tr:last-child td:first-child {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.dataTables_scrollBody table {
+  border-top: none;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.dataTables_scrollBody tbody tr:first-child th,
+.dataTables_scrollBody tbody tr:first-child td {
+  border-top: none;
+}
+
+.dataTables_scrollFoot table {
+  margin-top: 0 !important;
+  border-top: none;
+}
+
+/* Frustratingly the border-collapse:collapse used by Bootstrap makes the column
+   width calculations when using scrolling impossible to align columns. We have
+   to use separate
+ */
+table.table-bordered.dataTable {
+  border-collapse: separate !important;
+}
+table.table-bordered thead th,
+table.table-bordered thead td {
+  border-left-width: 0;
+  border-top-width: 0;
+}
+table.table-bordered tbody th,
+table.table-bordered tbody td {
+  border-left-width: 0;
+  border-bottom-width: 0;
+}
+table.table-bordered th:last-child,
+table.table-bordered td:last-child {
+  border-right-width: 0;
+}
+.dataTables_scrollHead table.table-bordered {
+  border-bottom-width: 0;
+}
+
+
+
+
+/*
+ * TableTools styles
+ */
+.table tbody tr.active td,
+.table tbody tr.active th {
+  background-color: #08C;
+  color: white;
+}
+
+.table tbody tr.active:hover td,
+.table tbody tr.active:hover th {
+  background-color: #0075b0 !important;
+}
+
+.table tbody tr.active a {
+  color: white;
+}
+
+.table-striped tbody tr.active:nth-child(odd) td,
+.table-striped tbody tr.active:nth-child(odd) th {
+  background-color: #017ebc;
+}
+
+table.DTTT_selectable tbody tr {
+  cursor: pointer;
+}
+
+.DTTT .btn {
+  color: #333 !important;
+  font-size: 12px;
+}
+
+.DTTT .btn:hover {
+  text-decoration: none !important;
+}
+
+ul.DTTT_dropdown.dropdown-menu {
+  z-index: 2003;
+}
+
+ul.DTTT_dropdown.dropdown-menu a {
+  color: #333 !important; /* needed only when demo_page.css is included */
+}
+
+ul.DTTT_dropdown.dropdown-menu li {
+  position: relative;
+}
+
+ul.DTTT_dropdown.dropdown-menu li:hover a {
+  background-color: #0088cc;
+  color: white !important;
+}
+
+.DTTT_collection_background {
+  z-index: 2002;  
+}
+
+/* TableTools information display */
+.DTTT_print_info.modal {
+  height: 150px;
+  margin-top: -75px;
+  text-align: center;
+}
+
+.DTTT_print_info h6 {
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 28px;
+  margin: 1em;
+}
+
+.DTTT_print_info p {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.dataTables_wrapper{
+  position: relative;
+}
+
+.dataTables_wrapper .relative {
+  min-height: 80px;
+}
+
+.dataTables_wrapper .dataTables_empty{
+  padding: 45px 15px!important; 
+  color: #929EA8;
+  text-align: center;
+  font-family: 'PTSansBold', sans-serif; 
+}
+
+.relative{
+  position: relative;
+}
+
+.dataTables_processing {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0px;
+    left: 0px;
+    background-color: rgba(255, 255, 255, .85);
+    border-top: 1px solid #EAEEF1;
+    border-bottom: 1px solid #EAEEF1;
+    text-align: center;
+    font-size: 16px;
+    z-index: 10;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    font-family: 'PTSansBold', sans-serif;
+}
+
+.dataTables_processing .grid-loading{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -80px;
+  width: 160px;
+  height: 100px;
+  text-align: center;
+  color: #929EA8;
+  border: 1px solid #EAEEF1;
+  background-color: #F9FAFC;
+  border-radius: 2px;
+}
+
+.dataTables_processing img{
+  display: block;
+  margin: 15px auto;
+}
+
+/*
+ * FixedColumns styles
+ */
+.DTFC_LeftHeadWrapper table,
+.DTFC_LeftFootWrapper table,
+.DTFC_RightHeadWrapper table,
+.DTFC_RightFootWrapper table,
+table.DTFC_Cloned tr.even {
+    background-color: white;
+    margin-bottom: 0;
+}
+ 
+.DTFC_RightHeadWrapper table ,
+.DTFC_LeftHeadWrapper table {
+    margin-bottom: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+ 
+.DTFC_RightHeadWrapper table thead tr:last-child th:first-child,
+.DTFC_RightHeadWrapper table thead tr:last-child td:first-child,
+.DTFC_LeftHeadWrapper table thead tr:last-child th:first-child,
+.DTFC_LeftHeadWrapper table thead tr:last-child td:first-child {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+ 
+.DTFC_RightBodyWrapper table,
+.DTFC_LeftBodyWrapper table {
+    border-top: none;
+    margin: 0 !important;
+}
+ 
+.DTFC_RightBodyWrapper tbody tr:first-child th,
+.DTFC_RightBodyWrapper tbody tr:first-child td,
+.DTFC_LeftBodyWrapper tbody tr:first-child th,
+.DTFC_LeftBodyWrapper tbody tr:first-child td {
+    border-top: none;
+}
+ 
+.DTFC_RightFootWrapper table,
+.DTFC_LeftFootWrapper table {
+    border-top: none;
+}
+
+
+/*
+ * FixedHeader styles
+ */
+.FixedHeader_Cloned table {
+  margin: 0 !important
+}

@@ -1,0 +1,15 @@
+<sun-form form="residence" data="residence"></sun-form>
+<hr/>
+<table ng-gridview="residence" title="<h4>Borrower Residences</h4>">
+    <thead>
+        <tr>
+            <th data-name="address">Address</th>
+            <th data-name="city">City</th>
+            <th data-name="state">State</th>
+            <th data-name="$options" width="160">Options</th>
+        </tr>
+    </thead>
+</table> 
+<div class="hide">
+  <sun-form form="residence" edit="true" data="residence.$selected" ng-gridedit="residence"></sun-form>
+</div>

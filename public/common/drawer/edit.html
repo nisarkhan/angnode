@@ -1,0 +1,533 @@
+
+<div id="content" class="container content">
+
+    <h3 class="row title">
+        <div class="col-xs-6">
+            Drawer {{drawer.drawer_number}}
+        </div>
+        <div class="col-xs-6 text-right text-gray">
+            {{ today | date:'MMMM d, y' }}
+        </div>
+    </h3>
+
+    <div class="row">     
+        <div class="col-xs-6">
+            <div class="panel panel-default">
+                <h4 class="panel-heading">
+                    <div class="text-left">
+                        Checks in Drawer
+                    </div>
+                    <div class="text-right">
+                        <button class="btn btn-white btn-rounded" data-toggle="modal" data-target="#modal-checks"> 
+                            Details <i class="fa fa-long-arrow-right"></i> 
+                        </button>
+                    </div>
+                </h4>
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="row text-gray drawer">
+                            <div class="col-xs-3 text-center">
+                                Checks Number
+                            </div>
+                            <div class="col-xs-3 text-center">
+                                Check Amount
+                            </div>
+                            <div class="col-xs-3 text-center">
+                                &nbsp;
+                            </div>    
+                            <div class="col-xs-3 text-center">
+                                Total
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" placeholder="0" ng-model="check_number" ng-mask="number" required>
+                            </div>                           
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" placeholder="0" ng-model="check"  ng-mask="currency" required>
+                            </div>
+                            <div class="col-xs-3">
+                                <button ng-click="addMoney('check')" class="btn btn-white btn-rounded">
+                                    Add
+                                </button>
+                            </div>
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" value="{{checks_total| currency}}" readonly="true" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="col-xs-6">
+            <div class="panel panel-default">
+                <h4 class="panel-heading">
+                    <div class="text-left">
+                        Vouchers in Drawer
+                    </div>
+                    <div class="text-right">
+                        <button class="btn btn-white btn-rounded text-right" data-toggle="modal" data-target="#modal-voucher"> 
+                            Details <i class="fa fa-long-arrow-right"></i> 
+                        </button>
+                    </div>
+                </h4>
+
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="row text-gray drawer">
+                            <div class="col-xs-3 text-center">
+                                Number
+                            </div>
+                            <div class="col-xs-3 text-center">
+                                Amount
+                            </div>
+                            <div class="col-xs-3 text-center">
+                                &nbsp;
+                            </div>
+                            <div class="col-xs-3 text-center">
+                                Total;
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" placeholder="0" ng-model="voucher_number" ng-mask="number" >
+                            </div>
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control"  placeholder="0" ng-model="voucher" ng-mask="currency" >
+                            </div>
+                            <div class="col-xs-3">
+                                <button ng-click="addMoney('voucher')" class="btn btn-white btn-rounded">
+                                    Add
+                                </button>
+                            </div>
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" value="{{(vouchers_total|| 0)| currency}} " readonly="true" />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="panel panel-default">
+                <h4 class="panel-heading">
+                    <div class="text-left">
+                        Cards in Drawer
+                    </div>
+                    <div class="text-right">
+                        <button class="btn btn-white btn-rounded" data-toggle="modal" data-target="#modal-cards"> 
+                            Details <i class="fa fa-long-arrow-right"></i> 
+                        </button>                       
+                    </div>
+                </h4>
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="row text-gray drawer">
+                            <div class="col-xs-3 text-center">
+                                Number
+                            </div>
+                            <div class="col-xs-3 text-center">
+                                Amount
+                            </div>
+                            <div class="col-xs-3 text-center">
+                                &nbsp;
+                            </div>
+                            <div class="col-xs-3 text-center">
+                                Total;
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" placeholder="0" ng-model="card_number" ng-mask="number" >
+                            </div>
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control"  placeholder="0" ng-model="card" ng-mask="currency" >
+                            </div>
+                            <div class="col-xs-3">
+                                <button ng-click="addMoney('card')" class="btn btn-white btn-rounded">
+                                    Add
+                                </button>
+                            </div>
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" value="{{(cards_total|| 0)| currency}} " readonly="true" />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>           
+        </div>
+        <div class="col-xs-6">
+            <div class="panel panel-default">
+                <h4 class="panel-heading">
+                    <div class="text-left" >
+                        Money Order in Drawer
+                    </div>
+                    <div class="text-right">
+                        <button class="btn btn-white btn-rounded" data-toggle="modal" data-target="#modal-money-order"> 
+                            Details <i class="fa fa-long-arrow-right"></i> 
+                        </button>                       
+                    </div>
+
+                </h4>
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="row text-gray drawer">
+                            <div class="col-xs-3 text-center">
+                                Number
+                            </div>
+                            <div class="col-xs-3 text-center">
+                                Amount
+                            </div>
+                            <div class="col-xs-3 text-center">
+                                &nbsp;
+                            </div>
+                            <div class="col-xs-3 text-center">
+                                Total;
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" placeholder="0" ng-model="money_order_number" ng-mask="number" >
+                            </div>
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control"  placeholder="0" ng-model="money_order" ng-mask="currency" >
+                            </div>
+                            <div class="col-xs-3">
+                                <button class="btn btn-white btn-rounded" ng-click="addMoney('money_order')" >
+                                    Add
+                                </button>
+                            </div>
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" value="{{(money_orders_total|| 0)| currency}} " readonly="true" />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>                 
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6">            
+            <div class="panel panel-default">
+                <h4 class="panel-heading">Dollar Bills</h4>
+                <div class="panel-body">
+
+                    <div class="input-group drawer">
+                        <span class="input-group-addon input-group-label">100's</span>
+                        <input type="text" class="form-control" ng-model="dollars[0].value" ng-change="updateDollar(0, 100)" ng-mask="number" />
+                        <span class="input-group-addon input-group-middle">=</span>
+                        <input type="text" class="form-control" value="{{(dollars[0].total||0)|currency}}" readonly="true" />
+                    </div>
+
+                    <div class="input-group drawer">
+                        <span class="input-group-addon input-group-label">50's</span>
+                        <input type="text" class="form-control" ng-model="dollars[1].value" ng-change="updateDollar(1, 50)" ng-mask="number" />
+                        <span class="input-group-addon input-group-middle">=</span>
+                        <input type="text" class="form-control" value="{{(dollars[1].total||0)|currency}}" readonly="true" />
+                    </div>
+
+                    <div class="input-group drawer">
+                        <span class="input-group-addon input-group-label">20's</span>
+                        <input type="text" class="form-control" ng-model="dollars[2].value" ng-change="updateDollar(2, 20)" ng-mask="number" />
+                        <span class="input-group-addon input-group-middle">=</span>
+                        <input type="text" class="form-control" value="{{(dollars[2].total||0)|currency}}" readonly="true" />
+                    </div>
+
+                    <div class="input-group drawer">
+                        <span class="input-group-addon input-group-label">10's</span>
+                        <input type="text" class="form-control" ng-model="dollars[3].value" ng-change="updateDollar(3, 10)" ng-mask="number" />
+                        <span class="input-group-addon input-group-middle">=</span>
+                        <input type="text" class="form-control" value="{{(dollars[3].total||0)|currency}}" readonly="true" />
+                    </div>
+
+                    <div class="input-group drawer">
+                        <span class="input-group-addon input-group-label">5's</span>
+                        <input type="text" class="form-control" ng-model="dollars[4].value" ng-change="updateDollar(4, 5)" ng-mask="number" />
+                        <span class="input-group-addon input-group-middle">=</span>
+                        <input type="text" class="form-control" value="{{(dollars[4].total||0)|currency}}" readonly="true" />
+                    </div>
+
+                    <div class="input-group drawer">
+                        <span class="input-group-addon input-group-label">1's</span>
+                        <input type="text" class="form-control" ng-model="dollars[5].value" ng-change="updateDollar(5, 1)" ng-mask="number" />
+                        <span class="input-group-addon input-group-middle">=</span>
+                        <input type="text" class="form-control" value="{{(dollars[5].total||0)|currency}}" readonly="true" />
+                    </div>
+
+                </div>
+            </div> 
+        </div>
+
+        <div class="col-xs-6">
+            <div class="panel panel-default">
+                <h4 class="panel-heading">Coins</h4>
+                <div class="panel-body">
+
+                    <div class="input-group drawer">
+                        <span class="input-group-addon input-group-label">.50</span>
+                        <input type="text" class="form-control" ng-model="rolls[0].value" ng-mask="number" ng-change="updateRoll(0, 10.00)" />
+                        <span class="input-group-addon input-group-label input-group-middle">x 10.00 +</span>
+                        <input type="text" class="form-control" ng-model="coins[0].value" ng-change="updateCoin(0, .50)" ng-mask="number" />
+                        <span class="input-group-addon input-group-middle">=</span>
+                        <input type="text" class="form-control" value="{{(rolls[0].total||0) + (coins[0].total || 0) | currency}}" readonly="true" />
+                    </div>
+
+                    <div class="input-group drawer">
+                        <span class="input-group-addon input-group-label">.25</span>
+                        <input type="text" class="form-control" ng-model="rolls[1].value" ng-change="updateRoll(1, 10.00)" ng-mask="number" />
+                        <span class="input-group-addon input-group-label input-group-middle">x 10.00 +</span>
+                        <input type="text" class="form-control" ng-model="coins[1].value" ng-change="updateCoin(1, .25)" ng-mask="number" />
+                        <span class="input-group-addon input-group-middle">=</span>
+                        <input type="text" class="form-control" value="{{(rolls[1].total|| 0) + (coins[1].total || 0) | currency}}" readonly="true" />
+                    </div>
+
+                    <div class="input-group drawer">
+                        <span class="input-group-addon input-group-label">.10</span>
+                        <input type="text" class="form-control" ng-model="rolls[2].value" ng-change="updateRoll(2, 5.00)" ng-mask="number" />
+                        <span class="input-group-addon input-group-label input-group-middle">x  5.00 +</span>
+                        <input type="text" class="form-control" ng-model="coins[2].value" ng-change="updateCoin(2, .10)" ng-mask="number" />
+                        <span class="input-group-addon input-group-middle">=</span>
+                        <input type="text" class="form-control" value="{{(rolls[2].total|| 0) + (coins[2].total || 0) | currency}}" readonly="true" />
+                    </div>
+
+                    <div class="input-group drawer">
+                        <span class="input-group-addon input-group-label">.05</span>
+                        <input type="text" class="form-control" ng-model="rolls[3].value" ng-change="updateRoll(3, 2.00)" ng-mask="number" />
+                        <span class="input-group-addon input-group-label input-group-middle">x  2.00 +</span>
+                        <input type="text" class="form-control" ng-model="coins[3].value" ng-change="updateCoin(3, .05)" ng-mask="number" />
+                        <span class="input-group-addon input-group-middle">=</span>
+                        <input type="text" class="form-control" value="{{(rolls[3].total|| 0) + (coins[3].total || 0) | currency}}" readonly="true" />
+                    </div>
+
+                    <div class="input-group drawer">
+                        <span class="input-group-addon input-group-label">.01</span>
+                        <input type="text" class="form-control" ng-model="rolls[4].value" ng-change="updateRoll(4, .50)" ng-mask="number" />
+                        <span class="input-group-addon input-group-label input-group-middle">x  0.50 +</span>
+                        <input type="text" class="form-control" ng-model="coins[4].value" ng-change="updateCoin(4, .01)" ng-mask="number" />
+                        <span class="input-group-addon input-group-middle">=</span>
+                        <input type="text" class="form-control" value="{{(rolls[4].total|| 0) + (coins[4].total || 0) | currency}}" readonly="true" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <h4 class="panel-heading">Summary</h4>
+                <div class="panel-body"> 
+                    <table width="100%">
+                        <thead>
+                            <tr>                             
+                                <th class="text-center">Checks</th>
+                                <th class="text-center">Vouchers</th>
+                                <th class="text-center">Cards</th>
+                                <th class="text-center">Money Orders</th>
+                                <th class="text-center">Cash</th>
+                                <th class="text-center">Total </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input class="text-right" type="text" value="{{(checks_total|| 0) | currency}}" readonly="true"> +
+                                </td>
+                                <td>
+                                    <input class="text-right" type="text" value="{{(vouchers_total|| 0) | currency}}" readonly="true"> +
+                                </td>
+                                <td>
+                                    <input class="text-right" type="text" value="{{(cards_total|| 0) | currency}}" readonly="true"> +
+                                </td>
+                                <td>
+                                    <input class="text-right" type="text" class="form-control" value="{{(money_orders_total|| 0) | currency}}" readonly="true"> +
+                                </td>
+                                <td>
+                                    <input class="text-right" type="text" class="form-control" value="{{(cash|| 0) | currency}}" readonly="true"> =
+                                </td>                               
+                                <td>
+                                    <input class="text-right" type="text" class="form-control" value="{{(grand_total|| 0) | currency}}" readonly="true">
+                                </td>              
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div> 
+        </div>             
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-12 text-right">
+            <button class="btn btn-default"> <i class="fa fa-check-circle"></i> Submit Drawer </button>
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="modal-checks" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title" id="myModalLabel">Check Detail</h3>
+                </div>
+
+                <div class="modal-body">
+
+                    <table width="100%" class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Number</th>
+                                <th class="text-center">Amount</th>
+                                <th class="text-center">Option</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="check in checks">
+                                <td class="text-right">{{check.number}}</td>
+                                <td class="text-right">{{check.amount| currency}}</td>
+                                <td><div class="text-center"><button class="btn btn-white btn-rounded" ng-click="removeMoney('check', $index)">remove</button></div></td>
+                            </tr>
+                            <tr>
+                                <td class="text-right text-black">Total:</td>
+                                <td class="text-right">{{(checks_total|| 0) | currency}}</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-voucher" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title" id="myModalLabel">Voucher Detail</h3>
+                </div>
+
+                <div class="modal-body">
+
+                    <table width="100%" class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Number</th>
+                                <th class="text-center">Amount</th>
+                                <th class="text-center">Option</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="voucher in vouchers">
+                                <td class="text-right">{{voucher.number}}</td>
+                                <td class="text-right">{{voucher.amount| currency}}</td>
+                                <td><div class="text-center"><button class="btn btn-white btn-rounded" ng-click="removeMoney('voucher', $index)">remove</button></div></td>
+                            </tr>
+                            <tr>
+                                <td class="text-right text-black">Total:</td>
+                                <td class="text-right">{{(vouchers_total|| 0) | currency}}</td>
+                                <td>&nbsp</td>
+                            </tr>
+                        </tbody>
+                    </table> 
+                </div>
+            </div>
+        </div>
+    </div>   
+
+    <div class="modal fade" id="modal-cards" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title" id="myModalLabel">Card Detail</h3>
+                </div>
+
+                <div class="modal-body">
+
+                    <table width="100%" class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Number</th>
+                                <th class="text-center">Amount</th>
+                                <th class="text-center">Option</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="card in cards">
+                                <td class="text-right">{{card.number}}</td>
+                                <td class="text-right">{{card.amount| currency}}</td>
+                                <td><div class="text-center"><button class="btn btn-white btn-rounded" ng-click="removeMoney('card', $index)">remove</button></div></td>
+                            </tr>
+                            <tr>
+                                <td class="text-right text-black">Total:</td>
+                                <td class="text-right">{{(cards_total|| 0) | currency}}</td>
+                                <td>&nbsp</td>
+                            </tr>
+                        </tbody>
+                    </table> 
+                </div>
+            </div>
+        </div>
+    </div>       
+
+    <div class="modal fade" id="modal-money-order" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title" id="myModalLabel">Money Order Detail</h3>
+                </div>
+
+                <div class="modal-body">
+
+                    <table width="100%" class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Number</th>
+                                <th class="text-center">Amount</th>
+                                <th class="text-center">Option</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="money_order in money_orders">
+                                <td class="text-right">{{money_order.number}}</td>
+                                <td class="text-right">{{money_order.amount| currency}}</td>
+                                <td><div class="text-center"><button class="btn btn-white btn-rounded" ng-click="removeMoney('money_order', $index)">remove</button></div></td>
+                            </tr>
+                            <tr>
+                                <td class="text-right text-black">Total:</td>
+                                <td class="text-right">{{(money_orders_total|| 0) | currency}}</td>
+                                <td class="text">&nbsp</td>
+                            </tr>
+                        </tbody>
+                    </table> 
+                </div>
+            </div>
+        </div>
+    </div>       
+</div>

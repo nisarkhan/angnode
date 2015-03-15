@@ -1,0 +1,144 @@
+<div id="content" class="container content">
+    
+    <h3 class="row title">
+        <div class="col-xs-12">
+            Cash Transfer 
+        </div>
+    </h3>
+    
+    <div class="row">
+      
+        <form name="drawer_transfer" class="form-horizontal" role="form" novalidate>
+        
+        <div class="col-xs-5">
+          
+          <div class="panel panel-default">
+            <h3 class="panel-heading">
+               From
+            </h3>
+            <div class="panel-body">
+
+                <!--
+                  <div class="form-group">
+                    <label for="from_line" class="col-xs-4 control-label">Line:</label>
+                    <div class="col-xs-8">
+                      <select name="from_line" dropdown="line" ng-dropdown>
+                        <option ng-option value="{{option.account_number}}" ng-repeat="option in accounts" >{{option.account_number}} - {{option.account_name}}</option>
+                      </select>
+                    </div>
+                  </div>
+                -->
+
+                  <div class="form-group">
+                    <label for="from_account" class="col-xs-4 control-label">G/L Acct:</label>
+                    <div class="col-xs-8">
+                      <!-- <input id="from_account" name="from_account" type="text" class="form-control" placeholder=""> -->
+                      <select name="from_account" dropdown="from_account" ng-model="transfer.from_account" server-validation ng-dropdown>
+                        <option ng-option value="{{option.account_number}}" ng-repeat="option in accounts" >{{option.account_number}} - {{option.account_name}}</option>
+                      </select>
+                      <span class="alert alert-danger" ng-show="drawer_transfer.from_account.$error.serverValidation">{{drawer_transfer.from_account.$error.serverValidationMessage}}</span>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="from_drawer" class="col-xs-4 control-label">Drawer:</label>
+                    <div class="col-xs-8">
+                      <select id="from_drawer" ng-model="transfer.from_drawer" ng-dropdown>
+                        <option ng-option value="{{option.id}}" ng-repeat="option in drawers" ng-selected='option.id === drawer.id'> Drawer {{option.drawer_number}}</option>
+                      </select>
+                    </div>
+                  </div>
+                
+                <div class="form-group">
+                    <label for="tender_type" class="col-xs-4 control-label">Tender type:</label>
+                    <div class="col-xs-8">
+                        <select id="tender_type" ng-model="transfer.tender_type" ng-dropdown>
+                            <option ng-option value="{{option.id}}" ng-repeat="option in tenders" ng-selected=""> {{option.name}} </option>
+                        </select>
+                    </div>
+                </div>
+
+                  <div class="form-group">
+                    <label for="amount" class="col-xs-4 control-label">Amount:</label>
+                    <div class="col-xs-8">
+                      <input id="amount" name="amount" type="text" class="form-control" placeholder="0.00" ng-mask="currency" server-validation ng-model="transfer.amount">
+                      <span class="alert alert-danger" ng-show="drawer_transfer.amount.$error.serverValidation">{{drawer_transfer.amount.$error.serverValidationMessage}}</span>
+                    </div>
+                  </div>
+
+            </div>
+          </div> 
+
+        </div>
+
+        <div class="col-xs-1">
+          <i class="fa fa-long-arrow-right transfer-form"></i>
+        </div>
+
+        <div class="col-xs-6">
+          
+          <div class="panel panel-default">
+            <h3 class="panel-heading">
+               To
+            </h3> 
+            <div class="panel-body">
+
+                <!--
+                  <div class="form-group">
+                    <label for="to_line" class="col-xs-4 control-label">Line:</label>
+                    <div class="col-xs-8">
+                      <select name="to_line" ng-dropdown>
+                        <option ng-option value="{{line.name}}" ng-repeat="line in lines">{{line.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+                -->
+
+                  <div class="form-group">
+                    <label for="to_account" class="col-xs-4 control-label">G/L Account:</label>
+                    <div class="col-xs-8">
+                      <!-- <input id="to_account" name="to_account" type="text" class="form-control" placeholder=""> -->
+                      <select name="to_account" dropdown="to_account" ng-model="transfer.to_account" server-validation ng-dropdown>
+                        <option ng-option value="{{option.account_number}}" ng-repeat="option in accounts" >{{option.account_number}} - {{option.account_name}}</option>
+                      </select>
+                      <span class="alert alert-danger" ng-show="drawer_transfer.to_account.$error.serverValidation">{{drawer_transfer.to_account.$error.serverValidationMessage}}</span>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="to_drawer" class="col-xs-4 control-label">Drawer:</label>
+                    <div class="col-xs-8">
+                      <select name="to_drawer" ng-model="transfer.to_drawer" ng-dropdown>
+                        <option ng-option value="{{drawer.id}}" ng-if="transfer.id !== drawer.id" ng-repeat="drawer in drawers"> Drawer {{drawer.drawer_number}}</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-xs-4 control-label">Amount:</label>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control" placeholder="0.00" ng-mask="currency" ng-model="transfer.amount" readonly />
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="explanation" class="col-xs-4 control-label">Explanation:</label>
+                    <div class="col-xs-8">
+                      <textarea id="explanation" name="explanation" ng-model="transfer.explanation" class="form-control" server-validation placeholder="Transfer Explanation"></textarea>
+                      <span class="alert alert-danger" ng-show="drawer_transfer.explanation.$error.serverValidation">{{drawer_transfer.explanation.$error.serverValidationMessage}}</span>
+                    </div>
+                  </div>
+
+                <button type="submit" ng-click="create(transfer)" class="btn btn-default btn-wide"> <i class="fa fa-refresh"></i> Transfer </button>
+
+            </div>
+          </div> 
+
+        </div>
+
+
+      </form>  
+    
+    </div>
+
+</div>

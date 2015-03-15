@@ -1,0 +1,57 @@
+<div class="container">
+
+    <h3 class="row title">
+        <div class="col-xs-12">
+            Change Password
+        </div>
+    </h3>
+    <form name="form" class="form-horizontal" ng-validate="create(login)" novalidate>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                         
+                        <br /> 
+                         
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label for="" class="col-xs-6 control-label">Password:</label>
+                                    <div class="col-xs-6">
+                                        <input id="password" name="password" ng-model="login.password" class="form-control" placeholder="Password" 
+                                               ng-required="true" type="text" />
+                                        <div class="alert alert-danger" ng-show="form.$submitted && form.password.$error.required">Enter password.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label for="" class="col-xs-6 control-label">Confirm Password:</label>
+                                    <div class="col-xs-6">
+                                        <input name="confirm_password" ng-model="login.confirm_password" class="form-control"
+                                               placeholder="Confirm password" ng-required="true" type="text" match="login.password" ng-minlength="6" />
+                                        <div class="alert alert-danger" ng-show="form.$submitted && form.confirm_password.$error.required">Enter confirm password.</div>
+                                        <div class="alert alert-warning" ng-show="form.$submitted && form.password.$error.minlength">Password should be minimun 6 characters length.</div>
+                                        <div ng-show="form.confirm_password.$error.mismatch">
+                                            <span class="alert alert-danger">Password and Confirm Password must match.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <div class="row text-right">                           
+                            <div class="col-xs-12">
+                                <button class="btn btn-default" type="submit"> <i class="fa fa-check-circle"></i> Update </button>                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+  
+</div>

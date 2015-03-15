@@ -1,0 +1,197 @@
+<form name="form" class="form-horizontal" ng-validate="updateBorrower(borrower)" novalidate>
+
+    <div class="row">
+
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Account Number:</label>
+                <div class="col-xs-7">
+                    <input name="address" type="text" class="form-control" ng-model="borrower.account_number" readonly="true">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label"> Primary SSN:</label>
+                <div class="col-xs-7">
+                    <input name="social_security_number" type="text" class="form-control" ng-model="borrower.social_security_number" ng-mask="ssn" readonly="true"    />
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Remarks:</label>
+                <div class="col-xs-7">
+                    <input name="remarks" type="text" class="form-control" ng-model="borrower.remarks">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">First Name:</label>
+                <div class="col-xs-7">
+                    <input name="first_name" type="text" class="form-control" ng-model="borrower.first_name" required>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.first_name.$error.required">Please enter a first name.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Middle Name:</label>
+                <div class="col-xs-7">
+                    <input name="middle_name" type="text" class="form-control" ng-model="borrower.middle_name" >
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Last Name:</label>
+                <div class="col-xs-7">
+                    <input name="last_name" type="text" class="form-control" ng-model="borrower.last_name" required>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.last_name.$error.required">Please enter a last name.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Date of Birth:</label>
+                <div class="col-xs-7">
+                    <div class="input-group date" ng-datepicker>
+                        <input name="date_of_birth" type="text" class="form-control" ng-model="borrower.date_of_birth" required>
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                    </div>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.date_of_birth.$error.required">Enter a date of birth.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Applied Date:</label>
+                <div class="col-xs-7">
+                    <div class="input-group date" ng-datepicker>
+                        <input name="applied_date" type="text" class="form-control" ng-model="borrower.applied_date " required>
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                    </div>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.applied_date.$error.required">Enter a applied date.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Report to CDP:</label>
+                <div class="col-xs-7">
+                    <div class="input-group date" ng-datepicker>
+                        <input name="report_to_cdp" type="text" class="form-control" ng-model="borrower.report_to_cdp" required>
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                    </div>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.report_to_cdp.$error.required">Enter report to CDP.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label"># of Loans:</label>
+                <div class="col-xs-7">
+                    <input name="number_of_loans" type="text" class="form-control" ng-model="borrower.number_of_loans" required>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.number_of_loans.$error.required">Please enter a number of loans.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">High Credit:</label>
+                <div class="col-xs-7">
+                    <input name="high_credit" type="text" class="form-control" ng-model="borrower.high_credit" required>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.high_credit.$error.required">Please enter a high credit.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Status:</label>
+                <div class="col-xs-7">
+                    <input name="status" type="text" class="form-control" ng-model="borrower.status" ng-mask="status" required>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.status.$error.required">Please enter a status.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label"># of Dependents:</label>
+                <div class="col-xs-7">
+                    <input name="number_of_dependents" type="text" class="form-control" ng-model="borrower.number_of_dependents" required>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.number_of_dependents.$error.required">Please enter a number of dependents.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Home City:</label>
+                <div class="col-xs-7">
+                    <input name="home_city" type="text" class="form-control" ng-model="borrower.home_city" required>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.home_city.$error.required">Please enter a home_city.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Organization Id:</label>
+                <div class="col-xs-7">
+                    <input name="organization_id" type="text" class="form-control" ng-model="borrower.organization_id" required>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.organization_id.$error.required">Please enter a organization id.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row text-right">
+        <div class="col-xs-12">
+            <button class="btn btn-default" type="submit">
+                <span> <i class="fa fa-refresh"></i>  Update Borrower </span>
+                <!--<span ng-if="!$edit"> <i class="fa fa-plus"></i>  Create Borrower </span>-->
+            </button>
+        </div>
+    </div>
+
+</form>

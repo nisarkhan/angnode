@@ -1,0 +1,26 @@
+<sun-form form="phone_number" 
+    data="phone_number_"> 
+</sun-form>
+<hr/>
+<table ng-gridview="phone_number"
+       resource="$phone_number"
+       change="save('phone_number')"
+       data="application.phone_number"
+       title="<h4>Current Phone Number</h4>">
+    <thead>
+        <tr>
+            <th data-render="{{phone_type || ''}}">Phone Type</th>
+            <th data-render="{{phone_number || ''}}">Number</th>
+            <th data-name="$options" data-width="160" >Options</th>
+        </tr>
+    </thead>
+</table>
+<div class="hide">
+    <sun-form ng-gridedit="phone_number"
+              form="phone_number"
+              data="phone_number.$selected"
+              edit="true" >
+    </sun-form>
+</div>
+
+ 

@@ -1,0 +1,27 @@
+<sun-form form="inquiry"
+          data="inquiry_">
+</sun-form>
+
+<hr/>
+
+<table ng-gridview="inquieries"
+       resource="$inquieries"
+       data="inquieries" 
+       title="<h4>Inquieries</h4>">
+    <thead>
+        <tr>
+            <th data-render="{{date_inquired | date:'MM/dd/yyyy' || '' }}">Date Inquired</th>
+            <th data-render="{{who_inquired|| ''  }}">Who Inquired</th>
+            <th data-render="{{inquiry|| ''  }}">Inquiry</th>
+            <th data-name="$options" data-width="160" >Options</th>
+        </tr>
+    </thead>
+</table>
+
+<div class="hide">
+    <sun-form form="inquiry"
+              edit="true"
+              data="inquieries.$selected"
+              ng-gridedit="inquieries">
+    </sun-form>
+</div>

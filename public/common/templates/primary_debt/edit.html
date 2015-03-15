@@ -1,0 +1,75 @@
+<form name="form" class="form-horizontal" ng-validate="$parent[ $edit ? 'update' : 'create']('debts', data, form)" novalidate>
+
+    <div class="row">
+
+        <div class="col-xs-4">
+            
+            <div class="form-group">
+                <label for="" class="col-xs-6 control-label">Type:</label>
+                <div class="col-xs-6">
+                   <select name="debt_type" dropdown="debt_type" ng-model="data.debt_type" ng-dropdown required>
+                      <option ng-option value="{{option.id}}" ng-repeat="option in $parent.dropdown.debt_types" >{{option.name}}</option>
+                   </select>
+                   <div class="alert alert-danger" ng-show="form.$submitted && form.debt_type.$error.required">Select a debt type.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-4">
+            
+            <div class="form-group">
+                <label for="" class="col-xs-6 control-label">Amount:</label>
+                <div class="col-xs-6">
+                   <input name="value" type="text" class="form-control" ng-model="data.value" ng-mask="currency" required>
+                   <div class="alert alert-danger" ng-show="form.$submitted && form.value.$error.required">Enter an amount.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-4">
+            
+            <div class="form-group">
+                <label for="" class="col-xs-6 control-label">No Payment:</label>
+                <div class="col-xs-6">
+                   <span class="checkbox right">
+                     <input id="no_pay{{$edit}}" type="checkbox" ng-model="data.no_pay" value="true" />
+                     <label for="no_pay{{$edit}}"></label>
+                   </span> 
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-8">
+            
+            <div class="form-group">
+                <label for="" class="col-xs-3 control-label">Description:</label>
+                <div class="col-xs-9">
+                   <input type="text" class="form-control" ng-model="data.description" >
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row text-right">
+        <div class="col-xs-12">
+            <button class="btn btn-default" type="submit" > 
+                <span ng-if="$edit"> <i class="fa fa-refresh"></i>  Update Debt </span>
+                <span ng-if="!$edit"> <i class="fa fa-plus"></i>  Add Debt </span>
+            </button>        
+        </div>
+    </div>
+
+</form>    

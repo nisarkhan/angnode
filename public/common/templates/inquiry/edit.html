@@ -1,0 +1,47 @@
+<form name="form" class="form-horizontal" ng-validate="$parent[ $edit ? 'update' : 'create']('inquieries', data, form)" novalidate>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label class="col-xs-5 control-label"> Date Inquired:</label>
+                <div class="col-xs-7">
+                    <div class="input-group date" ng-datepicker>
+                        <input type="text" name="date_inquired" class="form-control" ng-model="now">{{now}}
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-4 control-label">Who Inquired</label>
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" name="who_inquired" ng-model="data.who_inquired">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+
+        <div class="col-xs-12">
+
+            <div class="form-group">
+                <label class="col-xs-2 control-label"> Inquiry:</label>
+                <div class="col-xs-10">
+                    <input type="text" class="form-control" name="inquiry" ng-model="data.inquiry">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row text-right">
+        <div class="col-xs-12">
+            <button class="btn btn-default" type="submit" >
+                <span ng-if="$edit"> <i class="fa fa-refresh"></i>  Update Inquiry </span>
+                <span ng-if="!$edit"> <i class="fa fa-plus"></i>  Add Inquiry </span>
+            </button>
+        </div>
+    </div>
+
+</form>

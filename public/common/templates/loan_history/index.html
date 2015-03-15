@@ -1,0 +1,14 @@
+<table ng-gridview="loan_history">
+    <thead>
+        <tr>
+            <th data-name="loan_number">Loan</th>
+            <th data-render="{{loan_type || 'Undefined'}}">Type</th>
+            <th data-name="date_borrowed">Date Borrowed</th>
+            <th data-name="number_of_payments"># of Payments</th>
+            <th data-render="{{periodic_payment|currency}}">Periodic Payment</th>
+            <th data-render="{{final_payment|currency}}">Final Payment</th>
+            <th data-render="{{amount_advanced|currency}}">Amount Advanced</th>
+            <th data-name="$options" data-width="120" >Options</th>
+        </tr>
+    </thead>
+</table> 

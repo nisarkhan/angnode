@@ -1,0 +1,20 @@
+<div class="notifications" ng-show="$notifications.length > 0">
+    <div class="container">
+        <div class="row">
+           <div class="col-xs-8 col-xs-offset-2">
+              <div class="alert alert-{{alert.type}} animate-repeat" ng-repeat='alert in $notifications'>
+                 <button type="button" class="close" data-dismiss="alert" ng-click="$notifications.$remove($index)"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                 <p class="lead">
+                   <i class="fa fa-warning" ng-show="alert.type == 'danger'"></i>
+                   <i class="fa fa-check-circle" ng-show="alert.type == 'success'"></i>
+                   <b>{{alert.title}}</b>
+                 </p>
+                 <p>{{alert.message}}</p>
+                 <ul ng-show="alert.details.length > 0">
+                   <li ng-repeat="detail in alert.details">{{detail}}</li>
+                 </ul>
+              </div>
+           </div>
+        </div>
+    </div>
+</div>

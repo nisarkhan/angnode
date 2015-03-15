@@ -1,0 +1,27 @@
+<sun-form form="employee" data="employee_"></sun-form>
+
+<hr/>
+
+<table ng-gridview="employee"
+       resource="$employee"
+       change="save('employers')"
+       data="application.employers"
+       title="<h4>Employers</h4>">
+    <thead>
+        <tr>
+            <th data-name="name">Company Name</th>
+            <th data-name="contact_first_name">First Name</th>
+            <th data-name="contact_last_name">Last Name</th>
+            <th data-name="contact_email_address">Email</th>
+            <th data-name="$options" data-width="160" >Options</th>
+        </tr>
+    </thead>
+</table>
+
+<div class="hide">
+    <sun-form ng-gridedit="employee"
+              form="employee"
+              edit="true"
+              data="employee.$selected" >
+    </sun-form>
+</div>

@@ -1,0 +1,110 @@
+<form name="form" class="form-horizontal" ng-validate="$parent[ $edit ? 'update' : 'create']('residences', data, form)" novalidate>
+
+    
+  <div class="row" >
+
+    <div class="col-xs-4">
+
+      <div class="form-group">
+        <label for="" class="col-xs-5 control-label">Address:</label>
+        <div class="col-xs-7">
+          <input name="address" type="text" class="form-control" ng-model="data.address" required>
+          <div class="alert alert-danger" ng-show="form.$submitted && form.address.$error.required">Enter an address.</div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-xs-4">
+
+      <div class="form-group">
+        <label for="" class="col-xs-5 control-label">City:</label>
+        <div class="col-xs-7">
+          <input name="city" type="text" class="form-control" ng-model="data.city" required>
+          <div class="alert alert-danger" ng-show="form.$submitted && form.city.$error.required">Enter a city.</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-4">
+
+      <div class="form-group"   >
+        <label for="" class="col-xs-5 control-label">State:</label>
+        <div class="col-xs-7">
+          <select name="state" dropdown="state" ng-model="data.state" ng-dropdown required>
+            <option ng-option value="{{option.abbrev}}" ng-repeat="option in $parent.dropdown.states">{{option.name}}</option>
+          </select>        
+            
+           <!-- <ui-select ng-model="ddl_res_state.selected" theme="selectize" name="state" required ng-disabled="disabled" style="width: 150px;">             
+            <ui-select-match placeholder="Select">
+              <span>{{$select.selected.name}}</span> 
+              <button type="button" class="clear" ng-click="clear($event, 'res_state')">x</button>
+            </ui-select-match>
+            <ui-select-choices repeat="option in $parent.$parent.dropdown.states | filter: $select.search">
+              <div ng-bind-html="option.name | highlight: $select.search"></div>
+            </ui-select-choices>
+          </ui-select>-->
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-xs-4">
+
+      <div class="form-group">
+        <label for="" class="col-xs-5 control-label">Zip Code:</label>
+        <div class="col-xs-7">
+          <input name="zip" type="text" class="form-control" ng-model="data.zip" ng-mask="zip" required>
+          <div class="alert alert-danger" ng-show="form.$submitted && form.zip.$error.required">Please enter a zip code.</div>
+          <div class="alert alert-warning" ng-show="form_phone.$submitted && form.zip.$error.minlength">Zip code must be 5 characters length.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-4">
+
+      <div class="form-group">
+        <label for="" class="col-xs-5 control-label">How Long:</label>
+        <div class="col-xs-7">
+          <select name="how_long" dropdown="how_long" ng-model="data.how_long" ng-dropdown required>
+            <option ng-option value="{{option.id}}" ng-repeat="option in $parent.dropdown.howlong">{{option.name}}</option>
+          </select>
+           <!--<ui-select ng-model="ddl_res_how_long.selected" theme="selectize" name="how_long" required ng-disabled="disabled" style="width: 150px;">
+            <ui-select-match placeholder="Select">
+              <span>{{$select.selected.name}}</span> 
+              <button type="button" class="clear" ng-click="clear($event, 'how_long')">x</button>
+            </ui-select-match>
+            <ui-select-choices repeat="option in $parent.$parent.dropdown.howlong | filter: $select.search">
+              <div ng-bind-html="option.name | highlight: $select.search"></div>
+            </ui-select-choices>
+          </ui-select>-->
+          <div class="alert alert-danger" ng-show="form.$submitted && form.how_long.$error.required">Please select a "how long" value.</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <div class="form-group">
+        <label for="" class="col-xs-5 control-label">Is Primary:</label>
+        <div class="col-xs-7">
+          <span class="checkbox right">
+                <input id="is_primary" name="is_primary" type="checkbox" ng-model="data.is_primary" value="true" />
+                <label for="is_primary"></label>
+                <div class="alert alert-danger" ng-show="form.$submitted && form.is_primary.$error.required">Select is primary.</div>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row text-right">
+    <div class="col-xs-12">
+      <button class="btn btn-default" type="submit">
+        <span ng-if="$edit"> <i class="fa fa-refresh"></i>  Update Residence </span>
+        <span ng-if="!$edit"> <i class="fa fa-plus"></i>  Create Residence </span>
+      </button>
+    </div>
+  </div>
+
+</form>

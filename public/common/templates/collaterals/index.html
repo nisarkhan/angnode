@@ -1,0 +1,28 @@
+<sun-form form="collaterals"
+          data="collateral_">
+</sun-form>
+
+<hr/>
+
+<table ng-gridview="collaterals"
+       resource="$collaterals"
+       data="collaterals"
+       title="<h4>Current Collaterals</h4>">
+    <thead>
+        <tr>
+            <th data-render="{{collateral_type || ''}}">Type</th>
+            <th data-render="{{object_value || 0 | currency }}">Value</th>
+            <th data-render="{{object_id|| ''}}">Identification Number</th>
+            <th data-render="{{description|| ''}}">Description</th>
+            <th data-name="$options" data-width="160" >Options</th>
+        </tr>
+    </thead>
+</table>
+
+<div class="hide">
+    <sun-form form="collaterals"
+              edit="true"
+              data="collaterals.$selected"
+              ng-gridedit="collaterals">
+    </sun-form>
+</div>

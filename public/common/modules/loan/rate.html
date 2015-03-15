@@ -1,0 +1,71 @@
+<div class="container">
+
+    <div class="row text-gray">
+      <div class="col-xs-4">Loan Application</div>
+      <div class="col-xs-4">Borrower SSN</div>
+      <div class="col-xs-4 text-right">Application ID</div>
+    </div>
+    <h3 class="row reduced">
+        <div class="col-xs-4"> Make Loan </div>
+        <div class="col-xs-4">{{application.social_security_number}}</div>
+        <div class="col-xs-4 text-right">{{application.id}}</div>
+    </h3>
+
+    <form name="form" class="form-horizontal" novalidate>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+
+            <div class="row">
+                <div class="col-xs-4">
+                    <p><span class="strong">Borrower:</span> {{application.last_name}}, {{application.first_name}} </p>
+                    <p><span class="strong">Amount:</span> {{application.requested_amount}}</p>
+                    <p><span class="strong">Application date:</span> {{application.submitted_date}}</p>
+                </div>
+                <div class="col-xs-4">
+                    <p><span class="strong">Employment History:</span> {{application.employers[0].verified_how||'Not Completed'}}</p>
+                    <p><span class="strong">Primary Residence:</span> {{application.residences[0].address||'Not Completed'}}</p>
+                    <p><span class="strong">Monthly Income:</span> {{application.employers[0].net_salary||'Not Completed'}}</p>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="form-group">
+                <label class="col-xs-2 control-label">Select a Rate:</label>
+                <div class="col-xs-10">
+                    <ul class="list-group list-selector">
+                      <li class="list-group-item" ng-class="option.loan_rate_id == rate.loan_rate_id ? 'active' : ''" ng-click="select(option);" ng-repeat="option in rates">
+
+                        <div class="row text-gray">
+                          <div class="col-xs-3">IAHC</div>
+                          <div class="col-xs-3"># of Payments</div>
+                          <div class="col-xs-3">Final Payment</div>
+                          <div class="col-xs-3">Total Note</div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-3">${{option.iahc_charge}}</div>
+                          <div class="col-xs-3">{{option.number_of_payments}}</div>
+                          <div class="col-xs-3">${{option.final_payment}}</div>
+                          <div class="col-xs-3 strong">${{option.total_note}}</div>
+                        </div>
+
+                      </li>
+                    </ul>
+                </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row text-right">
+            <div class="col-xs-12">
+               <button class="btn btn-default" ng-click="continue()">
+                 <i class="fa fa-long-arrow-right"></i> Continue
+               </button>
+            </div>
+        </div>
+
+    </form>
+
+</div>

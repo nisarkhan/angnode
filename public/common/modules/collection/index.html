@@ -1,0 +1,173 @@
+
+<!--
+<div class="container">
+
+    <h3 class="row title">
+        <div class="col-xs-12">
+            Assign Collections
+        </div>
+    </h3>
+
+    <form name="form" class="form-horizontal" ng-submit="collections(query)" role="form">
+
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="panel panel-default">
+
+            <h3 class="panel-heading">Filters </h3>
+            <div class="panel-body">
+
+                <div class="row">
+                    <div class="col-xs-4">
+                        <div class="form-group">
+                            <label for="" class="col-xs-5 control-label">Type:</label>
+                            <div class="col-xs-7">
+                              <select ng-dropdown ng-model="query.type">
+                                  <option ng-option value="current">Current</option>
+                                  <option ng-option value="slow">Slow</option>
+                                  <option ng-option value="30s">30 days</option>
+                                  <option ng-option value="60s">60 days</option>
+                                  <option ng-option value="90s">90 days</option>
+                                  <option ng-option value="91+">91+ days</option>
+                              </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="form-group">
+                            <label for="" class="col-xs-5 control-label">Amount:</label>
+                            <div class="col-xs-7">
+                              <select ng-dropdown ng-model="query.amount">
+                                  <option ng-option value="0-100">$0 - $100</option>
+                                  <option ng-option value="101-150">$101 - $150</option>
+                                  <option ng-option value="151-200">$151 - $200</option>
+                                  <option ng-option value="201-250">$201 - $250</option>
+                                  <option ng-option value="251-300">$251 - $300</option>
+                                  <option ng-option value="301-350">$301 - $350</option>
+                                  <option ng-option value="351-400">$351 - $400</option>
+                                  <option ng-option value="401-450">$401 - $450</option>
+                                  <option ng-option value="451-500">$451 - $500</option>
+                                  <option ng-option value="501+">$501+</option>
+                              </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="form-group">
+                            <label for="" class="col-xs-5 control-label">Last Name:</label>
+                            <div class="col-xs-7">
+                              <select ng-dropdown ng-model="query.lastname">
+                                  <option ng-option value="A-D">A - D</option>
+                                  <option ng-option value="E-G">E - H</option>
+                                  <option ng-option value="I-L">I - L</option>
+                                  <option ng-option value="M-P">M - P</option>
+                                  <option ng-option value="Q-U">Q - U</option>
+                                  <option ng-option value="V-Z">V - Z</option>
+                              </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row text-right">
+          <div class="col-xs-12">
+
+             <span class="checkbox right">
+               <input id="assignment" type="checkbox" value="true" ng-model="query.assigned" />
+               <label for="assignment">Include Assignment </label>
+             </span>
+             <button class="btn btn-default"> <i class="fa fa-search"></i> Search </button>
+          </div>
+      </div>
+
+    </form>
+
+</div>
+-->
+
+<div class="container">
+    <div class="row">
+        <form name="search_collection" class="form-horizontal" ng-submit="collections()" role="search">
+            
+            <div class="col-xs-6 col-xs-offset-3">
+                <div class="form-group form-horizontal">
+                    <label for="from_drawer" class="col-xs-6 control-label">Select a Type:</label>
+                    <div class="col-xs-6">
+                        <select ng-dropdown ng-model="query.type">
+                            <!--
+                            <option ng-option value="current">Current</option>
+                            <option ng-option value="slow">Slow</option>
+                            -->
+                            <option ng-option value="30s">30 days</option>
+                            <option ng-option value="60s">60 days</option>
+                            <option ng-option value="90s">90 days</option>
+                            <option ng-option value="91+">91+ days</option>
+                        </select>
+                        <button class="btn btn-default"> <i class="fa fa-search"></i> Search </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<hr class="divider" />
+
+<div class="container">
+    <div class="row  bottom-xs">
+
+        <div class="col-xs-5">
+            <button ng-show="!checked" class="btn btn-white btn-rounded" ng-click="check($event)"> <i class="fa fa-check-square-o"></i> Check All </button>
+            <button ng-show="checked" class="btn btn-white btn-rounded" ng-click="uncheck($event)"> <i class="fa fa-square-o"></i> Uncheck All </button>
+        </div>
+        <div class="col-xs-7 text-right">
+            <form name="assign_form" class="form-horizontal" ng-validate="assign(loan)" role="search" novalidate>
+
+                <div class="pull-left">
+                    <label for="employee_id" class="control-label" style="display:block;">Assign all check to:</label>
+                    <div class="alert alert-danger" ng-show="assign_form.$submitted && assign_form.employee_id.$error.required">Select a Employee.</div>
+                </div>
+                <select class="btn btn-default" ng-model="loan.employee_id" required>
+                    <option ng-repeat="emp in employees" value="{{ emp.id }}">{{ emp.first_name+', '+emp.last_name}}</option>
+                </select>
+                <button class="btn btn-default"> <i class="fa fa-long-arrow-right"></i> Assign Collection(s) </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+
+            <div class="panel panel-default">
+                <h3 class="panel-heading">
+                    Search
+                </h3>
+                <div class="panel-body">
+                    <table ng-gridview="delinquency" data="delinquencies"  class="table table-striped table-bordered" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th data-name="$check" data-width="24"></th>
+                                <th data-name="status">Status</th>
+                                <th data-name="loan">Loan</th>
+                                <th data-name="account_number">Account</th>                              
+                                <th data-render="{{movementDate | date : 'shortDate' }}">Movement</th>
+                                <th data-render="{{last_name + ', ' +first_name}}">Name</th>
+                                <th data-render="{{upToDate | currency}}">Up to Date</th>
+                                <th data-render="{{balanceRenewal | currency}}">Renewal</th>
+                                <th data-render="{{payOff | currency}}">Pay Off</th>                                
+                                <th data-name="$manage" width="100" >Option</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

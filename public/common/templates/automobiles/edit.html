@@ -1,0 +1,70 @@
+<form name="form" class="form-horizontal" ng-validate="$parent[ $edit ? 'update' : 'create']('automobiles', data, form)" novalidate>
+
+    <div class="row">
+
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Vin-Number:</label>
+                <div class="col-xs-7">
+                    <input name="vin_number" type="text" class="form-control" ng-model="data.vin_number" required>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.vin_number.$error.required">Enter a Vin-Number.</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Make:</label>
+                <div class="col-xs-7">
+                    <input name="make" type="text" class="form-control" ng-model="data.make" required>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.make.$error.required">Enter a make.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">    
+        
+        <div class="col-xs-6">
+            
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Model:</label>
+                <div class="col-xs-7">
+                    <input name="model" type="text" class="form-control" ng-model="data.model" required>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.model.$error.required">Enter a model.</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Color:</label>
+                <div class="col-xs-7">
+                    <input name="color" type="text" class="form-control" ng-model="data.color" required>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.color.$error.required">Enter a color.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row"> 
+    
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Description:</label>
+                <div class="col-xs-7">
+                    <textarea class="form-control" ng-model="data.description"></textarea>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row text-right">
+        <div class="col-xs-12">
+            <button class="btn btn-default" type="submit" > 
+                <span ng-if="$edit"> <i class="fa fa-refresh"></i>  Update Automobile </span>
+                <span ng-if="!$edit"> <i class="fa fa-plus"></i>  Create Automobile </span>
+            </button>        
+        </div>
+    </div>
+
+</form>    

@@ -1,0 +1,122 @@
+<div class="container">
+    
+    <h3 class="row title">
+        <div class="col-xs-12">
+            Reports
+        </div>
+    </h3>
+    
+    <div class="row">
+      <div class="col-md-12">
+        
+        <div class="panel panel-default">
+          <div class="panel-body">
+            
+            <form name="drawer_edit" class="form-horizontal" role="form">
+                
+                <div class="row">
+
+                    <div class="col-xs-12">
+
+                        <div class="form-group">
+                            <label for="" class="col-xs-3 control-label">Date Range:</label>
+                            <div class="col-xs-6">
+                                <div class="input-daterange input-group" ng-datepicker>
+                                    <input type="text" class="input-sm form-control" name="start" />
+                                    <span class="input-group-addon">to</span>
+                                    <input type="text" class="input-sm form-control" name="end" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+                        
+                        <hr/>
+                        
+                        <div class="form-group">
+                            <label for="" class="col-xs-3 control-label">Options:</label>
+                            <div class="col-xs-9">
+                                
+                                <div class="checkbox">
+                                    <input type="checkbox" id="transaction_journal" />
+                                    <label for="transaction_journal">Transaction Journal</label>
+                                </div>
+
+                                <div class="checkbox">
+                                    <input type="checkbox" id="general_ledger" />
+                                    <label for="general_ledger">General Ledger Postings</label>
+                                </div>
+
+                                <div class="checkbox">
+                                    <input type="checkbox" id="info_total" />
+                                    <label for="info_total">Information about the postings to the general ledger totals</label>
+                                </div>
+
+                                <div class="checkbox">
+                                    <input type="checkbox" id="info_collection" />
+                                    <label for="info_collection">Information about collections that are done</label>
+                                </div>
+
+                                <div class="checkbox">
+                                    <input type="checkbox" id="info_collection_all" />
+                                    <label for="info_collection_all">Information about all collections that are done</label>
+                                </div>
+
+                                <div class="checkbox">
+                                    <input type="checkbox" id="info_refund" />
+                                    <label for="info_refund">Information about refunds made</label>
+                                </div>
+
+                                <div class="checkbox">
+                                    <input type="checkbox" id="info_refund_all" />
+                                    <label for="info_refund_all">Information about total refunds made</label>
+                                </div>
+
+                                <div class="checkbox">
+                                    <input type="checkbox" id="history_addresses" />
+                                    <label for="history_addresses">History of changes in addresses</label>
+                                </div>
+
+                                <div class="checkbox">
+                                    <input type="checkbox" id="history_mail" />
+                                    <label for="history_mail">History of changes in do not mail</label>
+                                </div>
+
+                                <div class="checkbox">
+                                    <input type="checkbox" id="history_high_credit" />
+                                    <label for="history_high_credit">History of changes in high credit</label>
+                                </div>
+
+                                <div class="checkbox">
+                                    <input type="checkbox" id="history_names" />
+                                    <label for="history_names">History of changes in borrower names</label>
+                                </div>
+
+                                <div class="checkbox">
+                                    <input type="checkbox" id="history_ssn" />
+                                    <label for="history_ssn">History of changes in borrower social security</label>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                 
+            </form>
+
+          </div>
+        </div> 
+
+      </div>
+    </div>
+
+    <div class="row text-right">
+        <div class="col-xs-12">
+           <button class="btn btn-default"> <i class="fa fa-play"></i> Run Report </button>
+        </div>
+    </div>
+
+</div>

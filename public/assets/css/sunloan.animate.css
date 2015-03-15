@@ -1,0 +1,83 @@
+/* Angular Animations */
+.fx,
+.btn-default{
+  -webkit-transition: all 03s cubic-bezier(0.250, 0.250, 0.750, 0.750);
+  transition: all 0.3s cubic-bezier(0.250, 0.250, 0.750, 0.750);
+}
+
+.fx-slide {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+}
+.fx-slide.ng-enter {
+  opacity: 0;/*
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);*/
+}
+.fx-slide.ng-enter.ng-enter-active{
+  opacity: 1;/*
+  -webkit-transform: scale(1);
+  transform: scale(1);*/
+}
+.fx-slide.ng-leave.ng-leave-active {
+  opacity: 0;/*
+  -webkit-transform: scale(0.9);
+  transform: translateX(0.9);*/
+}
+
+.animate-repeat{
+  box-sizing:border-box;
+}
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  -webkit-transition:all linear 0.4s;
+  transition:all linear 0.4s;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity:0;
+  max-height:0;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:100px;
+}
+
+/* CSS Animations */
+
+.fx-slidedown{
+  -webkit-animation: slideDown .4s ease;
+  animation: slideDown .4s ease;
+  overflow: hidden;
+}
+
+@keyframes slideDown {
+  0% {
+    max-height: 0;
+    opacity: .5;
+
+  }
+  100% {
+    max-height: 300px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideDown {
+  0% {
+    max-height: 0;
+    opacity: .5;
+  }
+  100% {
+    max-height: 300px;
+    opacity: 1;
+  }
+}

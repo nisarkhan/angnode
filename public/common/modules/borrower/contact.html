@@ -1,0 +1,40 @@
+<div class="modal fade" id="modal-contact" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title"> <i class="fa fa-user text-gray"></i> Contact Information</h4>
+      </div>
+
+      <div class="modal-body form-horizontal">
+        
+        <div class="row">
+
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-6 small text-right"> Name:</div>
+                    <div class="col-xs-6">{{borrower.first_name}} {{borrower.middle_name}} {{borrower.last_name}}</div>
+                 </div>
+                <hr class="small" />
+                <div class="row">
+                    <div class="col-xs-6 small text-right"> Primary phone:</div>
+                    <div class="col-xs-6">{{contactPhone[0].phone_number}}</div>
+                 </div>
+                <hr class="small" />
+                <div class="row">
+                    <div class="col-xs-6 small text-right"> Primary address:</div>
+                    <div class="col-xs-6">{{contactResidence[0].address}}</div>
+                    <div class="col-xs-6 small text-right"> </div>
+                     <div class="col-xs-6">{{contactResidence[0].city}} {{contactResidence[0].state}} {{contactResidence[0].zip}}</div>
+                 </div>
+                <hr class="small" />
+            </div>
+
+        </div>
+
+      </div>
+      
+    </div>
+  </div>
+</div>

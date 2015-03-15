@@ -1,0 +1,27 @@
+<sun-form form="reference"
+          data="reference_">
+</sun-form>
+
+<hr/>
+
+<table ng-gridview="references"
+       resource="$references"
+       data="references"  
+       title="<h4>Current References</h4>">
+    <thead>
+        <tr>
+            <th data-render="{{relationship_type}}"> Relationship</th>
+            <th data-render="{{first_name + ', ' + last_name}}">Name Name</th>
+            <th data-render="{{phone_number}}">Phone</th>
+            <th data-name="$options" data-width="160" >Options</th>
+        </tr>
+    </thead>
+</table>
+
+<div class="hide">
+    <sun-form ng-gridedit="references"
+              form="reference"
+              edit="true"
+              data="references.$selected" >
+    </sun-form>
+</div>

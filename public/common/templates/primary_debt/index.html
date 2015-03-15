@@ -1,0 +1,28 @@
+<sun-form form="debt"
+          data="debt_">
+</sun-form>
+
+<hr/>
+
+<table ng-gridview="debts"
+       resource="$debts"
+       data="debts"
+       title="<h4>Current Debts</h4>">
+    <thead>
+        <tr>
+            <th data-name="debt_type">Debt Type</th>
+            <th data-name="value">Amount</th>
+            <th data-name="description">Description</th>
+            <th data-name="no_pay">No Payment</th>
+            <th data-name="$options" data-width="160" >Options</th>
+        </tr>
+    </thead>
+</table>
+
+<div class="hide">
+    <sun-form form="debt"
+              edit="true"
+              data="debts.$selected"
+              ng-gridedit="debts">
+    </sun-form>
+</div>

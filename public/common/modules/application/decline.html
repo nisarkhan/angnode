@@ -1,0 +1,73 @@
+<div class="container">
+
+    <div class="row text-gray">
+        <div class="col-xs-4">Loan Application</div>
+        <div class="col-xs-4">Borrower SSN</div>
+        <div class="col-xs-4 text-right">Application ID</div>
+    </div>
+    <h3 class="row reduced">
+        <div class="col-xs-4 text-red">Denied</div>
+        <div class="col-xs-4">{{application.social_security_number}}</div>
+        <div class="col-xs-4 text-right">{{application.id}}</div>
+    </h3>
+
+    <form name="form" class="form-horizontal" ng-validate="save(application)" novalidate>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Application Information</h4>
+                    <div class="panel-body">
+                        <div class="col-xs-4">
+                            <p><span class="strong">Ownership  type:</span> {{application.ownership_type}}</p>
+                            <p><span class="strong">Application by Phone:</span> {{application.by_phone}}</p>
+                            <p><span class="strong">Referral:</span> {{application.referral_name|| 'Not Completed'}}</p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p><span class="strong">Date/Time Taken:</span> {{application.submitted_date}}</p>
+                            <p><span class="strong">Amount Requested:</span> {{application.requested_amount||'0'}}</p>
+                            <p><span class="strong">Previous Sun Loan Acct:</span> Not Completed</p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p><span class="strong">Taken By:</span> {{application.submitted_by}}</p>
+                            <p><span class="strong">Source:</span> {{application.source||'Not Completed'}}</p>
+                            <p><span class="strong">If Previous When?:</span> Not Completed</p>
+                        </div>
+                    </div>
+                </div>                  
+            </div>              
+        </div>           
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Borrower Information</h4>
+                    <div class="panel-body">
+                        <div class="col-xs-4">
+                            <p><span class="strong">Last Name:</span> {{application.last_name}}</p>
+                            <p><span class="strong">Date of Birth:</span> {{application.date_of_birth}}</p>
+                            <p><span class="strong">Home City:</span> {{application.home_city}}</p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p><span class="strong">MI:</span> {{application.middle_name|| '' }}</p>
+                            <p><span class="strong">{{application.identification_type||''}}:</span> {{application.identification_number||''}}</p>
+                            <p><span class="strong">Status:</span> {{application.status}}</p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p><span class="strong">First Name</span> {{application.first_name}}</p>
+                            <p><span class="strong">Dependents:</span> {{application.number_of_dependents||'0'}}</p>
+                        </div>
+                    </div>
+                </div>                  
+            </div>              
+        </div>
+        <div class="row text-right">
+            <div class="col-xs-12 text-center">
+                <button class="btn btn-default" type="submit">
+                    <i class="fa fa-toggle-off "></i> Decline
+                </button>
+                <button class="btn btn-default" type="button" ng-click="letter()" >
+                    <i class="fa fa-print"></i> Print Letter
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

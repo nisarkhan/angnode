@@ -1,0 +1,27 @@
+<div class="modal fade" id="modal-drawer" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h3 class="modal-title">Drawers Detail</h3>
+      </div>
+
+      <div class="modal-body">
+        <!-- Grid -->
+        <table ng-gridview="drawer" data="drawers">
+            <thead>
+                <tr>
+                    <th data-name="drawer_number">Drawer</th>
+                    <th data-name="assigned_to">Assigned To</th>
+                    <th data-render="{{ balance | currency }}">Cash on Hand</th>
+                    <th data-name="$options" data-width="170">Options</th>
+                </tr>
+            </thead>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+</div>

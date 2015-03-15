@@ -1,0 +1,93 @@
+<form name="form" class="form-horizontal" ng-validate="$parent[ $edit ? 'update' : 'create']('employees', data, form);" novalidate>
+
+     <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <!--<div class="row">
+                            <div class="col-xs-6">
+                                <p>Sun Loan</p>
+                                <p>125 Main St</p>
+                                <p>San Antonio, TX 12345</p>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <h2>Check #12345</h2>
+                            </div>
+                        </div>
+                        <hr/>-->  
+                        <br /> 
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label for="" class="col-xs-6 control-label">First Name:</label>
+                                    <div class="col-xs-6">
+                                        <input name="first_name" type="text" class="form-control" ng-model="data.first_name" placeholder="First name" ng-required="true">
+                                        <div class="alert alert-danger" ng-show="form.$submitted && form.first_name.$error.required">Enter first name.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label for="" class="col-xs-6 control-label">Last Name:</label>
+                                    <div class="col-xs-6">
+                                        <input name="last_name" type="text" class="form-control" ng-model="data.last_name" placeholder="Last name" ng-required="true">
+                                        <div class="alert alert-danger" ng-show="form.$submitted && form.last_name.$error.required">Enter last name.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label for="" class="col-xs-6 control-label">Username:</label>
+                                    <div class="col-xs-6">
+                                        <input name="user_name" type="text" class="form-control" ng-model="data.user_name" placeholder="Username" ng-required="true">
+                                        <div class="alert alert-danger" ng-show="form.$submitted && form.user_name.$error.required">Enter username.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label for="" class="col-xs-6 control-label">Password:</label>
+                                    <div class="col-xs-6">
+                                        <!--<input name="password" type="text" class="form-control" ng-model="data.password" placeholder="Enter password" ng-required="true">-->
+                                        <input id="password" name="password" ng-model="data.password" class="form-control" placeholder="Password" ng-required="true" type="text" />
+                                        <div class="alert alert-danger" ng-show="form.$submitted && form.password.$error.required">Enter password.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label for="" class="col-xs-6 control-label">Confirm Password:</label>
+                                    <div class="col-xs-6">
+                                        <input name="confirm_password" ng-model="data.confirm_password" class="form-control" placeholder="Confirm password" ng-required="true" type="text" match="data.password" />
+                                        <div class="alert alert-danger" ng-show="form.$submitted && form.confirm_password.$error.required">Enter confirm password.</div>
+                                        <div ng-show="form.confirm_password.$error.mismatch">
+                                            <span class="alert alert-warning">Password and confirm password must match.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="row text-right">
+        <div class="col-xs-12">
+            <button class="btn btn-default" type="submit" >
+                <span ng-if="$edit"> <i class="fa fa-refresh"></i>  Update Employee </span>
+                <span ng-if="!$edit"> <i class="fa fa-plus"></i>  Add Employee </span>
+            </button>
+        </div>
+    </div>
+
+
+</form>

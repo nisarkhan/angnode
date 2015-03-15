@@ -1,0 +1,416 @@
+<div class="container">
+
+    <div class="row text-gray">
+        <div class="col-xs-4">Application Date</div>
+        <div class="col-xs-4">Amount Requested</div>
+        <div class="col-xs-4">Taken By</div>
+    </div>
+    <h3 class="row reduced">
+        <div class="col-xs-4">{{application.submitted_date}}</div>
+        <div class="col-xs-4">{{application.requested_amount||'0'}}</div>
+        <div class="col-xs-4">{{application.submitted_by}}</div>
+    </h3>
+
+    <form name="form" class="form-horizontal" ng-validate="create(application)" novalidate>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Application Information</h4>
+                    <div class="panel-body">
+                        <div class="col-xs-4">
+                            <p><span class="strong">Ownership  type:</span> {{application.ownership_type}}</p>
+                            <p><span class="strong">Application by Phone:</span> {{application.by_phone}}</p>
+                            <p><span class="strong">Referral:</span> {{application.referral_name|| 'Not Completed'}}</p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p><span class="strong">Date/Time Taken:</span> {{application.submitted_date}}</p>
+                            <p><span class="strong">Amount Requested:</span> {{application.requested_amount||'0'}}</p>
+                            <p><span class="strong">Previous Sun Loan Acct:</span> Not Completed</p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p><span class="strong">Taken By:</span> {{application.submitted_by}}</p>
+                            <p><span class="strong">Source:</span> {{application.source||'Not Completed'}}</p>
+                            <p><span class="strong">If Previous When?:</span> Not Completed</p>
+                        </div>
+                    </div>
+                </div>                  
+            </div>              
+        </div>           
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Borrower Information</h4>
+                    <div class="panel-body">
+                        <div class="col-xs-4">
+                            <p><span class="strong">Last Name:</span> {{application.last_name}}</p>
+                            <p><span class="strong">Date of Birth:</span> {{application.date_of_birth}}</p>
+                            <p><span class="strong">Home City:</span> {{application.home_city}}</p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p><span class="strong">MI:</span> {{application.middle_name|| '' }}</p>
+                            <p><span class="strong">{{application.identification_type||''}}:</span> {{application.identification_number||''}}</p>
+                            <p><span class="strong">Status:</span> {{application.status}}</p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p><span class="strong">First Name</span> {{application.first_name}}</p>
+                            <p><span class="strong">Dependents:</span> {{application.number_of_dependents||'0'}}</p>
+                        </div>
+                    </div>
+                </div>                  
+            </div>              
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Residences</h4>
+                    <div class="panel-body">
+                        <table class="table-striped table-bordered" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="text-center strong">Address</th>
+                                    <th class="text-center strong">Type</th>
+                                    <th class="text-center strong">Ownership Type</th>
+                                    <th class="text-center strong">Moved In</th>
+                                    <th class="text-center strong">How Long</th>
+                                    <th class="text-center strong">Verified How</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="residence in application.residences">
+                                    <td>{{residence.address}} {{residence.city}}, {{residence.state}} {{residence.zip}}</td>
+                                    <td>{{residence.type}}</td>
+                                    <td>{{residence.ownership_type}}</td>
+                                    <td>{{residence.year_moved_in}}</td>
+                                    <td>{{residence.how_long}}</td>
+                                    <td>{{residence.how_verified}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Phones</h4>
+                    <div class="panel-body">
+                        <table class="table-striped table-bordered" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="text-center strong">Type</th>
+                                    <th class="text-center strong">Number</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="phone in application.phones">
+                                    <td>{{phone.phone_type}}</td>
+                                    <td>{{phone.phone_number}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Employers</h4>
+                    <div class="panel-body">
+                        <table class="table-striped table-bordered" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="text-center strong">Name</th>
+                                    <th class="text-center strong">Payment_Schedule</th>
+                                    <th class="text-center strong">Net Salary</th>
+                                    <th class="text-center strong">Verified How</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="employer in application.employers">
+                                    <td>{{employer.name}}</td>
+                                    <td>{{employer.payment_schedule}}</td>
+                                    <td>{{employer.net_salary}}</td>
+                                    <td>{{employer.verified_how}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">References</h4>
+                    <div class="panel-body">
+                        <table class="table-striped table-bordered" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="text-center strong">Name</th>
+                                    <th class="text-center strong">Address</th>
+                                    <th class="text-center strong">Relationship</th>
+                                    <th class="text-center strong">Phone Number</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="reference in application.references">
+                                    <td>{{reference.first_name}} {{reference.last_name}}</td>
+                                    <td>{{reference.address}} {{reference.city}}, {{reference.state}} {{reference.zip}}</td>
+                                    <td>{{reference.relationship_type}}</td>
+                                    <td>{{reference.phone_number}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Automobiles</h4>
+                    <div class="panel-body">
+                        <table class="table-striped table-bordered" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="text-center strong">VIN</th>
+                                    <th class="text-center strong">Make</th>
+                                    <th class="text-center strong">Model</th>
+                                    <th class="text-center strong">Color</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="automobile in application.automobiles">
+                                    <td>{{automobile.vin_number}}</td>
+                                    <td>{{automobile.make}}</td>
+                                    <td>{{automobile.model}}</td>
+                                    <td>{{automobile.color}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Debts</h4>
+                    <div class="panel-body">
+                        <table class="table-striped table-bordered" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="text-center strong">Type</th>
+                                    <th class="text-center strong">Note</th>
+                                    <th class="text-center strong">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="debt in application.debts">
+                                    <td>{{debt.debt_type}}</td>
+                                    <td>{{debt.description}}</td>
+                                    <td class="text-right">${{debt.value}}</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td class="text-right strong">Total:</td>
+                                    <td class="text-right strong">{{ application.debts | sumValues: 'value' | currency}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Income</h4>
+                    <div class="panel-body">
+                        <table class="table-striped table-bordered" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="text-center strong">source</th>
+                                    <th class="text-center strong">how_verified</th>
+                                    <th class="text-center strong">who_verified</th>
+                                    <th class="text-center strong">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="income in application.other_incomes">
+                                    <td>{{income.source}}</td>
+                                    <td>{{income.how_verified}}</td>
+                                    <td>{{income.who_verified}}</td>
+                                    <td class="text-right">${{income.amount}}</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td class="text-right strong">Total:</td>
+                                    <td class="text-right strong">{{ application.other_incomes | sumValues: 'amount' | currency}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Finances</h4>
+                    <div class="panel-body">
+                        <table class="table-striped table-bordered" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="text-center strong">Income</th>
+                                    <th class="text-center strong">Debt</th>
+                                    <th class="text-center strong">Free Income</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-right">{{total_income| currency}}</td>
+                                    <td class="text-right">{{total_debt| currency }}</td>
+                                    <td class="text-right">{{free_income| currency }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Evaluate</h4>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label">Credit Agency:</label>
+                            <div class="col-xs-10">
+                                <div class="form-group">
+                                    <div class="col-xs-6">
+                                        <span class="checkbox right">
+                                            <input id="no_credit_report" type="checkbox" value="true" ng-bind="application.no_credit_report" ng-model="application.no_credit_report" />
+                                            <label for="no_credit_report"> No Credit Report </label>
+                                        </span>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <label class="control-label col-xs-4">Stability:</label>
+                                        <div class="col-xs-8">
+                                            <select name="stability" dropdown="stability" ng-model="application.stability" ng-dropdown>
+                                                <option ng-option value="{{option.id}}" ng-repeat="option in dropdown.evaluation">{{option.name}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-xs-6">
+                                        <span class="checkbox right">
+                                            <input id="transunion" type="checkbox" value="true" ng-bind="application.transunion" ng-model="application.transunion" />
+                                            <label for="transunion"> Transunion(SARMA) </label>
+                                        </span>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <label class="control-label col-xs-4">Ability:</label>
+                                        <div class="col-xs-8">
+                                            <select name="ability" dropdown="ability" ng-model="application.ability" ng-dropdown>
+                                                <option ng-option value="{{option.id}}" ng-repeat="option in dropdown.evaluation">{{option.name}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-xs-6">
+                                        <span class="checkbox right">
+                                            <input id="equifax" type="checkbox" value="true" ng-bind="application.equifax" ng-model="application.equifax" />
+                                            <label for="equifax"> Equifax(CSC Credit Services) </label>
+                                        </span>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <label class="control-label col-xs-4">Willingness:</label>
+                                        <div class="col-xs-8">
+                                            <select name="willingness" dropdown="willingness" ng-model="application.willingness" ng-dropdown >
+                                                <option ng-option value="{{option.id}}" ng-repeat="option in dropdown.evaluation">{{option.name}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-xs-6">
+                                        <span class="checkbox right">
+                                            <input id="experian" type="checkbox" value="true" ng-bind="application.experian" ng-model="application.experian" />
+                                            <label for="experian"> Experian(formerly TRW) </label>
+                                        </span>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <label class="control-label col-xs-4">Security:</label>
+                                        <div class="col-xs-8">
+                                            <select name="security" dropdown="security" ng-model="application.security" ng-dropdown>
+                                                <option ng-option value="{{option.id}}" ng-repeat="option in dropdown.evaluation">{{option.name}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-xs-6">
+                                        <span class="checkbox right">
+                                            <input id="outside" type="checkbox" value="true" ng-model="application.outside_sources" ng-bind="application.outside_sources"/>
+                                            <label for="outside"> Outside Sources </label>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <h4 class="panel-heading">Approved Amount</h4>
+                    <div class="panel-body">
+                        <ul class="list-group list-selector">
+                            <li class="list-group-item" ng-class="option.loan_rate_id == rate.loan_rate_id ? 'active' : ''" ng-click="select(option);" ng-repeat="option in rates">
+
+                                <div class="row text-gray">
+                                    <div class="col-xs-3">IAHC</div>
+                                    <div class="col-xs-3"># of Payments</div>
+                                    <div class="col-xs-3">Final Payment</div>
+                                    <div class="col-xs-3">Total Note</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-3">${{option.iahc_charge}}</div>
+                                    <div class="col-xs-3">{{option.number_of_payments}}</div>
+                                    <div class="col-xs-3">${{option.final_payment}}</div>
+                                    <div class="col-xs-3 strong">${{option.total_note}}</div>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row text-right">
+            <div class="col-xs-12">
+                <button class="btn btn-default" type="button" ng-click="save()" > <i class="fa fa-save"></i> Save </button>
+                <button class="btn btn-default" type="button" ng-click="status('Declined')"> <i class="fa fa-thumbs-down"></i> Deny </button>
+                <button class="btn btn-green" type="button" ng-click="status('Approved')" > <i class="fa fa-thumbs-up"></i> Approve </button>
+            </div>
+        </div>
+
+    </form>
+
+</div>

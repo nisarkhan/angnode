@@ -1,0 +1,161 @@
+<form name="form" class="form-horizontal" ng-validate="$parent[ $edit ? 'update' : 'create']('other_debts', data, form)" novalidate>
+
+    <div class="row">
+
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-4 control-label">Creditor:</label>
+                <div class="col-xs-8">
+                   <input name="creditor" type="text" class="form-control" ng-model="data.creditor" placeholder="Creditor Name" required>
+                   <div class="alert alert-danger" ng-show="form.$submitted && form.creditor.$error.required">Enter a creditor.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-4 control-label">Type:</label>
+                <div class="col-xs-8">
+                   <select name="other_debt_type" dropdown="other_debt_type" ng-model="data.other_debt_type" ng-dropdown >
+                      <option ng-option value="{{option.id}}" ng-repeat="option in $parent.dropdown.other_debt_types" >{{option.name}}</option>
+                   </select>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-4 control-label">Amount:</label>
+                <div class="col-xs-8">
+                   <input type="text" class="form-control" ng-model="data.value" ng-mask="currency">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-4 control-label">Previous:</label>
+                <div class="col-xs-8">
+                   <input type="text" class="form-control" ng-model="data.previous" ng-mask="currency">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+     <div class="row">
+
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-4 control-label">High Credit:</label>
+                <div class="col-xs-8">
+                   <input type="text" class="form-control" ng-model="data.high_credit" ng-mask="currency">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-4 control-label">Payment Schedule:</label>
+                <div class="col-xs-8">
+                   <select name="payment_schedule_type" dropdown="payment_schedule_type" ng-model="data.payment_schedule_type" ng-dropdown>
+                      <option ng-option value="{{option.id}}" ng-repeat="option in $parent.dropdown.payment_schedules" >{{option.name}}</option>
+                   </select>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-4 control-label">No Payment:</label>
+                <div class="col-xs-8">
+                   <span class="checkbox right">
+                     <input id="no_payment{{$edit}}" type="checkbox" ng-model="data.no_pay" value="true" />
+                     <label for="no_payment{{$edit}}"></label>
+                   </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-4 control-label">Description:</label>
+                <div class="col-xs-8">
+                   <textarea class="form-control" ng-model="data.description"></textarea>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-4 control-label">Current Balance:</label>
+                <div class="col-xs-8">
+                   <input type="text" class="form-control" ng-model="data.current_balance" ng-mask="currency">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-4 control-label">How to Paid:</label>
+                <div class="col-xs-8">
+                   <textarea class="form-control" ng-model="data.how_paid"></textarea>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-4 control-label">Last Paid:</label>
+                <div class="col-xs-8">
+                    <div class="input-group date" ng-datepicker>
+                        <input name="last_payment_made" type="text" class="form-control" ng-model="data.last_payment_made" required="">
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                    </div>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.last_payment_made.$error.required">Enter a last paid date.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-4 control-label">Next Due:</label>
+                <div class="col-xs-8">
+                   <div class="input-group date" ng-datepicker>
+                        <input name="next_payment_due" type="text" class="form-control" ng-model="data.next_payment_due" required>
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                    </div>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.next_payment_due.$error.required">Enter a next due date.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row text-right">
+        <div class="col-xs-12">
+            <button class="btn btn-default" type="submit" >
+                <span ng-if="$edit"> <i class="fa fa-refresh"></i>  Update Debt </span>
+                <span ng-if="!$edit"> <i class="fa fa-plus"></i>  Add Debt </span>
+            </button>
+        </div>
+    </div>
+
+</form>

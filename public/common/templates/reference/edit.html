@@ -1,0 +1,122 @@
+<form name="form" class="form-horizontal" ng-validate="$parent[ $edit ? 'update' : 'create']('references', data, form);" novalidate>
+
+    <div class="row">
+
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label"> First Name:</label>
+                <div class="col-xs-7">
+                    <input name="first_name" type="text" class="form-control" ng-model="data.first_name" required text_only>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.first_name.$error.required">Enter a first name.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label"> Middle Name:</label>
+                <div class="col-xs-7">
+                    <input type="text" class="form-control" ng-model="data.middle_name" text_only>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Last Name:</label>
+                <div class="col-xs-7">
+                    <input name="last_name" type="text" class="form-control" ng-model="data.last_name" required text_only>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.last_name.$error.required">Enter a last name.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label"> Phone Type:</label>
+                <div class="col-xs-7">
+                    <select name="phone_type" dropdown="phone_type" ng-model="data.phone_type" ng-dropdown >
+                      <option ng-option value="{{option.id}}" ng-repeat="option in $parent.dropdown.phones" >{{option.name}}</option>
+                   </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label"> Phone Number:</label>
+                <div class="col-xs-7">
+                    <input type="text" class="form-control" ng-model="data.phone_number" ng-mask="phone">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label"> Address:</label>
+                <div class="col-xs-7">
+                    <input type="text" class="form-control" ng-model="data.address" >
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    <div class="row">
+    
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label"> City:</label>
+                <div class="col-xs-7">
+                    <input type="text" class="form-control" ng-model="data.city" text_only>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label"> State:</label>
+                <div class="col-xs-7">
+                   <select name="state" dropdown="state" ng-model="data.state" ng-dropdown >
+                      <option ng-option value="{{option.abbrev}}" ng-repeat="option in $parent.dropdown.states" >{{option.name}}</option>
+                   </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label"> Zipcode:</label>
+                <div class="col-xs-7">
+                    <input type="text" class="form-control" ng-model="data.zip" ng-mask="zip" >
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+
+        <div class="col-xs-4">
+            
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label"> Relationship:</label>
+                <div class="col-xs-7">
+                   <select name="relationship_type" dropdown="relationship_type" ng-model="data.relationship_type" ng-dropdown required>
+                      <option ng-option value="{{option.id}}" ng-repeat="option in $parent.dropdown.relationships" >{{option.name}}</option>
+                   </select>
+                   <div class="alert alert-danger" ng-show="form.$submitted && form.relationship_type.$error.required">Select a relationship.</div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+    <div class="row text-right">
+        <div class="col-xs-12">
+            <button class="btn btn-default" type="submit" > 
+                <span ng-if="$edit"> <i class="fa fa-refresh"></i>  Update Reference </span>
+                <span ng-if="!$edit"> <i class="fa fa-plus"></i>  Create Reference </span>
+            </button>        
+        </div>
+    </div>
+
+</form>    

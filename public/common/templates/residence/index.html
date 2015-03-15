@@ -1,0 +1,26 @@
+<sun-form form="residence" data="residence_"></sun-form>
+<hr/>
+<table ng-gridview="residences"
+       resource="$residence"
+       data="residences"
+       title="<h4>Residences</h4>">
+    <thead>
+        <tr>
+            <th data-render="{{address+', '+city+' '+state+' '+zip || ''}}">Address</th>
+            <th data-render="{{is_primary || ''}}">Primary</th>
+            <th data-render="{{type || ''}}">Type</th>
+            <th data-render="{{how_long || ''}}">How Long</th>
+            <th data-render="{{ownership_type || ''}}">Ownership</th>
+            <th data-render="{{year_moved_in || ''}}">Year Moved In</th>
+            <th data-render="{{how_verified || ''}}">How Verified</th>
+            <th data-name="$options" data-width="160" >Options</th>
+        </tr>
+    </thead>
+</table>
+<div class="hide">
+    <sun-form ng-gridedit="residences"
+              form="residence"
+              data="residences.$selected"
+              edit="true" >
+    </sun-form>
+</div>

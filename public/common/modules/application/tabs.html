@@ -1,0 +1,56 @@
+<div ng-switch="application.status">
+
+  <div ng-switch-when="Under review">
+    <div class="row text-gray">
+      <div class="col-xs-3">Application ID </div>
+      <div class="col-xs-3">Application Status</div>
+      <div class="col-xs-3 text-right">Submitted by</div>
+      <div class="col-xs-3 text-right">Last Updated</div>
+    </div>
+    <h3 class="row title">
+        <div class="col-xs-3 text-sm">{{application.id}}</div>
+        <div class="col-xs-3 text-sm">{{application.status}}</div>
+        <div class="col-xs-3 text-right text-sm">{{application.submitted_by}}</div>
+        <div class="col-xs-3 text-right text-sm">{{application.updated_date}}</div>
+    </h3>
+  </div>
+
+  <ul ng-switch-when="Under review" class="step-list steps-4">
+    <li class="step-item">
+      <a href="#/application/{{application.id}}" class="step-circle"> <i></i> </a>
+      <a href="#/application/{{application.id}}" class="step-name strong"> Application </a>
+    </li>
+    <li class="step-item">
+      <a href="#/application/{{application.id}}/borrower"class="step-circle"> <i></i>  </a>
+      <a href="#/application/{{application.id}}/borrower" class="step-name">Borrower</a>
+    </li>
+    <li class="step-item">
+      <a href="#/application/{{application.id}}/address" class="step-circle"> <i></i>  </a>
+      <a href="#/application/{{application.id}}/address" class="step-name">Address</a>
+    </li>
+    <li class="step-item">
+      <a href="#/application/{{application.id}}/options" class="step-circle"> <i></i>  </a>
+      <a href="#/application/{{application.id}}/options" class="step-name">Options</a>
+    </li>
+  </ul>
+
+  <ul ng-switch-default class="step-list steps-4">
+    <li class="step-item" ng-class="active == 'create' ? 'active' : ''">
+      <a class="step-circle"> <i class="fa fa-check"></i> </a>
+      <span class="step-name strong"> New Application </span>
+    </li>
+    <li class="step-item" ng-class="active == 'borrower' ? 'active' : ''" >
+      <a class="step-circle"> <i class="fa fa-check"></i>  </a>
+      <span class="step-name">Borrower</span>
+    </li>
+    <li class="step-item" ng-class="active == 'address' ? 'active' : ''">
+      <a class="step-circle"> <i class="fa fa-check"></i>  </a>
+      <span class="step-name">Address</span>
+    </li>
+    <li class="step-item" ng-class="active == 'options' ? 'active' : ''">
+      <a class="step-circle"> <i class="fa fa-check"></i>  </a>
+      <span class="step-name">Options</span>
+    </li>
+  </ul>
+
+</div>

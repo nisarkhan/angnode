@@ -1,0 +1,245 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <application-tabs active="borrower" application="application">
+            </application-tabs>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form name="form" class="form-horizontal form-validation" ng-validate="create()">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label for="" class="col-xs-5 control-label">Prefix:</label>
+                                    <div class="col-xs-7">
+                                        <!--<select dropdown="prefix" ng-model="application.prefix" ng-dropdown>
+                                            <option ng-option
+                                                    value='{{option.id}}'
+                                                    ng-repeat='option in dropdown.prefixes'
+                                                    ng-selected='option.id == application.prefix' >{{option.name}}</option>
+                                        </select>-->
+                                        <ui-select ng-model="ddl_prefix.selected" show-on-focus tabindex="1" theme="selectize" name="prefix"
+                                                   ng-disabled="disabled" style="width: 106px;">
+                                            <ui-select-match placeholder="Select">
+                                                <span>{{$select.selected.name}}</span>                                            
+                                                <button type="button" class="clear" ng-click="clear($event, 'prefix')">x</button>                           
+                                            </ui-select-match>
+                                            <ui-select-choices repeat="option in dropdown.prefixes | filter: $select.search">  
+                                                <div ng-bind-html="option.name | highlight: $select.search"></div> 
+                                            </ui-select-choices>
+                                        </ui-select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label for="" class="col-xs-5 control-label">First Name:</label>
+                                    <div class="col-xs-7">
+                                        <input type="text" class="form-control" tabindex="2" name="first_name" ng-model="application.first_name" required text_only />
+                                        <div class="alert alert-danger" ng-show="form.$submitted && form.first_name.$error.required">Enter a borrower name.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label for="" class="col-xs-5 control-label">Middle Name:</label>
+                                    <div class="col-xs-7">
+                                        <input type="text" class="form-control" tabindex="3" ng-model="application.middle_name" text_only/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label for="" class="col-xs-5 control-label">Last Name:</label>
+                                    <div class="col-xs-7">
+                                        <input type="text" class="form-control" tabindex=4" name="last_name" ng-model="application.last_name" required text_only />
+                                        <div class="alert alert-danger" ng-show="form.$submitted && form.last_name.$error.required">Enter a last name.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label for="" class="col-xs-5 control-label">Suffix:</label>
+                                    <div class="col-xs-7">
+                                        <!--<select ng-model="application.suffix" ng-dropdown>
+                                            <option ng-option
+                                                    value="{{option.id}}"
+                                                    ng-repeat="option in dropdown.suffixes"
+                                                    ng-selected='option.id == application.suffix'>{{option.name}}</option>
+                                        </select>-->
+                                        <ui-select ng-model="ddl_suffix.selected" show-on-focus tabindex="5" theme="selectize" name="suffix" 
+                                                   ng-disabled="disabled" style="width: 106px;">
+                                            <ui-select-match placeholder="Select">
+                                                <span>{{$select.selected.name}}</span>                                            
+                                                <button type="button" class="clear" ng-click="clear($event, 'suffix')">x</button>                           
+                                            </ui-select-match>
+                                            <ui-select-choices repeat="option in dropdown.suffixes | filter: $select.search">  
+                                                <div ng-bind-html="option.name | highlight: $select.search"></div> 
+                                            </ui-select-choices>
+                                        </ui-select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label for="" class="col-xs-5 control-label">Date of Birth:</label>
+                                    <div class="col-xs-7">
+                                        <div class="input-group date" ng-datepicker>
+                                            <input type="text" class="form-control" tabindex="6" name="date_of_birth" ng-model="application.date_of_birth" required>
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                        </div>
+                                        <div class="alert alert-danger" ng-show="form.$submitted && form.date_of_birth.$error.required">Enter a date of birth.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label for="" class="col-xs-5 control-label">Email:</label>
+                                    <div class="col-xs-7">
+                                        <input type="email" class="form-control" tabindex="7" ng-model="application.email_address"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label for="" class="col-xs-5 control-label">Number of dependents:</label>
+                                    <div class="col-xs-7">
+                                        <!--<select ng-model="application.number_of_dependents" ng-dropdown>
+                                            <option value="0" ng-option> No dependents </option>
+                                            <option value="1" ng-option> 1 Dependent</option>
+                                            <option value="2" ng-option> 2 Dependents</option>
+                                            <option value="3" ng-option> 3 Dependents</option>
+                                            <option value="4" ng-option> 4 Dependents</option>
+                                            <option value="5" ng-option> 5 Dependents</option>
+                                            <option value="6" ng-option> 6 Dependents</option>
+                                            <option value="7" ng-option> 7 Dependents</option>
+                                            <option value="8" ng-option> 8 Dependents</option>
+                                            <option value="9" ng-option> 9 Dependents</option>
+                                            <option value="10" ng-option> 10 Dependents</option>
+                                            <option value="11" ng-option> 11 Dependents</option>
+                                            <option value="12" ng-option> 12 Dependents</option>
+                                            <option value="13" ng-option> 13 Dependents</option>
+                                            <option value="14" ng-option> 14 Dependents</option>
+                                            <option value="15" ng-option> 15 Dependents</option>
+                                            <option value="16" ng-option> 16 Dependents</option>
+                                            <option value="17" ng-option> 17 Dependents</option>
+                                            <option value="18" ng-option> 18 Dependents</option>
+                                            <option value="19" ng-option> 19 Dependents</option>
+                                            <option value="20" ng-option> 20 Dependents</option>
+                                        </select>-->
+
+                                        <ui-select ng-model="ddl_number_of_dependents.selected" show-on-focus tabindex="8" theme="selectize" name="number_of_dependents"
+                                                   ng-disabled="disabled" style="width: 175px;">
+                                            <ui-select-match placeholder="Select">
+                                                <span>{{$select.selected.name}}</span>                                            
+                                                <button type="button" class="clear" ng-click="clear($event, 'number_of_dependents')">x</button>                           
+                                            </ui-select-match>
+                                            <ui-select-choices repeat="option in numberofdependents | filter: $select.search">  
+                                                <div ng-bind-html="option.name | highlight: $select.search"></div> 
+                                            </ui-select-choices>
+                                        </ui-select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label for="" class="col-xs-5 control-label">Home city:</label>
+                                    <div class="col-xs-7">
+                                        <input type="text" class="form-control" tabindex="9" ng-model="application.home_city" text_only/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-xs-4" ng-repeat="phone in application.phones">
+                                <div class="form-group">
+                                    <label for="" class="col-xs-5 control-label">{{phone.phone_type}} Phone:</label>
+                                    <div class="col-xs-7">
+                                        <div class="input-group">
+                                            <input style="width: 135px;" type="text" class="form-control" value="{{phone.phone_number}}" disabled="true">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-white" type="button" tabindex="10" ng-click="remove_phone($index)"> <i class="fa fa-close"></i> </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                    <hr/>
+
+                    <form name="form_phone" class="form-horizontal form-validation" ng-validate="add_phone(form_phone, phone)" novalidate>
+
+                        <div class="row">
+
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label for="" class="col-xs-5 control-label">Phone Type:</label>
+                                    <div class="col-xs-7">
+                                        <!--<select name="phone_type" ng-model="phone.phone_type" ng-dropdown required>
+                                            <option ng-option value="{{option.id}}" ng-repeat="option in dropdown.phones" >{{option.name}}</option>
+                                        </select>-->
+                                        <ui-select ng-model="ddl_phone_type.selected" show-on-focus tabindex="11" theme="selectize" name="phone_type" required
+                                                   ng-disabled="disabled" style="width: 175px;">
+                                            <ui-select-match placeholder="Select">
+                                                <span>{{$select.selected.name}}</span>                                            
+                                                <button type="button" class="clear" ng-click="clear($event, 'phone_type')">x</button>                           
+                                            </ui-select-match>
+                                            <ui-select-choices repeat="option in dropdown.phones | filter: $select.search">  
+                                                <div ng-bind-html="option.name | highlight: $select.search"></div> 
+                                            </ui-select-choices>
+                                        </ui-select>
+                                        <div class="alert alert-danger" ng-show="form_phone.$submitted && form_phone.phone_type.$error.required">Select a phone type.</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-xs-8">
+                                <div class="form-group">
+                                    <div class="col-xs-4">
+
+                                        <input name="phone_number" type="text" tabindex="12" class="form-control" placeholder="(999)999-9999" ng-model="phone.phone_number" ng-mask="phone" ng-minlength="13" required/>
+                                        <div class="alert alert-danger" ng-show="form_phone.$submitted && form_phone.phone_number.$error.required">Enter a phone number.</div>
+                                        <div class="alert alert-warning" ng-show="form_phone.$submitted && form_phone.phone_number.$error.minlength">Phone should be minimun 13 characters length.</div>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <button class="btn btn-default" tabindex="13" > <i class="fa fa-plus-square"></i> Add Phone </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row text-right">
+        <div class="col-xs-12">
+            <a class="btn btn-default" tabindex="16" href="#/application/{{application.id}}"> <i class="fa fa-long-arrow-left"></i> Previous </a>
+            <button class="btn btn-default" tabindex="15" ng-click="exit()" > <i class="fa fa-save" ></i> Save & Exit </button>
+            <button class="btn btn-default" tabindex="14" ng-click="form.$submit()"> <i class="fa fa-long-arrow-right"></i> Next </button>
+        </div>
+    </div>
+
+</div>

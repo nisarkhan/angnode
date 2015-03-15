@@ -1,0 +1,71 @@
+<form name="form" class="form-horizontal" novalidate>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label class="col-xs-6 control-label">Transaction Date:</label>
+                <div class="col-xs-6">
+                    <input type="text" class="form-control" ng-model="data.transaction_date" readonly="true">
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label class="col-xs-6 control-label">Applied to Balance:</label>
+                <div class="col-xs-6">
+                    <input type="text" class="form-control" ng-model="data.applied_to_balance" readonly="true">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label class="col-xs-6 control-label">To Late Charge:</label>
+                <div class="col-xs-6">
+                    <input type="text" class="form-control" ng-model="data.applied_to_nsf_charge" readonly="true">
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label class="col-xs-6 control-label">Maturity Interest:</label>
+                <div class="col-xs-6">
+                    <input type="text" class="form-control" ng-model="data.applied_to_maturity_interest" readonly="true">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label class="col-xs-6 control-label">New Ending Balance:</label>
+                <div class="col-xs-6">
+                    <input type="text" class="form-control" ng-model="data.new_ending_balance" readonly="true">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="col-xs-3 control-label">Notes:</label>
+                <div class="col-xs-9">
+                    <textarea class="form-control"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row text-right">
+        <div class="col-xs-12">
+            <button class="btn btn-default" ng-click="$parent.reverse(data)" > 
+                <i class="fa fa-refresh"></i>  Reverse Transaction
+            </button>        
+        </div>
+    </div>
+
+</form>

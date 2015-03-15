@@ -1,0 +1,166 @@
+<!--*****************************************-->
+<!--review application page-->
+<!--*****************************************-->
+<div class="container"    >
+<h3 class="row title">
+   <div class="col-xs-12">
+      Application
+   </div>
+</h3>
+<form name="form" class="form-horizontal" ng-submit="review_update(application)" novalidate>
+   <div class="row">
+   <div class="col-md-12">
+      <div class="panel panel-default">
+         <div class="panel-body">
+            <div class="row">
+               <div class="col-xs-6">
+                  <div class="form-group">
+                     <label for="" class="col-xs-5 control-label">Ownership Type:</label>
+                     <div class="col-xs-7">
+                        <!--<select name="ownership_type" dropdown="ownership_type" ng-model="application.ownership_type" ng-dropdown required>
+                           <option ng-option value="{{option.id}}" ng-repeat="option in $parent.dropdown.apptypes" >{{option.name}}</option>
+                           </select>--> 
+                        
+                        <ui-select ng-model="ddl_ownership_type.selected" show-on-focus tabindex="1" theme="selectize" name="ownership_type" required
+                           ng-disabled="disabled" style="width: 200px;">
+                           <ui-select-match placeholder="Select.../search...">
+                              <span>{{$select.selected.name}}</span>                                            
+                              <button type="button" class="clear" ng-click="clear($event, 'ownership_type')">x</button>                           
+                           </ui-select-match>
+                           <ui-select-choices repeat="option in dropdown.apptypes | filter: $select.search">
+                              <div ng-bind-html="option.name | highlight: $select.search"></div>
+                           </ui-select-choices>
+                        </ui-select>
+                        <div class="alert alert-danger" ng-show="form.$submitted && form.ownership_type.$error.required">Select a ownership type.</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xs-6">
+                  <div class="form-group">
+                     <label class="col-xs-5 control-label"> Identification Type: </label>
+                     <div class="col-xs-7">
+                        <!--<select name="identification_type" dropdown="identification_type" ng-model="application.identification_type" ng-dropdown required>
+                           <option ng-option value="{{option.id}}" ng-repeat="option in $parent.dropdown.identification_types" >{{option.name}}</option>
+                           </select>-->
+                        <ui-select ng-model="ddl_identification_type.selected" show-on-focus tabindex="2"   theme="selectize" name="identification_type" required
+                           ng-disabled="disabled" style="width: 243px;">
+                           <ui-select-match placeholder="Select.../search...">
+                              <span>{{$select.selected.name}}</span>                                            
+                              <button type="button" class="clear" ng-click="clear($event, 'identification_type')">x</button>                          
+                           </ui-select-match>
+                           <ui-select-choices repeat="option in $parent.dropdown.identification_types | filter: $select.search">
+                              <div ng-bind-html="option.name | highlight: $select.search"></div>
+                           </ui-select-choices>
+                        </ui-select>
+                        <div class="alert alert-danger" ng-show="form.$submitted && form.identification_type.$error.required">Select an identification type.</div>
+                     </div>
+                  </div>
+                  <!--
+                     <div class="form-group">
+                         <label for="" class="col-xs-5 control-label"> Primary SSN:</label>
+                         <div class="col-xs-7">
+                           <input name="social_security_number" type="text" class="form-control" ng-model="application.social_security_number" ng-mask="ssn" required ng-minlength="11" />
+                          
+                           <div class="alert alert-danger" ng-show="form.$submitted && form.social_security_number.$error.required">Enter a SSN.</div>
+                           <div class="alert alert-warning" ng-show="form.$submitted && form.social_security_number.$error.minlength">SSN should be minimun 11 characters length.</div>
+                         </div>
+                     </div>
+                     -->
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-xs-6">
+                  <div class="form-group">
+                     <label for="" class="col-xs-5 control-label">Source:</label>
+                     <div class="col-xs-7">
+                        <!--<select dropdown="source" name="source" ng-model="application.source" ng-dropdown required>
+                           <option ng-option value="{{option.id}}" ng-repeat="option in dropdown.appsources" >{{option.name}}</option>
+                           </select>-->
+                        <ui-select ng-model="ddl_source.selected" theme="selectize" show-on-focus tabindex="3" name="source" required
+                           ng-disabled="disabled" style="width: 200px;">
+                           <ui-select-match placeholder="Select.../search...">
+                              <span>{{$select.selected.name}}</span>                                            
+                              <button type="button" class="clear" ng-click="clear($event, 'source')">x</button>                           
+                           </ui-select-match>
+                           <ui-select-choices repeat="option in $parent.dropdown.appsources | filter: $select.search">
+                              <div ng-bind-html="option.name | highlight: $select.search"></div>
+                           </ui-select-choices>
+                        </ui-select>
+                     </div>
+                     <div class="col-xs-7 col-xs-offset-5">
+                        <div class="alert alert-danger" ng-show="form.$submitted && form.source.$error.required">Select a source.</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xs-6">
+                  <div class="form-group">
+                     <label class="col-xs-5 control-label"> Identification Number: </label>
+                     <div class="col-xs-7">
+                        <input name="identification_number" type="text" tabindex="4" class="form-control" ng-model="application.identification_number" ng-required="true">
+                        <div class="alert alert-danger" ng-show="form.$submitted && form.identification_number.$error.required">Enter an identification number.</div>
+                     </div>
+                  </div>
+                  <!--
+                     <div class="form-group">
+                         <label for="" class="col-xs-5 control-label"> Requested Amount:</label>
+                         <div class="col-xs-7">
+                             <input name="requested_amount" type="numeric" class="form-control" ng-model="application.requested_amount" ng-mask="currency"  ng-required="true">
+                             <div class="alert alert-danger" ng-show="form.$submitted && form.requested_amount.$error.required">Enter a requested amount.</div>
+                         </div>
+                     </div>
+                     -->
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-xs-6">
+                  <div class="form-group">
+                     <label for="" class="col-xs-5 control-label">Application by phone:</label>
+                     <div class="col-xs-7">
+                        <span class="checkbox right">
+                        <input id="by_phone" type="checkbox" tabindex="5" ng-model="application.by_phone" value="true" />
+                        <label for="by_phone"></label>
+                        </span>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xs-6">
+                  <div class="form-group">
+                     <label for="" class="col-xs-5 control-label"> Requested Amount:</label>
+                     <div class="col-xs-7">
+                        <input name="requested_amount" type="numeric" tabindex="6" class="form-control" ng-model="application.requested_amount" ng-mask="currency"  ng-required="true">
+                        <div class="alert alert-danger" ng-show="form.$submitted && form.requested_amount.$error.required">Enter a requested amount.</div>
+                     </div>
+                  </div>
+                  <!--
+                     <div class="form-group">
+                         <label for="" class="col-xs-5 control-label"> Referred by:</label>
+                         <div class="col-xs-7">
+                             <input type="text" class="form-control" ng-model="application.referral_name" />
+                         </div>
+                     </div>
+                     -->
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-xs-6">
+               </div>
+               <div class="col-xs-6">
+                  <div class="form-group">
+                     <label for="" class="col-xs-5 control-label"> Referred by:</label>
+                     <div class="col-xs-7">
+                        <input type="text" class="form-control" tabindex="7" ng-model="application.referral_name" />
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--   
+         <div class="row text-right">
+             <div class="col-xs-12">
+                <button class="btn btn-default" type="button" ng-click="review_update(application)"> <i class="fa fa-refresh"></i> Update Application </button>
+             </div>
+         </div>
+         -->
+</form>
+</div>

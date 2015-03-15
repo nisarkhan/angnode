@@ -1,0 +1,59 @@
+<form name="form" class="form-horizontal" ng-validate="$parent[ $edit ? 'update' : 'create']('phones', data, form)" novalidate>
+
+    <div class="row">
+
+        <div class="col-xs-4">
+            
+            <div class="form-group">
+                <label for="" class="col-xs-6 control-label">Phone Type:</label>
+                <div class="col-xs-6">
+                   <select name="phone_type" dropdown="phone_type" ng-model="data.phone_type" ng-dropdown required>
+                      <option ng-option value="{{option.id}}" ng-repeat="option in $parent.dropdown.phones" >{{option.name}}</option>
+                   </select>
+                    <!--{{data.phone_type}}
+                    <ui-select ng-model="ddl_tab_phone_type" theme="selectize" name="phone_type" required ng-disabled="disabled" style="width: 150px;">             
+                    <ui-select-match placeholder="Select">
+                      <span>{{$select.selected.name}}</span> 
+                      <button type="button" class="clear" ng-click="clear($event, 'tab_phone_type')">x</button>
+                    </ui-select-match>
+                    <ui-select-choices repeat="option in $parent.$parent.dropdown.phones | filter: $select.search">
+                      <div ng-bind-html="option.name | highlight: $select.search"></div>
+                    </ui-select-choices>
+                  </ui-select>-->
+
+                   <div class="alert alert-danger" ng-show="form.$submitted && form.phone_type.$error.required">Select a phone type.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-4">
+            
+            <div class="form-group">
+                <label for="" class="col-xs-6 control-label">Phone Number:</label>
+                <div class="col-xs-6">
+                   <input name="value" type="text" class="form-control" ng-model="data.phone_number" ng-mask="phone" required>
+                   <div class="alert alert-danger" ng-show="form.$submitted && form.value.$error.required">Enter an phone number.</div>
+                </div>
+            </div>
+        </div>
+        
+         
+
+    </div>
+
+  
+
+    <div class="row text-right">
+        <div class="col-xs-12">
+            <button class="btn btn-default" type="submit" > 
+                <span ng-if="$edit"> <i class="fa fa-refresh"></i>  Update Phone Number </span>
+                <span ng-if="!$edit"> <i class="fa fa-plus"></i>  Create Phone Number </span>
+            </button>        
+        </div>
+    </div>
+
+</form>    

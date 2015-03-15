@@ -1,0 +1,81 @@
+<section class="streamline">
+  <div class="container">
+
+      <div class="stream-list">
+
+          <div class="col-xs-4 stream-item active">
+              <h3 class="text-right">Call Route</h3>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>&nbsp;</th>
+                    <th>Count</th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="metric in metrics">
+                    <td>{{metric.delinquencyLatencyTypeEnum}}</td>
+                    <td align="right">{{metric.count}}</td>
+                    <td align="right">{{metric.balance|currency}}</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+
+          <div class="col-xs-3 stream-item">
+            <h3 class="text-right">Profit</h3>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>&nbsp;</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Daily</td>
+                    <td align="right">200$</td>
+                  </tr>
+                  <tr>
+                    <td>Weekly</td>
+                    <td align="right">500$</td>
+                  </tr>
+                  <tr>
+                    <td>Monthly</td>
+                    <td align="right">1,000$</td>
+                  </tr>
+                  <tr>
+                    <td>YTD</td>
+                    <td align="right">2,000$</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+
+          <div class="col-xs-3 stream-item text-center">
+            <h3 class="text-blue">
+              <i class="fa fa-pencil-square bg-blue"></i>
+              Check book
+            </h3>
+            <big class="text-gray">500$</big>
+          </div>
+
+          <div class="col-xs-2 stream-item text-center">
+
+            <h3 class="text-green">
+              <i class="fa fa-archive bg-green"></i>
+              Drawers
+            </h3>
+            <big class="text-gray">1,200$</big>
+            <button class="btn btn-white btn-rounded" data-toggle="modal" data-target="#modal-drawer">
+              Details <i class="fa fa-long-arrow-right"></i>
+            </button>
+          </div>
+
+          <div class="clearfix"></div>
+
+      </div>
+
+  </div>
+</section>

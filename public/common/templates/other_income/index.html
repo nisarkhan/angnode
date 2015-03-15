@@ -1,0 +1,26 @@
+    <sun-form form="other_income"
+          data="other_income_">
+</sun-form>
+
+<hr/>
+
+<table ng-gridview="other_incomes"
+       resource="$other_incomes"
+       data="other_incomes" 
+       title="<h4>Other Income</h4>">
+    <thead>
+        <tr>
+            <th data-render="{{source|| ''}}">Source</th>
+            <th data-render="${{amount}}">Amount</th>
+            <th data-name="$options" data-width="160" >Options</th>
+        </tr>
+    </thead>
+</table>
+
+<div class="hide">
+    <sun-form form="other_income"
+              edit="true"
+              data="other_incomes.$selected"
+              ng-gridedit="other_incomes">
+    </sun-form>
+</div>

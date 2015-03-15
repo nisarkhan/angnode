@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <application-tabs active="options" application="application">
+            </application-tabs>
+        </div>
+    </div>
+
+    <div class="row text-right" style="margin-bottom: 15px;">
+
+        <div class="col-xs-12">
+            <a class="btn btn-default" href="#/application/{{application.id}}/address"> <i class="fa fa-long-arrow-left"></i> Previous </a>
+            <button class="btn btn-default" ng-click="exit();"> <i class="fa fa-save"></i> Exit </button>
+            <button class="btn btn-green" ng-click="submit();"> <i class="fa fa-check"></i> Submit for Approval </button>
+            <button class="btn btn-info" ng-click="review_update(application)"> <i class="fa fa-save"></i> Update Application </button>
+
+        </div>
+    </div>
+
+    <!--nk: START added for review the app --> 
+    <div class="row">
+        <section ng-repeat="template  in reviewtemplates">
+            <ng-include src="template"></ng-include>
+        </section>
+    </div>
+    <div class="row text-right">
+        <div class="col-xs-12">
+            <button class="btn btn-info" ng-click="review_update(application)"> <i class="fa fa-save"></i> Update Application Changes  </button>
+
+        </div>
+    </div> 
+    <br>
+    <!--nk: END added for review the app -->
+
+    <div class="panel panel-default">
+        <h3 class="panel-heading">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#residence" role="tab" data-toggle="tab">Residence</a></li>
+                <li><a href="#employer" role="tab" data-toggle="tab">Employers</a></li>
+                <li><a href="#debt" role="tab" data-toggle="tab">Debts</a></li>
+                <li><a href="#reference" role="tab" data-toggle="tab">References</a></li>
+                <li><a href="#automobile" role="tab" data-toggle="tab">Automobiles</a></li>
+                <li><a href="#phones" role="tab" data-toggle="tab">Phones</a></li>
+                <li><a href="#other_income" role="tab" data-toggle="tab">Income</a></li>
+            </ul>
+        </h3>
+        <div class="panel-body">
+            <div class="tab-content">
+                <sun-tab class="tab-pane active" id="residence"></sun-tab>
+                <sun-tab class="tab-pane" id="employer"></sun-tab>
+                <sun-tab class="tab-pane" id="debt"></sun-tab>
+                <sun-tab class="tab-pane" id="reference"></sun-tab>
+                <sun-tab class="tab-pane" id="automobile"></sun-tab>
+                <sun-tab class="tab-pane" id="phones"></sun-tab>
+                <sun-tab class="tab-pane" id="other_income"></sun-tab>
+            </div>
+        </div>
+    </div>
+
+</div>

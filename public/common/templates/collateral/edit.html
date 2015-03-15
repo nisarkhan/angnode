@@ -1,0 +1,59 @@
+<form name="form" class="form-horizontal" ng-validate="$parent[ $edit ? 'update' : 'create']('collaterals', data, form)" novalidate>
+
+   
+    <div class="row">            
+        <div class="col-xs-6">
+            
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Type:</label>
+                <div class="col-xs-7">
+                    <select name="collateral_type" dropdown="collateral_type" ng-model="data.collateral_type" ng-dropdown required>
+                      <option ng-option value="{{option.id}}" ng-repeat="option in $parent.dropdown.collateral" >{{option.name}}</option>
+                    </select>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.collateral_type.$error.required">Enter a model.</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Object Id:</label>
+                <div class="col-xs-7">
+                    <input name="object_id" type="text" class="form-control" ng-model="data.object_id" required>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.object_id.$error.required">Enter a color.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row"> 
+    
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Object Value:</label>
+                <div class="col-xs-7">
+                    <input name="object_value" type="text" class="form-control" ng-model="data.object_value" ng-mask="currency" required>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.object_value.$error.required">Enter a color.</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Description:</label>
+                <div class="col-xs-7">
+                    <textarea class="form-control" ng-model="data.description"></textarea>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row text-right">
+        <div class="col-xs-12">
+            <button class="btn btn-default" type="submit" > 
+                <span ng-if="$edit"> <i class="fa fa-refresh"></i>  Update Collateral </span>
+                <span ng-if="!$edit"> <i class="fa fa-plus"></i>  Create Collateral </span>
+            </button>        
+        </div>
+    </div>
+
+</form>    

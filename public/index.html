@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="sunloan" >
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="/favicon.ico">
+
+        <title> Sunloan ® - Dashboard  </title>
+
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/assets/css/sunloan.css" rel="stylesheet">
+        <link href="/assets/css/sunloan.datatable.css" rel="stylesheet">
+        <link href="/assets/css/sunloan.datepicker.css" rel="stylesheet">
+        <link href="/assets/css/sunloan.animate.css" rel="stylesheet">
+        <link href="/assets/css/ui-select/select.css" rel="stylesheet">
+        <link href="/assets/css/ui-select/select.default.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="assets/js/vendor/html5shiv.min.js"></script>
+          <script src="assets/js/vendor/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- ui-select -->
+        <link href="/assets/css/ui-select/select.css" rel="stylesheet">
+        <link href="/assets/css/ui-select/select.default.css" rel="stylesheet">
+        
+    </head>
+
+    <body>
+
+    <sun-header></sun-header>
+    <sun-notification></sun-notification>
+
+    <div class="modal fade" id="modal-global-info" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header" ng-show="alertDialog.title">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title"><i class='fa fa-warning'></i>{{alertDialog.title}}</h3>
+                </div>
+                <div class="modal-body">{{alertDialog.message}}</div>
+                <div class="modal-footer text-right">
+                    <div class="row"><div class="col-xs-12"><button class="btn btn-white" data-dismiss="modal">Accept</button></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ng-view class="fx fx-slide page" ></ng-view>
+
+    <script src="/assets/js/vendor/jquery.min.js"></script>
+    <script src="/assets/js/vendor/bootstrap.min.js"></script>
+    <script src="/assets/js/vendor/angular/angular.js"></script>
+    <script src="/assets/js/vendor/angular/angular-route.js"></script>
+    <script src="/assets/js/vendor/angular/angular-resource.js"></script>
+    <script src="/assets/js/vendor/angular/angular-animate.js"></script>
+    <script src="/assets/js/vendor/angular/angular-cookies.js"></script>
+    <script src="/assets/js/plugins.js"></script>
+    <script src="/assets/js/ui-select/select.js"></script>
+    <script src="/assets/js/ui-select/angular-sanitize.js"></script>
+    
+    <script src="/common/sunloan.js"></script>
+    <script src="/common/filters.js"></script>
+    
+    <!-- ui-select -->
+    <script src="/assets/js/ui-select/select.js"></script>
+    <script src="/assets/js/ui-select/angular-sanitize.js"></script>
+    
+    
+    <!-- Directives -->
+    <script src="/common/directives/templates.js"></script>
+    <script src="/common/directives/gridview.js"></script>
+    <script src="/common/directives/dropdown.js"></script>
+    <script src="/common/directives/mask.js"></script>
+    <script src="/common/directives/form.js"></script>
+    <script src="/common/directives/match.js"></script>
+    <script src="/common/directives/focus.js"></script>
+    <script src="/common/directives/server_validation.js"></script>
+    <!-- Services -->
+    <script src="/common/services/storage.js"></script>
+    <script src="/common/services/user.js"></script>
+    <script src="/common/services/drawer.js"></script>
+    <script src="/common/services/line.js"></script>
+    <script src="/common/services/checkbook.js"></script>
+    <script src="/common/services/borrower.js"></script>
+    <script src="/common/services/loan.js"></script>
+    <script src="/common/services/collect.js"></script>
+    <script src="/common/services/application.js"></script>
+    <script src="/common/services/residence.js"></script>
+    <script src="/common/services/employee.js"></script>
+    <script src="/common/services/debt.js"></script>
+    <script src="/common/services/reference.js"></script>
+    <script src="/common/services/automobile.js"></script>
+    <script src="/common/services/collateral.js"></script>
+    <script src="/common/services/callroute.js"></script>
+    <script src="/common/services/delinquency.js"></script>
+    <script src="/common/services/drawer_history.js"></script>
+    <script src="/common/services/phones.js"></script>
+    <script src="/common/services/pay_collection.js"></script>
+    <script src="/common/services/writeoff.js"></script>
+    <script src="/common/services/employer.js"></script>
+    <script src="/common/services/employees.js"></script>
+    <script src="/common/services/promissory_note.js"></script>
+    <script src="/common/services/chart_of_accounts.js"></script>
+    <script src="/common/services/cashtransfer.js"></script>
+    <script src="/common/services/form_error.js"></script>
+    <script src="/common/services/tender_types.js"></script>
+    <script src="/common/services/tab.js"></script>
+    <script src="/common/services/inquieries.js"></script>
+    <script src="/common/services/other_income.js"></script>
+    <!-- Controllers -->
+    <script src="/common/modules/borrower/controller.js"></script>
+    <script src="/common/modules/writeoff/controller.js"></script>
+    <script src="/common/modules/application/create.js"></script>
+    <script src="/common/modules/application/borrower.js"></script>
+    <script src="/common/modules/application/address.js"></script>
+    <script src="/common/modules/application/options.js"></script>
+    <script src="/common/modules/application/evaluate.js"></script>
+    <script src="/common/modules/application/decline.js"></script>
+    <script src="/common/modules/application/letter.js"></script>
+    <script src="/common/modules/loan/rate.js"></script>
+    <script src="/common/modules/loan/make.js"></script>
+    <script src="/common/modules/loan/renew.js"></script>
+    <script src="/common/modules/drawer/controller.js"></script>
+    <script src="/common/modules/check/controller.js"></script>
+    <script src="/common/modules/report/controller.js"></script>
+    <script src="/common/modules/collection/controller.js"></script>
+    <script src="/common/modules/employees/controller.js"></script>
+    <script src="/common/modules/changepassword/controller.js"></script>
+    <!-- Filters -->
+    <script src="/common/filters/sumtender.js"></script>
+    <script src="/common/filters/sumvalues.js"></script>
+
+    <script src="dashboard/controller.js"></script>
+    <script src="routes.js"></script>
+</body>
+</html>

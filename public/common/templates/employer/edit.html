@@ -1,0 +1,234 @@
+<form name="form" class="form-horizontal" ng-validate="$parent[ $edit ? 'update' : 'create']('employers', data, form);" novalidate>
+
+    <div class="row">
+
+        <div class="col-xs-6">
+
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Employer Name:</label>
+                <div class="col-xs-7">
+                    <input name="name" type="text" class="form-control" ng-model="data.name" required>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.name.$error.required">Enter an address.</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-xs-6">
+
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">How long:</label>
+                <div class="col-xs-7">
+                   <select name="how_long" ng-model="data.how_long" ng-dropdown>
+                      <option ng-option value="{{option.id}}" ng-repeat="option in $parent.dropdown.howlong" >{{option.name}}</option>
+                   </select>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-6">
+
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Position:</label>
+                <div class="col-xs-7">
+                    <input type="text" class="form-control" ng-model="data.position" >
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Supervisor First Name:</label>
+                <div class="col-xs-7">
+                    <input type="text" class="form-control" ng-model="data.contact_first_name" >
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-6">
+
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Supervisor Last Name:</label>
+                <div class="col-xs-7">
+                    <input type="text" class="form-control" ng-model="data.contact_last_name" >
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label">Contact Email:</label>
+                <div class="col-xs-7">
+                    <input type="text" class="form-control" ng-model="data.contact_email_address" >
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-6">
+
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label"> Address:</label>
+                <div class="col-xs-7">
+                    <input type="text" class="form-control" ng-model="data.address" >
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label"> City:</label>
+                <div class="col-xs-7">
+                    <input type="text" class="form-control" ng-model="data.city" >
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-6">
+
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label"> State:</label>
+                <div class="col-xs-7">
+                    <select name="state" dropdown="state" ng-model="data.state" ng-dropdown>
+                        <option ng-option value="{{option.abbrev}}" ng-repeat="option in $parent.dropdown.states" >{{option.name}}</option>
+                    </select>
+                    <!--
+                    <input type="text" class="form-control" ng-model="data.state" >
+                    -->
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label"> Zipcode:</label>
+                <div class="col-xs-7">
+                    <input type="text" class="form-control" ng-model="data.zip" ng-mask="zip" >
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-6">
+
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label"> Phone Number:</label>
+                <div class="col-xs-7">
+                    <input type="text" class="form-control" ng-model="data.phone_number" ng-mask="phone" >
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label"> Work Extension:</label>
+                <div class="col-xs-7">
+                    <input type="text" class="form-control" ng-model="data.extension">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-6">
+
+            <div class="form-group">
+                <label class="col-xs-5 control-label"> Employment Date:</label>
+                <div class="col-xs-7">
+                    <div class="input-group date" ng-datepicker>
+                        <input type="text" class="form-control" ng-model="data.employment_date">
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+
+            <div class="form-group">
+                <label class="col-xs-5 control-label"> Payment Schedule:</label>
+                <div class="col-xs-7">
+                   <select name="payment_schedule" ng-model="data.payment_schedule" ng-dropdown>
+                      <option ng-option value="{{option.id}}" ng-repeat="option in $parent.dropdown.payment_schedules" >{{option.name}}</option>
+                   </select>
+                   <div class="alert alert-danger" ng-show="form.$submitted && form.payment_schedule.$error.required">Select a schedule.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-6">
+
+            <div class="form-group">
+                <label class="col-xs-5 control-label"> Shift:</label>
+                <div class="col-xs-7">
+                    <input type="text" class="form-control" ng-model="data.shift">
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+
+            <div class="form-group">
+                <label class="col-xs-5 control-label"> Net Salary:</label>
+                <div class="col-xs-7">
+                    <input type="text" name="net_salary" class="form-control" ng-model="data.net_salary" ng-mask="currency" value="0.00">
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.net_salary.$error.required">Please enter a net salary.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label"> How Verified:</label>
+                <div class="col-xs-7">
+                   <select name="verified_how" ng-model="data.how_verified" ng-dropdown>
+                      <option ng-option value="{{option.id}}" ng-repeat="option in $parent.dropdown.how_verified" >{{option.name}}</option>
+                   </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label"> Who Verified</label>
+                <div class="col-xs-7">
+                    <input type="text" class="form-control" ng-model="data.who_verified" readonly="true">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row text-right">
+        <div class="col-xs-12">
+            <button class="btn btn-default" type="submit" >
+                <span ng-if="$edit"> <i class="fa fa-refresh"></i>  Update Employer </span>
+                <span ng-if="!$edit"> <i class="fa fa-plus"></i>  Add Employer </span>
+            </button>
+        </div>
+    </div>
+
+</form>

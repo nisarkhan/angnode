@@ -1,0 +1,316 @@
+<div class="container">
+    <div class="row text-gray">
+        <div class="col-xs-6">Borrower</div>
+        <div class="col-xs-6 text-right">Account Number</div>
+    </div>
+
+    <h3 class="row reduced">
+        <div class="col-xs-6">
+            <i class="fa fa-user"></i>
+            {{borrower.first_name}}, {{borrower.last_name}} {{borrower.middle_name}}
+        </div>
+        <div class="col-xs-6 text-right">
+            {{borrower.account_number + '-' + borrower.number_of_loans}}
+        </div>
+    </h3>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <h4 class="panel-heading">Current Information</h4>
+                <div class="panel-body">
+                    <div class="col-xs-6 border-right">
+                        <div class="row">
+                            <div class="col-xs-3 small text-right">Address:</div>
+                            <div class="col-xs-9 text-left">{{residences[0].address + ' ' + residences[0].city + ', ' + residences[0].state + ' ' + residences[0].zip}}</div>
+                        </div>
+                        <hr class="small" />
+                        <div class="row">
+                            <div class="col-xs-3 small text-right">Phone Numbers:</div>
+                            <div class="col-xs-9">
+                                <span ng-repeat="phone in phones">{{phone.phone_type+':'+ phone.phone_number+', '}}</span></div>
+                        </div>
+                        <hr class="small" />
+                        <div class="row">
+                            <div class="col-xs-3 small text-right">References:</div>
+                            <div class="col-xs-9">
+                                <span ng-repeat="reference in references">{{reference.relationship_type + ': ' + reference.first_name + ', ' + reference.last_name + ' ' + reference.phone_number + ' | ' }}</span></div>
+                        </div>
+                        <hr class="small" />
+                    </div>
+                    <div class="col-xs-6 ">
+                        <div class="row">
+                            <div class="col-xs-3 small text-right"> Employer:</div>
+                            <div class="col-xs-9">{{employer.name}}</div>
+                        </div>
+                        <hr class="small" />
+                        <div class="row">
+                            <div class="col-xs-3 small text-right"> Address:</div>
+                            <div class="col-xs-9">{{employer.address + ' ' + employer.city + ', ' + employer.state + ' ' + employer.zip|| 'Unknown'}}</div>
+                        </div>
+                        <hr class="small" />
+                        <div class="row">
+                            <div class="col-xs-3 small text-right"> Phone Number:</div>
+                            <div class="col-xs-9">{{employer.phone_number|| 'Unknown' }}</div>
+                        </div>
+                        <hr class="small" />
+                        <div class="row">
+                            <div class="col-xs-3 small text-right"> Supervisor:</div>
+                            <div class="col-xs-9">{{employer.contact_first_name + ', ' + employer.contact_last_name|| 'Unknown'}}</div>
+                        </div>
+                        <hr class="small" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-xs-8">
+            <div class="panel panel-default">
+                <h4 class="panel-heading">Current Loan Information</h4>
+                <div class="panel-body">
+
+                    <div class="col-xs-6 border-right">
+                        <div class="row">
+                            <div class="col-xs-6 small text-right"> Status:</div>
+                            <div class="col-xs-6">{{loan.status|| 'Opened'}}</div>
+                        </div>
+                        <hr class="small" />
+                        <div class="row">
+                            <div class="col-xs-6 small text-right"> Date Borrowed:</div>
+                            <div class="col-xs-6">{{loan.date_borrowed| date:'MM/dd/YYYY'}}</div>
+                        </div>
+                        <hr class="small" />
+                        <div class="row">
+                            <div class="col-xs-6 small text-right"> First Due:</div>
+                            <div class="col-xs-6">{{loan.first_due_date| date:'MM/dd/YYYY'}}</div>
+                        </div>
+                        <hr class="small" />
+                        <div class="row">
+                            <div class="col-xs-6 small text-right"> Matures:</div>
+                            <div class="col-xs-6">{{loan.matures| date:'MM/dd/YYYY'}}</div>
+                        </div>
+                        <hr class="small" />
+                        <div class="row">
+                            <div class="col-xs-6 small text-right"> Periodic Payment:</div>
+                            <div class="col-xs-6">${{loan.periodic_payment}}</div>
+                        </div>
+                        <hr class="small" />
+                        <div class="row">
+                            <div class="col-xs-6 small text-right"> Final Payment:</div>
+                            <div class="col-xs-6">${{loan.final_payment}}</div>
+                        </div>
+                        <hr class="small" />
+                        <div class="row">
+                            <div class="col-xs-6 small text-right"> Renew Amount</div>
+                            <div class="col-xs-6">${{balance_renewal.value }}</div>
+                        </div>
+                        <hr class="small" />
+                    </div>
+
+                    <div class="col-xs-6 ">
+                        <div class="row">
+                            <div class="col-xs-6 small text-right"> Promise to Pay:</div>
+                            <div class="col-xs-6 text-right" >{{promise.promise_date}}</div>
+                        </div>                        
+                        <hr class="small" />
+                         <div class="row">
+                            <div class="col-xs-6 small text-right"> # Payments:</div>
+                            <div class="col-xs-6 text-right" >{{loan.number_of_payments}}</div>
+                        </div>                        
+                        <hr class="small" />
+                        <div class="row">
+                            <div class="col-xs-6 small text-right"> APR:</div>
+                            <div class="col-xs-6 text-right">{{loan.apr}}%</div>
+                        </div>
+                        <hr class="small" />
+                        <div class="row">
+                            <div class="col-xs-6 small text-right"> Amount Advanced:</div>
+                            <div class="col-xs-6 text-right">${{loan.amount_advanced }}</div>
+                        </div>
+                        <hr class="small" />
+                        <div class="row">
+                            <div class="col-xs-6 small text-right"> IAHC:</div>
+                            <div class="col-xs-6 text-right">${{loan.iahc_charge}}</div>
+                        </div>
+                        <hr class="small" />
+                        <div class="row">
+                            <div class="col-xs-6 small text-right"> ACQ:</div>
+                            <div class="col-xs-6 text-right">${{loan.acq_fee}}</div>
+                        </div>
+                        <hr class="small" />
+                        <div class="row">
+                            <div class="col-xs-6 small text-right"> Total:</div>
+                            <div class="col-xs-6 text-right">${{loan.initial_balance}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xs-4">
+
+            <div class="panel panel-default">
+                <h4 class="panel-heading">Current Loan Payment</h4>
+                <div class="panel-body form-horizontal">
+
+                    <div class="row">
+                        <div class="col-xs-7 small text-right"> Current balance:</div>
+                        <div class="col-xs-5">${{current.current_ending_balance}}</div>
+                    </div>
+                    <hr class="small" />
+                    <div class="row">
+                        <div class="col-xs-7 small text-right"> Late charge:</div>
+                        <div class="col-xs-5">${{current.current_late_balance}}</div>
+                    </div>
+                    <hr class="small" />
+                    <div class="row">
+                        <div class="col-xs-7 small text-right"> Maturity interest:</div>
+                        <div class="col-xs-5">${{current.current_maturity_interest}}</div>
+                    </div>
+                    <hr class="small" />
+                    <div class="row">
+                        <div class="col-xs-7 small text-right"> Next Due Date:</div>
+                        <div class="col-xs-5">{{loan.next_due_date| date:'MMM d, y'}}</div>
+                    </div>
+                    <hr class="small" />
+                    <div class="row">
+                        <div class="col-xs-7 small text-right"> Return check charge:</div>
+                        <div class="col-xs-5">${{loan.nsf_charge|| '0.00' }}</div>
+                    </div>
+                    <hr class="small" />
+                    <div class="row">
+                        <div class="col-xs-7 small text-right"> Payment amount:</div>
+                        <div class="col-xs-5">${{current.current_up_to_date|| '0.00'}}</div>
+                    </div>
+                    <hr class="small" />
+                    <div class="row">
+                        <div class="col-xs-7 small text-right"> Total:</div>
+                        <div class="col-xs-5 strong">{{current.total||0 | currency}}</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-white btn-rounded" data-toggle="modal" data-target="#modal-collection" ng-hide="loan.status">
+                <i class="fa fa-plus"></i> Payment Collection
+            </button>
+            <button class="btn btn-white btn-rounded" data-toggle="modal" data-target="#modal-nfs" ng-hide="loan.status"> 
+                <i class="fa fa-archive" ></i> Add NFS Charge 
+            </button>
+            <button class="btn btn-white btn-rounded" ng-click="renew()" ng-hide="loan.status"> 
+                <i class="fa fa-archive" ></i> Renew Loan 
+            </button>
+            <button class="btn btn-white btn-rounded" data-toggle="modal" data-target="#modal-writeoff" ng-hide="loan.status"> 
+                <i class="fa fa-user"></i> Write Off 
+            </button>
+            <button class="btn btn-white btn-rounded" data-toggle="modal" data-target="#modal-promise" ng-hide="loan.status"> 
+                <i class="fa fa-user"></i> Promise to Pay
+            </button>
+        </div>
+    </div>
+</div>
+
+<hr class="divider" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+
+            <form name="form" class="form-horizontal" ng-validate="create_notes(note)" novalidate>
+                <div class="panel panel-default">
+                    <h3 class="panel-heading"><a href="" ng-click="showme = !showme">Add Notes</a></h3>
+                    <p ng-hide="showme"></p>
+
+                    <div class="panel-body" ng-show="showme">
+                        <div class="form-group" >
+                            <div class="col-xs-9">
+                                <textarea name="notes" class="form-control" placeholder="Check Notes" ng-model="note.content"></textarea>
+                            </div>
+                        </div>
+
+
+                        <div class="row text-right">
+
+                            <div class="col-xs-12">
+                                <button class="btn btn-default" type="submit"> <i class="fa fa-check-circle"></i> Add Notes </button>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+
+
+            <div class="panel panel-default">
+                <h3 class="panel-heading">Notes</h3>
+                <div class="panel-body">
+                    <!-- Grid -->
+                    <table ng-gridview="notes">
+                        <thead>
+                            <tr>
+                                <th data-render="{{created_date|date:'EEEE, MMMM d, y'}} <span class='text-gray'>at</span> {{created_date|date:'h:mm a'}}">Created</th>
+                                <th data-name="content">Content</th>
+                                <th data-name="$options" width="80">Options</th>
+                            </tr>
+                        </thead>
+                    </table>
+
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="panel panel-default">
+                <h3 class="panel-heading">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="active"><a href="#transaction" role="tab" data-toggle="tab">Transactions</a></li>
+                        <li><a href="#loan_history" role="tab" data-toggle="tab">Loans</a></li>
+                        <li><a href="#employer" role="tab" data-toggle="tab">Employers</a></li>
+                        <li><a href="#residence" role="tab" data-toggle="tab">Residences</a></li>
+                        <li><a href="#debt" role="tab" data-toggle="tab">Primary Debts</a></li>
+                        <li><a href="#reference" role="tab" data-toggle="tab">References</a></li>
+                        <li><a href="#automobile" role="tab" data-toggle="tab">Automobiles</a></li>
+                        <li><a href="#phones" role="tab" data-toggle="tab">Phone</a></li>
+                        <li><a href="#inquiry" role="tab" data-toggle="tab">Inquiries</a></li>
+                        <li><a href="#other_income" role="tab" data-toggle="tab">Other Income</a></li>
+                        <li><a href="#borrower" role="tab" data-toggle="tab">Borrower</a></li>
+                    </ul>
+                </h3>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <sun-tab class="tab-pane active" id="transaction"></sun-tab>
+                        <sun-tab class="tab-pane" id="loan_history"></sun-tab>
+                        <sun-tab class="tab-pane" id="employer"></sun-tab>
+                        <sun-tab class="tab-pane" id="residence"></sun-tab>
+                        <sun-tab class="tab-pane" id="debt"></sun-tab>
+                        <sun-tab class="tab-pane" id="reference"></sun-tab>
+                        <sun-tab class="tab-pane" id="automobile"></sun-tab>
+                        <sun-tab class="tab-pane" id="phones"></sun-tab>
+                        <sun-tab class="tab-pane" id="inquiry"></sun-tab>
+                        <sun-tab class="tab-pane" id="other_income"></sun-tab>
+                        <sun-tab class="tab-pane" id="borrower"></sun-tab>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-include src="template" ng-repeat="template in templates"></ng-include>

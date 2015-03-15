@@ -1,0 +1,66 @@
+<div class="container">
+
+    <h3 class="row title">
+        <div class="col-xs-12">
+            Write Off (90+ days)
+        </div>
+    </h3>
+
+    <div class="row title">
+        <div class="col-xs-6">
+            <button ng-show="!checked" class="btn btn-white btn-rounded" ng-click="check($event)"> <i class="fa fa-check-square-o"></i> Check All </button>
+            <button ng-show="checked" class="btn btn-white btn-rounded" ng-click="uncheck($event)"> <i class="fa fa-square-o"></i> Uncheck All </button>
+        </div>
+        <div class="col-xs-6 text-right">
+            <button class="btn btn-default" ng-click="writeoff()"> <i class="fa fa-check-circle"></i> Writeoff Selected </button>
+        </div>
+    </div>
+
+    <div class="row" ng-init="writeoffCollections()">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <h3 class="panel-heading">
+                    Loans
+                </h3>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Write Off?</th>
+                                <th>Account</th>
+                                <th>Loan</th>
+                                <th>Borrower Name</th>
+                                <th>Movement Date</th>
+                                <th>Payoff</th>
+                                <th>Up to Date</th>
+                                <th>Manage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="writeoff in writeoffs">
+                                <td><input id="{{writeoff.loan}}" 
+                                           type="checkbox" value="{{writeoff.loan}}" 
+                                           ng-checked="selection.indexOf(employee.name) > -1" 
+                                           ng-click="toggleSelection(writeoff.loan)" 
+                                           ng-click="toggleSelection(writeoff.loan)">
+                                </td>
+                                <td>{{writeoff.account_number}}</td>
+                                <td>{{writeoff.loan}}</td>
+                                <td>{{writeoff.first_name + ', ' + writeoff.last_name}}</td>
+                                <td>{{writeoff.movementDate| date:'mediumDate'}}</td>
+                                <td>{{writeoff.payOff| currency}}</td>
+                                <td>{{writeoff.upToDate| currency}}</td>
+                                <td>
+                                    <div class="table-buttons">
+                                        <a class="btn btn-white btn-sm" ng-click="manage(writeoff);"> <i class="fa fa-pencil"></i> Manage</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

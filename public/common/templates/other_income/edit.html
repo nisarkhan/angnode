@@ -1,0 +1,68 @@
+<form name="form" class="form-horizontal" ng-validate="$parent[ $edit ? 'update' : 'create']('other_incomes', data, form)" novalidate>
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-4 control-label">Source:</label>
+                <div class="col-xs-8">
+                    <select name="income_type" dropdown="other_income_type" ng-model="data.source" ng-dropdown required>
+                        <option ng-option value="{{option.id}}" ng-repeat="option in $parent.dropdown.income_source" >{{option.name}}</option>
+                    </select>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.income_type.$error.required">You must select a income type .</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-4 control-label">Monthly Income:</label>
+                <div class="col-xs-8">
+                    <input name="amount" type="text" min="0" class="form-control" ng-model="data.amount" ng-mask="currency" required>
+                    <div class="alert alert-danger" ng-show="form.$submitted && form.value.$error.required">Enter an amount.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label"> How Verified:</label>
+                <div class="col-xs-7">
+                    <select name="verified_how" ng-model="data.how_verified" ng-dropdown>
+                        <option ng-option value="{{option.id}}" ng-repeat="option in $parent.dropdown.how_verified" >{{option.name}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label class="col-xs-5 control-label"> Comments:</label>
+                <div class="col-xs-7">
+                    <input type="text" class="form-control" ng-model="data.comments">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="" class="col-xs-5 control-label"> Who Verified:</label>
+                <div class="col-xs-7">
+                    <input type="text" class="form-control" ng-model="data.who_verified">
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            &nbsp;
+        </div>
+
+    </div>
+    <div class="row text-right">
+        <div class="col-xs-12">
+            <button class="btn btn-default" type="submit" >
+                <span ng-if="$edit"> <i class="fa fa-refresh"></i>  Update Debt </span>
+                <span ng-if="!$edit"> <i class="fa fa-plus"></i>  Add Debt </span>
+            </button>
+        </div>
+    </div>
+
+</form>

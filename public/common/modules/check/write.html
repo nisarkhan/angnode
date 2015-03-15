@@ -1,0 +1,114 @@
+<div class="container">
+
+    <h3 class="row title">
+        <div class="col-xs-12">
+            Write a Check
+        </div>
+    </h3>
+    <form name="form" class="form-horizontal" ng-validate="write()" novalidate>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <p>{{organization.organization_name}}</p>
+                                <p>{{organization.address}}</p>
+                                <p>{{organization.city+', '+organization.state+' '+ organization.zip}}</p>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                Check Number: {{checkbook.check_current}}
+                            </div>
+                        </div>
+                        <hr />
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label for="" class="col-xs-6 control-label">Account:</label>
+                                    <div class="col-xs-6">
+                                        <select ng-model="check.account_number" ng-required="true">
+                                            <option ng-repeat="account in accounts | filter:{type:'E'} |orderBy:'account_name'" value="{{ account.account_number }}">{{ account.account_name}}</option>
+                                        </select>
+                                        <div class="alert alert-danger" ng-show="form.$submitted && form.account.$error.required">Select the account.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label for="" class="col-xs-6 control-label">Pay to the order of:</label>
+                                    <div class="col-xs-6">
+                                        <input name="pay_order" type="text" class="form-control" ng-model="check.pay_to" placeholder="Pay to the order of" ng-required="true">
+                                        <div class="alert alert-danger" ng-show="form.$submitted && form.pay_order.$error.required">Enter pay to the order.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+
+                                <div class="form-group">
+                                    <label for="" class="col-xs-6 control-label">Amount:</label>
+                                    <div class="col-xs-6">
+                                        <input name="amount" type="text" class="form-control" ng-model="check.amount" placeholder="0.00" ng-required="true" ng-mask="currency">
+                                        <div class="alert alert-danger" ng-show="form.$submitted && form.amount.$error.required">Enter the amount.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="" class="col-xs-3 control-label">Notes:</label>
+                            <div class="col-xs-9">
+                                <textarea name="notes" class="form-control" placeholder="Check Notes" ng-model="check.memo"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row text-right">
+                            <p class="col-xs-12">
+                                Created by: <b>{{user.first_name}} {{user.last_name}}</b>
+                            </p>
+                            <div class="col-xs-12">
+                                <button class="btn btn-default" type="submit"> <i class="fa fa-check-circle"></i> Write Check </button>
+                               
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!--gridview check history-->
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="panel panel-default">
+                <h3 class="panel-heading">
+                    Checks
+                </h3>
+                <div class="panel-body">
+
+                    <!-- Grid -->
+                    <table ng-gridview="checks" data="checks" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th data-render="{{date_written | date:'MMMM d, y'}}">Date</th>
+                                <th data-render="{{check_num}}">Check #</th>
+                                <th data-render="{{account_number}}">Account</th>
+                                <th data-render="{{pay_to}}">Paid To</th>
+                                <th data-render="{{amount | currency}}">Amount</th>
+                                <th data-render="{{void_date | date:'MMMM d, y'}}">Void</th>
+                                <th data-name="$options">Options</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

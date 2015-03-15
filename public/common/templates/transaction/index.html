@@ -1,0 +1,13 @@
+<table ng-gridview="transactions" lengthchange="false" >
+    <thead>
+        <tr>
+            <th data-name="transaction_date">Date</th>
+            <th data-render="{{transaction_code||'Undefined'}}">Code</th>
+            <th data-render="{{transaction_amount|currency}}">Amount</th>
+            <th data-render="{{applied_to_balance|currency}}">To Balance</th>
+            <th data-render="{{applied_to_late_charge|currency}}">To Late</th>
+            <th data-render="{{applied_to_maturity_interest|currency}}">To Maturity</th>
+            <th data-render="{{new_ending_balance|currency}}">New Balance</th>
+        </tr>
+    </thead>
+</table> 

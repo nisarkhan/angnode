@@ -1,0 +1,29 @@
+<sun-form form="other_debt"
+          data="other_debt_">
+</sun-form>
+
+<hr/>
+
+<table ng-gridview="other_debts"
+       resource="$other_debts"
+       data="other_debts" 
+       title="<h4>Current Debts</h4>">
+    <thead>
+        <tr>
+            <th data-render="{{creditor|| ''}}">Creditor</th>
+            <th data-render="{{other_debt_type|| ''}}">Debt Type</th>
+            <th data-render="{{current_balance|| ''}}">Amount</th>
+            <th data-render="{{description|| ''}}">Description</th>
+            <th data-render="{{last_payment_made|| ''}}">Last Paid</th>
+            <th data-name="$options" data-width="160" >Options</th>
+        </tr>
+    </thead>
+</table>
+
+<div class="hide">
+    <sun-form form="other_debt"
+              edit="true"
+              data="other_debts.$selected"
+              ng-gridedit="other_debts">
+    </sun-form>
+</div>
